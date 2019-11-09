@@ -61,6 +61,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-搭建hexo-Github博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/09/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time datetime="2019-11-09T15:45:50.728Z" itemprop="datePublished">2019-11-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/09/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/">搭建hexo-Github博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简要吐槽"><a href="#简要吐槽" class="headerlink" title="简要吐槽"></a>简要吐槽</h3><hr>
+<p>搭博客其实没那么麻烦，但是在网上各类教程的“指导下”，我不知道放弃了多少次又重新试了多少次，大部分还是得靠自己。。。<br>今天在这里给大家简要分享一下我搭博客(hexo-Github)的教程，基于自己很多很多日日夜夜的尝试与摸索后的经验教训，希望对大家有一些帮助。</p>
+<h3 id="直入主题"><a href="#直入主题" class="headerlink" title="直入主题"></a>直入主题</h3><hr>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><hr>
+<p>首先需要三个工具，git、npm、node.js。可以在windows下用命令行(win+R)验证一下(如下)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>只要显示了版本号即证明OK。如果没有的话可以去官网下载安装即可(下方附上官网地址)，并且不要忘了添加环境变量不然还是看不到版本号也没法在命令行里使用这三个命令。</p>
+<blockquote>
+<p> <a href="https://www.git-scm.com/download/" target="_blank" rel="noopener">git安装地址</a></p>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js安装地址</a>(安装这个就包含了npm)</p>
+</blockquote>
+<h4 id="在Github上搭建"><a href="#在Github上搭建" class="headerlink" title="在Github上搭建"></a>在Github上搭建</h4><hr>
+<p>首先需要注册一个Github账号(需要邮箱)，然后进入后点击右上角的人脸选择<strong>your repositories</strong>(如下图)</p>
+<p><img src="/.com//%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2%5Crep.jpg" alt="啦啦啦">)<img src="/.com//%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2%5C3.jpg" alt="啦啦啦"></p>
+<p>然后点击右上角绿色的new(如上图)创建一个自己的仓库，进入后就会出现下面这个界面</p>
+<p><img src="/.com//%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2%5Cright.jpg" alt="啦啦啦"></p>
+<p>图中打了×的都是可填可不填的，description就是一个简单的描述，public和private就是选择你的项目是否公开，但是private需要花钱，最后那个是添加一个README文件可有可无。但是最重要的是第一个打勾的地方，要搭建博客的话这个仓库名称必须是“username”.github.io，username是你自己的账号名字，如上图我的仓库名称就应该为DbettKK.github.io(!!!!!千万不要写错，不然还得删了重来，本人不知道删过多少次了)，最后点击create repository即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/09/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/" data-id="ck2rrcddn0001q8u2cla8790b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/09/hello-world/" class="article-date">
@@ -89,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/hello-world/" data-id="ck2rmqbwg0000isu2h3vb1dwu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/hello-world/" data-id="ck2rrcdd60000q8u20zy8hm5l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -113,7 +167,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/09/dp/">动态规划(DP)题目汇总</a>
+      <a class="article-title" href="/2019/11/09/dp/">动态规划(DP)——股票问题</a>
     </h1>
   
 
@@ -121,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、股票问题（简单DP）"><a href="#一、股票问题（简单DP）" class="headerlink" title="一、股票问题（简单DP）"></a>一、股票问题（简单DP）</h2><h3 id="股票Ⅰ"><a href="#股票Ⅰ" class="headerlink" title="股票Ⅰ"></a>股票Ⅰ</h3><h4 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h4><hr>
+        <h2 id="股票问题（简单DP）"><a href="#股票问题（简单DP）" class="headerlink" title="股票问题（简单DP）"></a>股票问题（简单DP）</h2><h3 id="股票Ⅰ"><a href="#股票Ⅰ" class="headerlink" title="股票Ⅰ"></a>股票Ⅰ</h3><h4 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h4><hr>
 <p>假设您有一个数组，第i个元素是第i天给定股票的价格。</p>
 <p>如果只允许您最多完成一笔交易（即买入和卖出一股股票），请设计一种算法以找到最大的利润(卖出的价格-买入的价格)。</p>
 <p>请注意，您不能在买股票之前卖出股票。</p>
@@ -244,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/dp/" data-id="ck2rmqbwu0001isu2fs7j2lgc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/dp/" data-id="ck2rrcdea0002q8u2doq4bur7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,11 +339,15 @@
       <ul>
         
           <li>
+            <a href="/2019/11/09/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/">搭建hexo-Github博客</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/09/hello-world/">First Time!!!</a>
           </li>
         
           <li>
-            <a href="/2019/11/09/dp/">动态规划(DP)题目汇总</a>
+            <a href="/2019/11/09/dp/">动态规划(DP)——股票问题</a>
           </li>
         
       </ul>
