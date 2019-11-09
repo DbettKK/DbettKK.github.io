@@ -64,13 +64,7 @@
       <div class="outer">
         <section id="main"><article id="post-dp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    
-        <!-- ������ͳ�� -->
-        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
-              <i class="icon-smile icon"></i> read times<span id="busuanzi_value_page_pv"></span>
-        </span>
-
-<a href="/2019/11/09/dp/" class="article-date">
+    <a href="/2019/11/09/dp/" class="article-date">
   <time datetime="2019-11-09T12:28:41.000Z" itemprop="datePublished">2019-11-09</time>
 </a>
     
@@ -213,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/dp/" data-id="ck2rjyrqp00001gu20zhwaqmr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/dp/" data-id="ck2rlrjxw0001jsu2996h9c2t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,17 +283,15 @@
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
-  
-        <!-- ������ͳ�� -->
-        <span id="busuanzi_container_site_pv">
-                Total views of the site<span id="busuanzi_value_site_pv"></span>times
-        </span>
-        <span class="post-meta-divider">|</span>
-        <span id="busuanzi_container_site_uv" style='display:none'>
-                Total visitors<span id="busuanzi_value_site_uv"></span>
-        </span>
-        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
+  {% if theme.footer.counter %}
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">read times<span id="busuanzi_value_site_pv"></span></span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">�ܷÿ�<span id="busuanzi_value_site_uv"></span>��</span>
+    <span class="post-meta-divider">|</span>
+
+{% endif %}
 </footer>
     </div>
     <nav id="mobile-nav">
