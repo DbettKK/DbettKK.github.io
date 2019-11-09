@@ -5,21 +5,22 @@
   
 
   
-  <title>搭建hexo-Github博客 | BBBBBlog</title>
+  <title>搭建(hexo-Github)博客 | BBBBBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="简要吐槽 搭博客其实没那么麻烦，但是在网上各类教程的“指导下”，我不知道放弃了多少次又重新试了多少次，大部分还是得靠自己。。。今天在这里给大家简要分享一下我搭博客(hexo-Github)的教程，基于自己很多很多日日夜夜的尝试与摸索后的经验教训，希望对大家有一些帮助。 直入主题 准备工作 首先需要三个工具，git、npm、node.js。可以在windows下用命令行(win+R)验证一下(如下)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建hexo-Github博客">
+<meta property="og:title" content="搭建(hexo-Github)博客">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;10&#x2F;%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="简要吐槽 搭博客其实没那么麻烦，但是在网上各类教程的“指导下”，我不知道放弃了多少次又重新试了多少次，大部分还是得靠自己。。。今天在这里给大家简要分享一下我搭博客(hexo-Github)的教程，基于自己很多很多日日夜夜的尝试与摸索后的经验教训，希望对大家有一些帮助。 直入主题 准备工作 首先需要三个工具，git、npm、node.js。可以在windows下用命令行(win+R)验证一下(如下)">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;DbettKK&#x2F;pics&#x2F;blob&#x2F;master&#x2F;1.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;DbettKK&#x2F;pics&#x2F;blob&#x2F;master&#x2F;2.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;DbettKK&#x2F;pics&#x2F;blob&#x2F;master&#x2F;3.jpg">
-<meta property="og:updated_time" content="2019-11-09T16:22:40.357Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;3.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;4.jpg">
+<meta property="og:updated_time" content="2019-11-09T16:50:02.420Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;github.com&#x2F;DbettKK&#x2F;pics&#x2F;blob&#x2F;master&#x2F;1.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="BBBBBlog" type="application/atom+xml">
   
@@ -69,7 +70,7 @@
         <section id="main"><article id="post-搭建hexo-Github博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/10/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2019-11-09T16:22:40.354Z" itemprop="datePublished">2019-11-10</time>
+  <time datetime="2019-11-09T16:50:18.000Z" itemprop="datePublished">2019-11-10</time>
 </a>
     
   </div>
@@ -80,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      搭建hexo-Github博客
+      搭建(hexo-Github)博客
     </h1>
   
 
@@ -100,10 +101,11 @@
 <p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js安装地址</a>(安装这个就包含了npm)</p>
 <h4 id="在Github上搭建"><a href="#在Github上搭建" class="headerlink" title="在Github上搭建"></a>在Github上搭建</h4><hr>
 <p>首先需要注册一个Github账号(需要邮箱)，然后进入后点击右上角的人脸选择<strong>your repositories</strong>(如下图)</p>
-<p><img src="https://github.com/DbettKK/pics/blob/master/1.jpg" alt="blog1">)<img src="https://github.com/DbettKK/pics/blob/master/2.jpg" alt="blog2"></p>
+<p><img src="https://raw.githubusercontent.com/DbettKK/pictures/master/blog/1.jpg" alt="blog1">)<img src="https://raw.githubusercontent.com/DbettKK/pictures/master/blog/2.jpg" alt="blog2"></p>
 <p>然后点击右上角绿色的new(如上图)创建一个自己的仓库，进入后就会出现下面这个界面</p>
-<p><img src="https://github.com/DbettKK/pics/blob/master/3.jpg" alt="blog1"></p>
-<p>图中打了×的都是可填可不填的，description就是一个简单的描述，public和private就是选择你的项目是否公开，但是private需要花钱，最后那个是添加一个README文件可有可无。但是最重要的是第一个打勾的地方，要搭建博客的话这个仓库名称必须是“username”.github.io，username是你自己的账号名字，如上图我的仓库名称就应该为DbettKK.github.io(!!!!!千万不要写错，不然还得删了重来，本人不知道删过多少次了)，最后点击create repository即可。</p>
+<p><img src="https://raw.githubusercontent.com/DbettKK/pictures/master/blog/3.jpg" alt="blog1"></p>
+<p>图中打了×的都是可填可不填的，description就是一个简单的描述，public和private就是选择你的项目是否公开，但是private需要花钱，最后那个是添加一个README文件可有可无。但是最重要的是第一个打勾的地方，要搭建博客的话这个仓库名称必须是“username”.github.io，username是你自己的账号名字，如上图我的仓库名称就应该为DbettKK.github.io(!!!!!千万不要写错，不然还得删了重来，本人不知道删过多少次了)，最后点击create repository即可。进去后记住下方那个https后面的地址后面还有用。</p>
+<p><img src="https://raw.githubusercontent.com/DbettKK/pictures/master/blog/4.jpg" alt="blog4"></p>
 
       
     </div>
@@ -157,7 +159,7 @@
       <ul>
         
           <li>
-            <a href="/2019/11/10/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/">搭建hexo-Github博客</a>
+            <a href="/2019/11/10/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/">搭建(hexo-Github)博客</a>
           </li>
         
           <li>
