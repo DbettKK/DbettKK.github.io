@@ -168,53 +168,34 @@
 
 <p>或者也可以直接在source/_posts/目录下新建.md文档，效果是一样的。不过需要在里面添加一下title等东西，可以参考用命令生成的.md文档。然后开始写就可以啦，写完还是同样的方式上传即可。</p>
 <h5 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h5><hr>
-<p>当然大家都希望自己的博客功能多样，比如访客量、漂亮的背景图、鼠标点击效果、不同的主题等等，这些我在这里就不一一介绍啦，大家可以去网上看教程，还是非常丰富的。</p>
+<p>当然大家都希望自己的博客功能多样，比如访客量、漂亮的背景图、鼠标点击效果、不同的主题等等，这些我在这里就不一一介绍啦，大家可以去网上看教程，还是非常丰富的。我在这里就给大家简单分享一下如何在博客里方便的插入图片的方法吧。</p>
+<h6 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h6><hr>
+<p>这个方法是在网上看到的，虽然我没有成功，但还是分享给大家吧。</p>
+<p>首先在_config.yml里找到# Writting大类里的post_asset_folder，将其置为true。</p>
+<p>然后在根目录里运行cmd并运行以下命令，下载一个小插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image –save</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，在使用hexo n ”…“创建新博文时，就有一个同样标题的文件夹，把图片放进去即可，然后在.md文档里插入图片时就如下写，方括号里是图片不展示时显示的文字，2是代表你放图片的文件夹名，1是代表图片名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![...](2/1.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>虽然本人没有成功，希望大家能够成功啦。</p>
+<h6 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h6><hr>
+<p>这个方法非常的好用与方便，也不怕掉链子。</p>
+<p>就是使用github来保存自己的图片，然后在.md里引用时就用github网址即可。具体操作如下。</p>
+<p>首先找一个文件夹，里面放你本次.md里需要的图片，并且在github上新建一个专门用来存放图片的仓库。然后在这个文件夹所在的目录使用git bush将这个文件夹push到你的图片仓库里，具体操作如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init # 初始化</span><br><span class="line">git add . # 将该目录所有文件添加，注意这个&quot;.&quot;，也可以指定添加，git add 文件名</span><br><span class="line">git commit -m &quot;...&quot; # 双引号内即你给这个文件夹的备注，可以随意填写，不要省略双引号</span><br><span class="line">git remote add origin 仓库地址 # 后面填写你该仓库的地址。</span><br><span class="line">git push -u origin master # 第一次push时加上-u，后面不用。</span><br></pre></td></tr></table></figure>
+
+<p>然后完成后，在自己的仓库里找到相应的图片，点击download按钮，会进去一个只有图片的网页，然后右键图片点击复制地址，再在你的.md文档里插入图片时写上网址即可，非常的方便，不用担心本地文件丢失等等问题，希望对大家有帮助。</p>
 <h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>终于写完了这篇博客，希望对大家有所帮助呀，当然如果有什么问题也敬请指出来，我的邮箱会留在下方，欢迎随时联系，同时希望大家都能拥有属于自己的博客呀！！！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">邮箱：394739138@qq.com</span><br></pre></td></tr></table></figure>
 
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><hr>
+<p> <a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a> </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/10/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/" data-id="ck2simfhb0002mgu2eb2s6k73" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/09/hello-world/" class="article-date">
-  <time datetime="2019-11-09T12:50:18.000Z" itemprop="datePublished">2019-11-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/09/hello-world/">First Time!!!</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<p>作为一个大懒鬼以及大菜鸡，今天终于搭好了自己的第一个博客，<strong>太不容易了吧</strong>，之后肯定也会一直更新的啦，主要还是关于算法以及硬件基础方面的东西啦，当然要是我觉得有用的东西，我也会写在博客里供大家参考，希望对大家有用哦；不过主要本人水平实在有限，大家就当看着玩玩啦，请大家多多指教哦！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/hello-world/" data-id="ck2simfgv0000mgu20xc55smq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/10/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/" data-id="ck2sjp1aj0002awu2a8xc3nap" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,7 +208,7 @@
     <article id="post-dp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/09/dp/" class="article-date">
-  <time datetime="2019-11-09T12:28:41.000Z" itemprop="datePublished">2019-11-09</time>
+  <time datetime="2019-11-09T14:28:41.000Z" itemprop="datePublished">2019-11-09</time>
 </a>
     
   </div>
@@ -369,7 +350,45 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/dp/" data-id="ck2simfh90001mgu23sgi38r8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/dp/" data-id="ck2sjp1a90001awu2ei8xhrh9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/09/hello-world/" class="article-date">
+  <time datetime="2019-11-09T12:50:18.000Z" itemprop="datePublished">2019-11-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/09/hello-world/">First Time!!!</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+<p>作为一个大懒鬼以及大菜鸡，今天终于搭好了自己的第一个博客，<strong>太不容易了吧</strong>，之后肯定也会一直更新的啦，主要还是关于算法以及硬件基础方面的东西啦，当然要是我觉得有用的东西，我也会写在博客里供大家参考，希望对大家有用哦；不过主要本人水平实在有限，大家就当看着玩玩啦，请大家多多指教哦！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/09/hello-world/" data-id="ck2sjp1a30000awu286h44pc0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -414,11 +433,11 @@
           </li>
         
           <li>
-            <a href="/2019/11/09/hello-world/">First Time!!!</a>
+            <a href="/2019/11/09/dp/">动态规划(DP)——股票问题</a>
           </li>
         
           <li>
-            <a href="/2019/11/09/dp/">动态规划(DP)——股票问题</a>
+            <a href="/2019/11/09/hello-world/">First Time!!!</a>
           </li>
         
       </ul>
