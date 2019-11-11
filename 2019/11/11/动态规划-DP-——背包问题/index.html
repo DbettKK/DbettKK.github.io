@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="背包问题（简单DP）摘要 该讲主要介绍四类背包问题，都是比较经典的DP问题，比之前所讲的股票问题难度有所提升。 背包Ⅰ(01背包)题面 有N件物品和一个容量为V的背包。第i件物品的费用是c[i]，价值是w[i]。求解将哪些物品装入背包可使价值总和最大。  时间限制：5000ms，内存限制：65536kb 输入 多组输入数据 每组数据第一行两个数n，v，表示物品的数量和背包的容量。(1≤n≤500,">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-11T14:09:46.542Z">
+<meta property="og:updated_time" content="2019-11-11T14:18:57.009Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -434,13 +434,13 @@
 <li>j&gt;=a[i].price: b[i,j]=max(b[i-1，j],b[i-1，j-a[i].price]+a[i].value)</li>
 <li>j&lt;a[i].price: b[i，j]=b[i-1，j]</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=v;j++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(j&gt;=a[i].price)&#123;</span><br><span class="line">			b[i][j]=<span class="built_in">max</span>(b[i<span class="number">-1</span>][j],b[i<span class="number">-1</span>][j-a[i].price]+a[i].value);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			b[i][j]=b[i<span class="number">-1</span>][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=v;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j&gt;=a[i].price)&#123;</span><br><span class="line">            b[i][j]=<span class="built_in">max</span>(b[i<span class="number">-1</span>][j],b[i<span class="number">-1</span>][j-a[i].price]+a[i].value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            b[i][j]=b[i<span class="number">-1</span>][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 <hr>
 <p>上文这样确实是能够解决问题，但其实是可以再进行优化的，从二维数组优化到一维数组来解决。因为我们可以知道每一次往二维数组<kbd>b[i,j]</kbd>中写入数据的时候都是从上一次得到的数据来写入的，其实<kbd>i</kbd>就变得没有必要了，因为总是从<kbd>b[i-1,...]</kbd>中获取数据的，因此只需要一维数组即可，但是对于<kbd>j</kbd>来说，则需要一点思考，到底是由顶向下还是由底向上循环。假设考虑由底向上循环，我们考虑模拟取第<kbd>i</kbd>件物品的情况，<kbd>v</kbd>应该是从<kbd>a[i].price</kbd>到<kbd>val</kbd>的，那么在最开始的时候就相当于模拟取了一件了，那么在<kbd>v</kbd>取到<kbd>2*a[i].price</kbd>的时候，就相当于模拟取了两个第<kbd>i</kbd>件了，这明显是与题意不符的(这是后面会说到的完全背包)，所以我们采用由顶向下的循环就不会出现这种问题了。大家如果还不明白可以自己画画图推一推就好了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(v=val;v&gt;=<span class="number">1</span>;v--)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v&gt;=a[i].price) b[v]=<span class="built_in">max</span>(b[v],b[v-a[i].price]+a[i].value);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(v=val;v&gt;=<span class="number">1</span>;v--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(v&gt;=a[i].price) b[v]=<span class="built_in">max</span>(b[v],b[v-a[i].price]+a[i].value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -477,13 +477,13 @@
 <li>b[i,j] = max(b[i-1,j-k*a[i].price]+k*a[i].value)    0&lt;=k*a[i].price&lt;=j</li>
 </ul>
 <p>这里就不贴代码了，因为很明显时间复杂度太大，需要三个循环才能实现，并且还不是那么容易。所以我们直接开始说优化的过程。还是同样先优化为一维数组。因为每次取物品的时候都是可以无限量的取的，所以我们的<kbd>k</kbd>就可以省略了，直接采用两重循环实现，并且要保证每次的量的无限，我们的<kbd>j</kbd>的循环则需要从小到大进行循环，代码如下文所示。为什么呢，在这里举个例子说明以下吧：假设我们取第<kbd>i</kbd>件物品需要取<kbd>j</kbd>件才能满足最大价值的时候，我们的第二重循环运转的时候，<kbd>v</kbd>是从<kbd>a[i].price</kbd>一直循环到<kbd>val</kbd>也就是我们可以在取了一次后，<kbd>b[v]</kbd>更新，这样在<kbd>v</kbd>取到<kbd>2*a[i].price</kbd>的时候就能模拟第二次取，并且此时的<kbd>b[v-a[i].price]</kbd>是之前第一次取后更新了过后的值，这样一直循环下去便实现了模拟取无穷次的过程。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=val;v++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v&gt;=a[i].price) b[v]=<span class="built_in">max</span>(b[v],b[v-a[i].price]+a[i].value);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=val;v++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(v&gt;=a[i].price) b[v]=<span class="built_in">max</span>(b[v],b[v-a[i].price]+a[i].value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 <h4 id="转移方程-1"><a href="#转移方程-1" class="headerlink" title="转移方程"></a>转移方程</h4><hr>
 <ul>
-<li>b[j] = max(b[j],b[j-a[i].price]+a[i].value)</li>
+<li>b[j]=max(b[j],b[j-a[i].price]+a[i].value)</li>
 </ul>
 <h4 id="HINT-1"><a href="#HINT-1" class="headerlink" title="HINT"></a>HINT</h4><hr>
 <p>注意初始化。</p>
