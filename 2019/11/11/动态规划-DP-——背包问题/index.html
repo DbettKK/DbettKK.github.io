@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="简介 作为一个大懒鬼以及大菜鸡，今天终于搭好了自己的第一个博客，太不容易了吧，之后肯定也会一直更新的啦，主要还是关于算法以及硬件基础方面的东西啦，当然要是我觉得有用的东西，我也会写在博客里供大家参考，希望对大家有用哦；不过主要本人水平实在有限，大家就当看着玩玩啦，请大家多多指教哦！">
+<meta name="description" content="背包问题（简单DP）背包Ⅰ(01背包)题面  有N件物品和一个容量为V的背包。第i件物品的费用是c[i]，价值是w[i]。求解将哪些物品装入背包可使价值总和最大。  输入 多组输入数据 每组数据第一行两个数n，v，表示物品的数量和背包的容量。(1≤n≤500,1≤v≤30000) 接下来n行，每行两个整数，表示物品的费用和价值(1≤ci,wi≤500) 输出 每组数据一行一个数。 输入样例 123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Time!!!">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;09&#x2F;hello-world&#x2F;index.html">
+<meta property="og:title" content="动态规划(DP)——背包问题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;11&#x2F;%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="简介 作为一个大懒鬼以及大菜鸡，今天终于搭好了自己的第一个博客，太不容易了吧，之后肯定也会一直更新的啦，主要还是关于算法以及硬件基础方面的东西啦，当然要是我觉得有用的东西，我也会写在博客里供大家参考，希望对大家有用哦；不过主要本人水平实在有限，大家就当看着玩玩啦，请大家多多指教哦！">
+<meta property="og:description" content="背包问题（简单DP）背包Ⅰ(01背包)题面  有N件物品和一个容量为V的背包。第i件物品的费用是c[i]，价值是w[i]。求解将哪些物品装入背包可使价值总和最大。  输入 多组输入数据 每组数据第一行两个数n，v，表示物品的数量和背包的容量。(1≤n≤500,1≤v≤30000) 接下来n行，每行两个整数，表示物品的费用和价值(1≤ci,wi≤500) 输出 每组数据一行一个数。 输入样例 123">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-10T16:37:22.647Z">
+<meta property="og:updated_time" content="2019-11-11T10:43:38.235Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/09/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/11/动态规划-DP-——背包问题/"/>
 
 
 
 
 
-  <title>First Time!!! | BBBBBlog</title>
+  <title>动态规划(DP)——背包问题 | BBBBBlog</title>
   
 
 
@@ -284,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/09/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bcutty Kmy">
@@ -301,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">First Time!!!</h1>
+          <h1 class="post-title" itemprop="name headline">动态规划(DP)——背包问题</h1>
         
 
         <div class="post-meta">
@@ -313,8 +313,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-09T20:50:18+08:00">
-                2019-11-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-11T17:52:18+08:00">
+                2019-11-11
               </time>
             
 
@@ -332,8 +332,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/09/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/09/hello-world/" itemprop="commentCount"></span>
+                <a href="/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -341,7 +341,7 @@
 
           
           
-             <span id="/2019/11/09/hello-world/" class="leancloud_visitors" data-flag-title="First Time!!!">
+             <span id="/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="动态规划(DP)——背包问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  129 words
+                  1k words
                 </span>
               
 
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 minutues
+                  4 minutues
                 </span>
               
             </div>
@@ -403,8 +403,50 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<p>作为一个大懒鬼以及大菜鸡，今天终于搭好了自己的第一个博客，<strong>太不容易了吧</strong>，之后肯定也会一直更新的啦，主要还是关于算法以及硬件基础方面的东西啦，当然要是我觉得有用的东西，我也会写在博客里供大家参考，希望对大家有用哦；不过主要本人水平实在有限，大家就当看着玩玩啦，请大家多多指教哦！</p>
+        <h2 id="背包问题（简单DP）"><a href="#背包问题（简单DP）" class="headerlink" title="背包问题（简单DP）"></a>背包问题（简单DP）</h2><h3 id="背包Ⅰ-01背包"><a href="#背包Ⅰ-01背包" class="headerlink" title="背包Ⅰ(01背包)"></a>背包Ⅰ(01背包)</h3><h4 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h4><hr>
+<p> 有N件物品和一个容量为V的背包。第i件物品的费用是c[i]，价值是w[i]。求解将哪些物品装入背包可使价值总和最大。 </p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><hr>
+<p>多组输入数据</p>
+<p>每组数据第一行两个数n，v，表示物品的数量和背包的容量。(1≤n≤500,1≤v≤30000)</p>
+<p>接下来n行，每行两个整数，表示物品的费用和价值(1≤c<sub>i</sub>,w<sub>i</sub>≤500)</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><hr>
+<p>每组数据一行一个数。</p>
+<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 6</span><br><span class="line">2 1</span><br><span class="line">3 2</span><br><span class="line">2 3</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h4><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure>
+
+<h4 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h4><hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> value;</span><br><span class="line">	<span class="keyword">int</span> price;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> <span class="title">a</span>[505];</span></span><br><span class="line"><span class="keyword">int</span> b[<span class="number">30005</span>]=&#123;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n&gt;=m) <span class="keyword">return</span> n;</span><br><span class="line">	<span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,val,vmax=<span class="number">0</span>,i,j,v;</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;val))&#123;</span><br><span class="line">		vmax=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a[i].price,&amp;a[i].value);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=val;i++)&#123;</span><br><span class="line">			b[i]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(v=val;v&gt;=a[i].price;v--)&#123;</span><br><span class="line">				b[v]=<span class="built_in">max</span>(b[v],b[v-a[i].price]+a[i].value);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,b[val]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><hr>
+<p>我们还是直接从DP的角度开始分析这个问题，这是一个01背包问题，我们先假设一些变量，<kbd>b[i,j]</kbd>表示当前背包被占用的容量是<kbd>j</kbd>的情况下，前<kbd>i</kbd>个物品的最佳组合的总价值。<kbd>a[i].price</kbd>和<kbd>a[i].value</kbd>即表示当前商品所需要的容量和当前商品的价值。然后对于当前这个商品有以下两种可能：</p>
+<ul>
+<li>包剩余的容量不够装当前商品，总价值保持不变，不装入该商品，即<kbd>b[i,j]=b[i-1,j]</kbd>;</li>
+<li>有足够容量装该商品，但是装了之后不一定是最佳的价值(因为占用了容量无法保证后面商品是否更好)，需要一个选择，即<kbd>b[i,j]=max(b[i-1,j],b[i-1,j-a[i].price]+a[i].value)</kbd>;</li>
+</ul>
+<p>第二个式子怎么理解呢，如果当前产品装进去了，那么装入之前的状态就是<kbd>b[i-1,j-a[i].price]</kbd>，这样说应该比较好理解了。然后这样我们可以得到一个转移方程如下，当然可以通过初始赋值将其转化为一个方程，代码实现我也放在下方。</p>
+<ul>
+<li>j&gt;=a[i].price: b[i,j]=max(b[i-1,j],b[i-1,j-a[i].price]+a[i].value)</li>
+<li>j&lt;a[i].price: b[i,j]=b[i-1,j]</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=v;j++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(j&gt;=a[i].price)&#123;</span><br><span class="line">			b[i][j]=<span class="built_in">max</span>(b[i<span class="number">-1</span>][j],b[i<span class="number">-1</span>][j-a[i].price]+a[i].value);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			b[i][j]=b[i<span class="number">-1</span>][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>上文这样确实是能够解决问题，但其实是可以再进行优化的，从二维数组优化到一维数组来解决。因为我们可以知道每一次往二维数组<kbd>b[i,j]</kbd>中写入数据的时候都是从上一次得到的数据来写入的，其实<kbd>i</kbd>就变得没有必要了，因为总是从<kbd>b[i-1,...]</kbd>中获取数据的，因此只需要一维数组即可，但是对于<kbd>j</kbd>来说，则需要一点思考，因为每次更新时，<kbd>b[i-1,j-a[i].price]</kbd>都是根据更大的<kbd>j</kbd>来判断的，如果我们循环还是像上面那样写的话，就会没有参照的点，也就没法实现其效果，所以我们的<kbd>j</kbd>的循环需要从最大开始，这样才能保证代码的正确性，代码如下。稍微小改动就是上文的AC代码了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(v=val;v&gt;=<span class="number">0</span>;v--)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v&gt;=a[i].price) b[v]=<span class="built_in">max</span>(b[v],b[v-a[i].price]+a[i].value);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="转移方程"><a href="#转移方程" class="headerlink" title="转移方程"></a>转移方程</h4><hr>
+<ul>
+<li>b[j] = max(b[j], b[j - a[i].price] + a[i].value)</li>
+</ul>
+<h4 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h4><hr>
+<p>注意初始化。</p>
 
       
     </div>
@@ -425,7 +467,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://yoursite.com/2019/11/09/hello-world/" title="First Time!!!">http://yoursite.com/2019/11/09/hello-world/</a>
+    <a href="http://yoursite.com/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" title="动态规划(DP)——背包问题">http://yoursite.com/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -447,15 +489,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/11/10/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/" rel="next" title="搭建(hexo-Github)博客">
+                <i class="fa fa-chevron-left"></i> 搭建(hexo-Github)博客
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/09/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92(DP)%E2%80%94%E2%80%94%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/" rel="prev" title="动态规划(DP)——股票问题">
-                动态规划(DP)——股票问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -588,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背包问题（简单DP）"><span class="nav-number">1.</span> <span class="nav-text">背包问题（简单DP）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背包Ⅰ-01背包"><span class="nav-number">1.1.</span> <span class="nav-text">背包Ⅰ(01背包)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面"><span class="nav-number">1.1.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入"><span class="nav-number">1.1.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出"><span class="nav-number">1.1.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入样例"><span class="nav-number">1.1.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出样例"><span class="nav-number">1.1.5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AC代码"><span class="nav-number">1.1.6.</span> <span class="nav-text">AC代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析"><span class="nav-number">1.1.7.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转移方程"><span class="nav-number">1.1.8.</span> <span class="nav-text">转移方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HINT"><span class="nav-number">1.1.9.</span> <span class="nav-text">HINT</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

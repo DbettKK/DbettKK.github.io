@@ -91,7 +91,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;3.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;4.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;5.jpg">
-<meta property="og:updated_time" content="2019-11-10T16:37:22.663Z">
+<meta property="og:updated_time" content="2019-11-11T09:51:27.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;blog&#x2F;1.jpg">
 
@@ -432,7 +432,7 @@
 <h5 id="为啥要配置这个"><a href="#为啥要配置这个" class="headerlink" title="为啥要配置这个"></a>为啥要配置这个</h5><hr>
 <p>因为提交代码是需要GitHub权限的，就相当于每次都需要输入你的邮箱和密码，非常的麻烦和容易出错，有了这个SSH key就能让本地和GitHub服务器连接起来，以上的问题就迎刃而解，非常的方便与安全。</p>
 <h5 id="生成本地SSH-key"><a href="#生成本地SSH-key" class="headerlink" title="生成本地SSH key"></a>生成本地SSH key</h5><hr>
-<p>可以先用以下代码在GIT BUSH中查看本机是否已经有SSH存在</p>
+<p>可以先用以下代码在GIT BASH中查看本机是否已经有SSH存在</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/. ssh</span><br></pre></td></tr></table></figure>
 
 <p>如果显示No such file……就说明需要重新生成，命令如下</p>
@@ -441,12 +441,12 @@
 <p>邮箱地址是你自己的GitHub邮箱地址即”[username].github.io”，然后连续敲几次回车即可，这个SSH key就保存在C盘用户目录里的.ssh文件夹里，然后找到该文件夹里的id_rsa.pub文件，用记事本打开并且复制里面的全部内容，在你的GitHub中还是点击右上角的人脸选择settings(这里就不配图了)，然后选择左边的SSH and GPG keys(如下图)，并且选择新增SSH keys，下图中的title可以随意填写，Key就是把你之前复制的粘贴下来点击Add SSH key即可完成，完成后就能看到自己的SSH key了。</p>
 <p><img src="https://raw.githubusercontent.com/DbettKK/pictures/master/blog/5.jpg" alt="update5"></p>
 <h5 id="测试成功与否"><a href="#测试成功与否" class="headerlink" title="测试成功与否"></a>测试成功与否</h5><hr>
-<p>在git bush里输入一下命令进行验证是否连接成功</p>
+<p>在git bash里输入一下命令进行验证是否连接成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 <p>上面那个邮箱地址是不用更改的，就这样写就可以了，如果有需要输入的就输入yes/y就可以了，最后如果看到其中显示<strong><em>Hi …..! You’ve successfully……</em></strong>就说明配置成功了。</p>
 <h5 id="将git与Github绑定"><a href="#将git与Github绑定" class="headerlink" title="将git与Github绑定"></a>将git与Github绑定</h5><hr>
-<p>在git bush中输入以下命令将git与你的GitHub账号和邮箱绑定。</p>
+<p>在git bash中输入以下命令将git与你的GitHub账号和邮箱绑定。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;.....&quot;</span><br><span class="line">git config --global user.email &quot;...@...&quot;</span><br></pre></td></tr></table></figure>
 
 <p>上面引号中的内容都填写你自己的账号用户名和邮箱即可。</p>
@@ -456,16 +456,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://hexo.io/zh-cn/</span><br></pre></td></tr></table></figure>
 
 <h5 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h5><hr>
-<p>Hexo的安装不需要去官网，直接再git bush中就能完成，在任意地方打开git bush，然后输入一下命令进行安装，可能需要等一会，这个过程不要去乱按键盘即可。</p>
+<p>Hexo的安装不需要去官网，直接再git bush中就能完成，在任意地方打开git bash，然后输入一下命令进行安装，可能需要等一会，这个过程不要去乱按键盘即可。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
 
-<p>等到有版本号出来的时候就说明安装完成了，然后进行下一步，初始化hexo，现在自己找一个位置新建一个文件夹hexo(什么名字都可以，我写hexo方便下文描述)，这也就是你之后写博客、存放代码的位置，所以选择还是慎重一些。然后进去这个文件夹，右键git bush here打开git bush然后输入一下命令</p>
+<p>等到有版本号出来的时候就说明安装完成了，然后进行下一步，初始化hexo，现在自己找一个位置新建一个文件夹hexo(什么名字都可以，我写hexo方便下文描述)，这也就是你之后写博客、存放代码的位置，所以选择还是慎重一些。然后进去这个文件夹，右键git bash here打开git bash然后输入一下命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
 <p>这个过程还是不短，还是耐心等待一会啦，最后初始化完之后，这个文件夹里应该会有以下内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">public # 这个里面是存放源码的地方，一般用不到。</span><br><span class="line">scaffolds</span><br><span class="line">source # 这个里面会有一个_posts，_posts里就是你写.md文档的地方，那里面可能会有默认的一个.md。</span><br><span class="line">themes # 这个是主题，最开始里面应该都只有一个landscape，有需要可以去官网下载。</span><br><span class="line">.gitignore</span><br><span class="line">_config.yml # 这个是配置文件，很多操作都需要对它进行编辑修改。</span><br><span class="line">db.json # 这个及后面的暂时不介绍，暂时用不到。</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 
-<p>然后就可以查看自己博客的初始状态啦，当然只能在本地服务器查看，因为还没有上传到github。用以下命令来查看，还是在刚刚下载好的地方用git bush，后文若无特殊说明，都是在此目录下打开git bush。</p>
+<p>然后就可以查看自己博客的初始状态啦，当然只能在本地服务器查看，因为还没有上传到github。用以下命令来查看，还是在刚刚下载好的地方用git bash，后文若无特殊说明，都是在此目录下打开git bash。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g # 这个命令用于将source/_posts/里的.md文件生成到自己的博客上（本地）</span><br><span class="line">hexo s # 这个命令用于启动本地的服务器，使用这个命令就可以开始访问啦</span><br></pre></td></tr></table></figure>
 
 <p>输入命令hexo s命令后，应该出现以下内容，此时就可以在本地网站里输入下方的网址进行访问啦</p>
@@ -559,7 +559,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/09/dp/" rel="next" title="动态规划(DP)——股票问题">
+              <a href="/2019/11/09/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92(DP)%E2%80%94%E2%80%94%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/" rel="next" title="动态规划(DP)——股票问题">
                 <i class="fa fa-chevron-left"></i> 动态规划(DP)——股票问题
               </a>
             
@@ -568,6 +568,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" rel="prev" title="动态规划(DP)——背包问题">
+                动态规划(DP)——背包问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -647,7 +651,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -734,7 +738,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.2k</span>
+    <span title="Site words total count">6.2k</span>
   
 </div>
 
