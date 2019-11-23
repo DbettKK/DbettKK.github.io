@@ -79,13 +79,14 @@
 
 
 
-<meta name="description" content="NO DEPENDENCE ONLY PRIDE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BBBBBlog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;index.html">
+<meta name="description" content="摘要主要是之前一直不知道约瑟夫环的dp解法，这里和大家分享一下。本文用三种方法给大家呈现本题。 最后一条毛毛虫题目描述小D的花园里养了 n 条毛毛虫，每条毛毛虫都有自己独有的编号（从 1 到 n ）。 一开始，所有的毛毛虫都开开心心地生活在花园里，享受着食物和阳光。 直到某一天，额……它们知道自己肯定会被吃掉，所以就开始玩一个游戏，来决定被吃的顺序。游戏的方法是这样的： 所有毛毛虫按照编号顺序从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="约瑟夫环">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="NO DEPENDENCE ONLY PRIDE">
+<meta property="og:description" content="摘要主要是之前一直不知道约瑟夫环的dp解法，这里和大家分享一下。本文用三种方法给大家呈现本题。 最后一条毛毛虫题目描述小D的花园里养了 n 条毛毛虫，每条毛毛虫都有自己独有的编号（从 1 到 n ）。 一开始，所有的毛毛虫都开开心心地生活在花园里，享受着食物和阳光。 直到某一天，额……它们知道自己肯定会被吃掉，所以就开始玩一个游戏，来决定被吃的顺序。游戏的方法是这样的： 所有毛毛虫按照编号顺序从">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-23T07:21:15.161Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -116,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/17/约瑟夫环/"/>
 
 
 
 
 
-  <title>Archive | BBBBBlog</title>
+  <title>约瑟夫环 | BBBBBlog</title>
   
 
 
@@ -141,7 +142,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,333 +270,242 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bcutty Kmy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BBBBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">约瑟夫环</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-17T23:01:50+08:00">
+                2019-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 8 posts in total. Keep on posting.
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-        
+          
+          
+             <span id="/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" class="leancloud_visitors" data-flag-title="约瑟夫环">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/23/%E9%A2%98%E8%A7%A3%E7%AF%87-C5/" itemprop="url">
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">题解篇-C5</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.1k words
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-23T11:30:50+08:00"
-              content="2019-11-23" >
-          11-23
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4 minutues
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" itemprop="url">
-              
-                <span itemprop="name">约瑟夫环</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-17T23:01:50+08:00"
-              content="2019-11-17" >
-          11-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>主要是之前一直不知道约瑟夫环的dp解法，这里和大家分享一下。本文用三种方法给大家呈现本题。</p>
+<h2 id="最后一条毛毛虫"><a href="#最后一条毛毛虫" class="headerlink" title="最后一条毛毛虫"></a>最后一条毛毛虫</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>小D的花园里养了 n 条毛毛虫，每条毛毛虫都有自己独有的编号（从 1 到 n ）。</p>
+<p>一开始，所有的毛毛虫都开开心心地生活在花园里，享受着食物和阳光。</p>
+<p>直到某一天，额……它们知道自己肯定会被吃掉，所以就开始玩一个游戏，来决定被吃的顺序。游戏的方法是这样的：</p>
+<p>所有毛毛虫按照编号顺序从 11 到 n 顺时针围成一个环，然后从 1 号毛毛虫开始顺时针依次报数，报到数字 m 的毛毛虫就出环被吃，下一条毛毛虫继续从 1 开始顺时针报数……直到所有毛毛虫都出环被吃。</p>
+<p>那么，最后一条被吃的毛毛虫的编号是多少呢？</p>
+<p> 时间限制：1000ms，内存限制：65536KB</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>两个正整数 n,m ，意义如题所示。</p>
+<p>输入数据保证： 1≤n,m≤3000。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>一个正整数，代表最后一条被吃的毛毛虫的编号。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5 3</span><br></pre></td></tr></table></figure>
 
-        
-        
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
 
-        
+<h3 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h3><p>毛毛虫被吃的顺序依次为：3、1、5、2、4 。</p>
+<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><p><a href="accoding.cn">北航OJ</a></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>(1) 首先很显然最简单的约瑟夫环问题，肯定用最容易理解的方法就是循环链表了。通过指针遍历、删除来完成每次的报数和出局环节，最后只剩一条毛毛虫时，就结束就可以了。虽然非常容易理解，但是代码比较长，时间花费也比较高(和后面介绍的方法相比)，但本题的限制还是可以随便AC的。代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">p</span>,*<span class="title">r</span>,*<span class="title">head</span>;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	head=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        r=(struct node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node));</span><br><span class="line">        r-&gt;num=i;</span><br><span class="line">        <span class="keyword">if</span> (head==<span class="literal">NULL</span>)</span><br><span class="line">            head=p=r;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            p-&gt;next=r;          </span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;next=head;</span><br><span class="line">    r=p;</span><br><span class="line">    p=head;</span><br><span class="line">   	<span class="keyword">while</span>(p-&gt;next!=p)&#123;</span><br><span class="line">         <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m<span class="number">-1</span>;i++)&#123;</span><br><span class="line">               r=p;</span><br><span class="line">               p=p-&gt;next;</span><br><span class="line">          &#125;</span><br><span class="line">          r-&gt;next=p-&gt;next;</span><br><span class="line">          <span class="built_in">free</span>(p);</span><br><span class="line">          p=r-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%d"</span>, p-&gt;num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	insert(n,m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>(2) 第二第三种方法本质一样，只是实现方式有所区别。都是通过数学方法进行一些推导得到的。首先我们假设编号从0开始，最后求出的答案再加1就好了，所以可以知道在第一次中，肯定是叫到(m-1)%n的会出局，那么第一次出局的下一个肯定就是m%n了，如果把他当作0号，那剩下的n-1个人又组成了一个新的约瑟夫环，此时出局的就是(m-1)%(n-1)，但是因为现在的0号并不是0号，而是m%n号，所以我们得到的胜利者还要加回去，也就是((m-1)%(n-1)+m%n)%n，如果我们把第n-1次胜利者看作f(n-1)的话，那第n次的胜利者肯定就是(f(n-1)+m%n)%n，那对于第三次开始叫号也就是同样的道理，胜利者编号就为((f(n-2)+m%(n-1))%(n-1)+m%n)%n，可以看出是有规律的，我们用式子写出来就是f(n)=(f(n-1)+m%n)%n，f(n-1)=(f(n-2)+m%(n-1))%(n-1)，化简得到就一个式子f(n)=(f(n-1)+m)%n，对于n∈[0,n]都是成立的。那么我们就可以写递归代码了，如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> (func(n<span class="number">-1</span>)+m)%n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,func(n) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/17/%E9%A2%98%E8%A7%A3%E7%AF%87-E3/" itemprop="url">
-              
-                <span itemprop="name">题解篇-E3</span>
-              
-            </a>
-        
-      </h2>
+<p>(3) 但是这样递归，其实多了很多重复计算的步骤，是可以优化的，即DP，所以转移方程也就是上文提到的<code>f(n)=(f(n-1)+m)%n</code>，甚至不需要数组来存，直接就能出来，代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m,s=<span class="number">0</span>,i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    	s=(s+m)%i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-17T13:13:50+08:00"
-              content="2019-11-17" >
-          11-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>有谬误敬请指出，敬请不吝赐教</p>
+<hr>
+<hr>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/12/Prince-and-Princess/" itemprop="url">
-              
-                <span itemprop="name">Prince and Princess</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-12T21:02:31+08:00"
-              content="2019-11-12" >
-          11-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" itemprop="url">
-              
-                <span itemprop="name">动态规划(DP)——背包问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-11T17:52:18+08:00"
-              content="2019-11-11" >
-          11-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/10/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/" itemprop="url">
-              
-                <span itemprop="name">搭建(hexo-Github)博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-10T00:50:18+08:00"
-              content="2019-11-10" >
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/09/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/" itemprop="url">
-              
-                <span itemprop="name">动态规划(DP)——股票问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-09T22:28:41+08:00"
-              content="2019-11-09" >
-          11-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/09/hello-world/" itemprop="url">
-              
-                <span itemprop="name">First Time!!!</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-09T20:50:18+08:00"
-              content="2019-11-09" >
-          11-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Bcutty Kmy
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yoursite.com/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" title="约瑟夫环">http://yoursite.com/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/17/%E9%A2%98%E8%A7%A3%E7%AF%87-E3/" rel="next" title="题解篇-E3">
+                <i class="fa fa-chevron-left"></i> 题解篇-E3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/23/%E9%A2%98%E8%A7%A3%E7%AF%87-C5/" rel="prev" title="题解篇-C5">
+                题解篇-C5 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -603,6 +513,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -623,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -682,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后一条毛毛虫"><span class="nav-number">2.</span> <span class="nav-text">最后一条毛毛虫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">2.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">2.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例"><span class="nav-number">2.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例"><span class="nav-number">2.5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例解释"><span class="nav-number">2.6.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">2.7.</span> <span class="nav-text">题目来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.8.</span> <span class="nav-text">分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -844,6 +786,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
