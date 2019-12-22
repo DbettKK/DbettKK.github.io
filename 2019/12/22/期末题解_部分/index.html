@@ -88,7 +88,7 @@
 <meta property="og:description" content="摘要在这里给大家提供9道题的题解，都是比较容易想到的题(其他题也不会啊)，希望有需要的人能够从中得到一些启发。可能有些会存在一些小错误因为是我自己通过记忆来描述的，希望理解。 第一次算法期末考试A 水二分查找输入:多组输入、n、n个数(按顺序排好的)、q、m(q次查询，看n个数中是否存在与m相同的数) 输出:存在输出Yes，不存在输出No，对于每个q输出q行 分析这n个数的数据范围应该是在106内">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;1.jpg">
-<meta property="og:updated_time" content="2019-12-22T04:54:47.099Z">
+<meta property="og:updated_time" content="2019-12-22T05:03:20.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;DbettKK&#x2F;pictures&#x2F;master&#x2F;1.jpg">
 
@@ -456,7 +456,7 @@
 <h2 id="G-圆"><a href="#G-圆" class="headerlink" title="G 圆"></a>G 圆</h2><p>这道题考试中因为时间问题没能做出来，所以代码的正确性也不确定，有错误希望大家指出来。</p>
 <p>输入:圆心坐标、半径以及两个点的坐标</p>
 <p>输出:两点最近且不穿过圆的距离</p>
-<h3 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h3><p>首先肯定是两点连线不与圆相交就直接算两点距离，这个怎么判断呢，也不难，圆心到直线的距离与半径比较即可，但是这个距离怎么算比较方便呢，可以通过叉积先算出这两点与圆心围成的三角形面积再除以两点的距离来算得，这样比较好写。然后如果两点连线与圆相交的话，这样怎么算最近距离呢，很容易可以想到是和切线相关，即两点分别对圆作切线然后取两距离较近的切点，两切点之间的弧长加上这两个切点到其原来两个点的距离之和即为所要求的距离了。即下图的线段AA’加上线段BB’加上弧AA’即可。</p>
+<h3 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h3><p>首先肯定是两点连线不与圆相交就直接算两点距离，这个怎么判断呢，也不难，圆心到直线的距离与半径比较即可，但是这个距离怎么算比较方便呢，可以通过叉积先算出这两点与圆心围成的三角形面积再除以两点的距离来算得，这样比较好写。然后如果两点连线与圆相交的话，这样怎么算最近距离呢，很容易可以想到是和切线相关，即两点分别对圆作切线然后取两距离较近的切点，两切点之间的弧长加上这两个切点到其原来两个点的距离之和即为所要求的距离了。即下图的线段AA’加上线段BB’加上弧A’B’即可。</p>
 <p><img src="https://raw.githubusercontent.com/DbettKK/pictures/master/1.jpg" alt></p>
 <p>然后是算AA’和BB’的问题了，很显然直接用勾股定理还是很容易算出来的，即AO和BO都很容易得到，用勾股定理就能得到AA’和BB’了。最后就是算弧A’B’的问题了，想算弧，显然先算角，即算图中对应得θ角，我的想法是先通过余弦定理算出α角然后知道角AOA’的余弦值，通过数学库的acos即可得到AOA’角，然后同理对于BOB’角，然后用α角减去这两个角就得到了θ角，然后通过周长和θ角求得弧长。</p>
 <h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><p>这里就给出一些函数，具体代码就不给了。</p>
