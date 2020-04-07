@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HTML学习</title>
+      <link href="/2020/04/07/HTML%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2020/04/07/HTML%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>时隔几个月，终于又开始写博客了，原因呢，大学太颓废，还是得找点事给自己干，所以从现在开始学习前端开发，最开始，当然，从HTML开始，虽然之前也学过一些，但是总结的东西都不多，所以这次就当是正式开始系统的学习前端知识了，我的一个思路呢就是HTML-&gt;CSS-&gt;JS，先把这三大基础整透，再说后面的内容。写博客的目的呢，一是监督自己学习，二呢就是方便自己在学习的时候做好相关的笔记记录，这样也能给予自己前进的动力了，好了废话就说这么多，开始这一系列第一篇博客的更新了。</p><p><em>time：2020/04/07</em></p><h2 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h2><p>在开始这篇博客前已经完成了一些准备工作如下：</p><p>vscode安装、webstorm安装、sublime安装，虽然这三个IDE都比较推荐，但我还是全都安装下来了，在使用过程中再来取舍。</p><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>因为之前已经有着一定的了解，在这里就记录一些自己忘记或者不了解的属性。</p><table><thead><tr><th align="center">属性</th><th align="center">值</th><th align="center">描述</th></tr></thead><tbody><tr><td align="center">class</td><td align="center">classname</td><td align="center">规定元素的类名（classname）</td></tr><tr><td align="center">id</td><td align="center">id</td><td align="center">规定元素的唯一 id</td></tr><tr><td align="center">title</td><td align="center">text</td><td align="center">规定元素的额外信息（可在工具提示中显示）</td></tr><tr><td align="center">style</td><td align="center">style_defination</td><td align="center">规定元素的行内样式（inline style）</td></tr></tbody></table><h4 id="HTML水平线"><a href="#HTML水平线" class="headerlink" title="HTML水平线"></a>HTML水平线</h4><p><code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。像下面那样</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习篇 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>期末题解（部分）</title>
       <link href="/2019/12/22/%E6%9C%9F%E6%9C%AB%E9%A2%98%E8%A7%A3_%E9%83%A8%E5%88%86/"/>
       <url>/2019/12/22/%E6%9C%9F%E6%9C%AB%E9%A2%98%E8%A7%A3_%E9%83%A8%E5%88%86/</url>
