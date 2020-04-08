@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="简介时隔几个月，终于又开始写博客了，原因呢，大学太颓废，还是得找点事给自己干，所以从现在开始学习前端开发，最开始，当然，从HTML开始，虽然之前也学过一些，但是总结的东西都不多，所以这次就当是正式开始系统的学习前端知识了，我的一个思路呢就是HTML-&amp;gt;CSS-&amp;gt;JS，先把这三大基础整透，再说后面的内容。写博客的目的呢，一是监督自己学习，二呢就是方便自己在学习的时候做好相关的笔记记录，这">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-07T12:25:35.177Z">
+<meta property="og:updated_time" content="2020-04-08T05:28:11.390Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  692 words
+                  958 words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  3 minutues
+                  4 minutues
                 </span>
               
             </div>
@@ -442,7 +442,24 @@
 <p>引用</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--短的引用--&gt;</span> <span class="tag">&lt;<span class="name">q</span>&gt;</span><span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--长引用，并会进行缩进处理--&gt;</span> <span class="tag">&lt;<span class="name">blockquote</span>&gt;</span><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--定义缩写，为浏览器提供帮助--&gt;</span> <span class="tag">&lt;<span class="name">abbr</span>&gt;</span><span class="tag">&lt;/<span class="name">abbr</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--定义缩写的意义，鼠标放置即可查看--&gt;</span> <span class="tag">&lt;<span class="name">dfn</span>&gt;</span><span class="tag">&lt;/<span class="name">dfn</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--定义文档或者文章的联系信息--&gt;</span> <span class="tag">&lt;<span class="name">address</span>&gt;</span><span class="tag">&lt;/<span class="name">address</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--定义著作的标题--&gt;</span> <span class="tag">&lt;<span class="name">cite</span>&gt;</span><span class="tag">&lt;/<span class="name">cite</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--双向书写，可以从左边开始--&gt;</span> <span class="tag">&lt;<span class="name">bdo</span>&gt;</span><span class="tag">&lt;/<span class="name">bdo</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="HTML样式"><a href="#HTML样式" class="headerlink" title="HTML样式"></a>HTML样式</h4>
+<hr>
+<p>外部样式表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"mystyle.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>内部样式表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">body</span> &#123;<span class="attribute">background-color</span>: red&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">p</span> &#123;<span class="attribute">margin-left</span>: <span class="number">20px</span>&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>内联样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color: red; margin-left: 20px"</span>&gt;</span></span><br><span class="line">This is a paragraph</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>链接</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"url"</span>&gt;</span>Link text<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="comment">&lt;!--链接不一定是网页，也可以是图片等等--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"url"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="comment">&lt;!--使链接在新窗口打开--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">"xxx"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="comment">&lt;!--定义锚点--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#xxx"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="comment">&lt;!--本文档其他位置可以创建访问锚点的链接,适用于pdf--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://....#xxx"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="comment">&lt;!--其他界面创建访问该锚点的链接--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>图片</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--alt在图片未加载的时候显示，无闭合标签--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">"loading..."</span> <span class="attr">alion</span>=<span class="string">"left"</span> <span class="attr">width</span>=<span class="string">""</span> <span class="attr">height</span>=<span class="string">""</span>/&gt;</span> </span><br><span class="line"><span class="comment">&lt;!--还可用&lt;a&gt;包裹图片制作图片链接--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--还可利用&lt;map&gt;,&lt;area&gt;来定义图像地图--&gt;</span></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -649,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">2.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML基础"><span class="nav-number">2.0.1.</span> <span class="nav-text">HTML基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML样式"><span class="nav-number">2.0.2.</span> <span class="nav-text">HTML样式</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">2.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML基础"><span class="nav-number">2.0.1.</span> <span class="nav-text">HTML基础</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -683,7 +700,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">37.9k</span>
+    <span title="Site words total count">38.2k</span>
   
 </div>
 
