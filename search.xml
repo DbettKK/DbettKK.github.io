@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>JavaScript学习</title>
+      <link href="/2020/04/10/JavaScript%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2020/04/10/JavaScript%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="JavaScript学习"><a href="#JavaScript学习" class="headerlink" title="JavaScript学习"></a>JavaScript学习</h2><p><em>time:2020/04/10</em></p><h4 id="Javascript基础"><a href="#Javascript基础" class="headerlink" title="Javascript基础"></a>Javascript基础</h4><p>数据类型和变量</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Number类型，不区分整数和浮点数统一为Number类型。</span></span><br><span class="line"><span class="comment">//NaN和Infinity是特殊的Number类型</span></span><br><span class="line"><span class="comment">//一个表示无法表示的数，另一个则是在JavaScript中超过最大能表示的范围，就为Infinity</span></span><br><span class="line"><span class="comment">//%取模运算在JavaScript中可以对浮点数使用</span></span><br><span class="line"><span class="number">10.5</span>%<span class="number">3</span>==<span class="number">1.5</span>;</span><br><span class="line"><span class="number">0</span>/<span class="number">0</span>==<span class="literal">NaN</span>;</span><br><span class="line"><span class="number">2</span>/<span class="number">0</span>==<span class="literal">Infinity</span>;</span><br><span class="line"><span class="comment">//==和===运算符，前者会自动转换类型再比较，所以应坚持使用后者进行比较</span></span><br><span class="line"><span class="comment">//NaN和所有值都不同，包括其自身，需使用isNaN()来判断</span></span><br><span class="line"><span class="comment">//浮点数的比较也需要注意,eg.1/3!=1-2/3</span></span><br></pre></td></tr></table></figure><p>字符串</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可用`...`来表示多行字符串</span></span><br><span class="line"><span class="string">`这是一个</span></span><br><span class="line"><span class="string">多行</span></span><br><span class="line"><span class="string">字符串`</span>;</span><br><span class="line"><span class="comment">//除了用'+'连接字符串，还可以使用$&#123;&#125;来实现</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'小明'</span>;</span><br><span class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">`你好, <span class="subst">$&#123;name&#125;</span>, 你今年<span class="subst">$&#123;age&#125;</span>岁了!`</span>;</span><br><span class="line"><span class="comment">//var message = '你好, ' + name + ', 你今年' + age + '岁了!';</span></span><br><span class="line"><span class="comment">//字符串可以使用下标访问特定位置的字符。</span></span><br><span class="line"><span class="comment">//字符串是不变的，所以对某位置的字符进行改变，全字符串是不变的</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习篇 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTML学习</title>
       <link href="/2020/04/07/HTML%E5%AD%A6%E4%B9%A0/"/>
       <url>/2020/04/07/HTML%E5%AD%A6%E4%B9%A0/</url>
