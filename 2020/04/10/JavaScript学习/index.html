@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="JavaScript学习time:2020&#x2F;04&#x2F;10 Javascript基础数据类型和变量 12345678910&#x2F;&#x2F;Number类型，不区分整数和浮点数统一为Number类型。&#x2F;&#x2F;NaN和Infinity是特殊的Number类型&#x2F;&#x2F;一个表示无法表示的数，另一个则是在JavaScript中超过最大能表示的范围，就为Infinity&#x2F;&#x2F;%取模运算在JavaScript中可以对浮点数使用10.5%">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-18T09:12:59.791Z">
+<meta property="og:updated_time" content="2020-04-25T03:55:28.529Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.9k words
+                  3.4k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  11 minutues
+                  13 minutues
                 </span>
               
             </div>
@@ -459,6 +459,13 @@
 <p>方法</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JavaScript的函数内部如果调用了this，那么这个this到底指向谁？</span></span><br><span class="line"><span class="comment">//如果是通过对象的形式进行调用，那么this指向的是调用的对象，是符合情理的</span></span><br><span class="line"><span class="comment">//如果单独调用函数，比如getAge()，此时，该函数的this指向全局对象，也就是window。</span></span><br><span class="line"><span class="comment">//要保证this指向正确，必须用obj.xxx()的形式调用！</span></span><br><span class="line"><span class="comment">//也可以先使用that捕获this，然后再使用</span></span><br><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="string">'小明'</span>,</span><br><span class="line">    birth: <span class="number">1990</span>,</span><br><span class="line">    age: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> that = <span class="keyword">this</span>; <span class="comment">// 在方法内部一开始就捕获this</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">getAgeFromBirth</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> y = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear();</span><br><span class="line">            <span class="keyword">return</span> y - that.birth; <span class="comment">// 用that而不是this</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> getAgeFromBirth();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//这样就能避免出错了</span></span><br><span class="line"><span class="comment">//apply</span></span><br><span class="line"><span class="comment">//指定函数的this指向哪个对象，可以用函数本身的apply方法</span></span><br><span class="line"><span class="comment">//它接收两个参数，第一个参数就是需要绑定的this变量，第二个参数是Array，表示函数本身的参数。</span></span><br><span class="line"><span class="comment">//使用apply来避免this的出错</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> y = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear();</span><br><span class="line">    <span class="keyword">return</span> y - <span class="keyword">this</span>.birth;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="string">'小明'</span>,</span><br><span class="line">    birth: <span class="number">1990</span>,</span><br><span class="line">    age: getAge</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xiaoming.age(); <span class="comment">// 25</span></span><br><span class="line">getAge.apply(xiaoming, []); <span class="comment">// 25, this指向xiaoming, 参数为空</span></span><br><span class="line"><span class="comment">//另一个与apply()类似的方法是call()，唯一区别是：</span></span><br><span class="line"><span class="comment">//apply()把参数打包成Array再传入；</span></span><br><span class="line"><span class="comment">//call()把参数按顺序传入。</span></span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, [<span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>]); <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">Math</span>.max.call(<span class="literal">null</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>); <span class="comment">// 5</span></span><br><span class="line"><span class="comment">//对普通函数调用，我们通常把this绑定为null</span></span><br><span class="line"><span class="comment">//装饰器</span></span><br><span class="line"><span class="comment">//利用apply()，我们还可以动态改变函数的行为。</span></span><br><span class="line"><span class="comment">//现在假定我们想统计一下代码一共调用了多少次parseInt()，</span></span><br><span class="line"><span class="comment">//可以把所有的调用都找出来，然后手动加上count += 1，</span></span><br><span class="line"><span class="comment">//不过这样做太傻了。最佳方案是用我们自己的函数替换掉默认的parseInt()</span></span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> oldParseInt = <span class="built_in">parseInt</span>; <span class="comment">// 保存原函数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.parseInt = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    count += <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> oldParseInt.apply(<span class="literal">null</span>, <span class="built_in">arguments</span>); <span class="comment">// 调用原函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<p> 闭包</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Array的map()方法</span></span><br><span class="line"><span class="comment">//传入参数为函数对象，作用为将此函数作用于数组的所有元素</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> results = arr.map(pow); <span class="comment">// [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br><span class="line"><span class="comment">//reduce()方法</span></span><br><span class="line"><span class="comment">//Array的reduce()把一个函数作用在这个Array的[x1, x2, x3...]上</span></span><br><span class="line"><span class="comment">//这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算，其效果就是：</span></span><br><span class="line">[x1, x2, x3, x4].reduce(f) = f(f(f(x1, x2), x3), x4);</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>];</span><br><span class="line">arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * <span class="number">10</span> + y;</span><br><span class="line">&#125;); <span class="comment">// 13579,reduce的一些好用的地方</span></span><br><span class="line"><span class="comment">//可以省略function，进而变成arr.map(x=&gt;10*x)或者arr.reduce((x,y)=&gt;10*x+y)</span></span><br></pre></td></tr></table></figure>
+
+<p>箭头函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用箭头函数来省略function</span></span><br><span class="line">x=&gt;x*x;</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;<span class="keyword">return</span> x*x;&#125;;<span class="comment">//两者等价</span></span><br><span class="line"><span class="comment">//箭头函数相当于匿名函数</span></span><br><span class="line"><span class="comment">//如果函数只用return一个表达式，则可以全部省略</span></span><br><span class="line"><span class="comment">//如果函数体里包含了一些其他结构，则不能省略return</span></span><br><span class="line">x =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">0</span>) <span class="keyword">return</span> x * x;</span><br><span class="line">    <span class="keyword">else</span>  <span class="keyword">return</span> - x * x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果存在多个参数需要用括号括起来</span></span><br><span class="line">(x, y) =&gt; x * x + y * y</span><br><span class="line">() =&gt; <span class="number">3.14</span></span><br><span class="line"><span class="comment">// 可变参数:</span></span><br><span class="line">(x, y, ...rest) =&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> i, sum = x + y;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;rest.length; i++) &#123;</span><br><span class="line">        sum += rest[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在返回对象的时候需要用小括号括起来，因为&#123;&#125;会导致歧义</span></span><br><span class="line">x=&gt;(&#123;<span class="attr">foo</span> : x&#125;);</span><br><span class="line"><span class="comment">//使用箭头函数也不用担心this的错用，箭头函数会保证this指向外部作用域</span></span><br><span class="line"><span class="comment">//this在箭头函数中已经词法绑定了</span></span><br><span class="line"><span class="comment">//用call()或者apply()调用箭头函数时，无法对this进行绑定，即传入的第一个参数被忽略</span></span><br><span class="line">arr.sort(<span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> x-y;</span><br><span class="line">&#125;);<span class="comment">//简化sort写法</span></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1, 2, 10, 20]</span></span><br></pre></td></tr></table></figure>
+
+<p>generator</p>
 
       
     </div>
@@ -516,6 +523,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/04/python%E5%AD%A6%E4%B9%A0/" rel="prev" title="Python学习">
+                Python学习 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -595,7 +606,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -617,7 +628,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -700,7 +711,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">42.3k</span>
+    <span title="Site words total count">47.4k</span>
   
 </div>
 
