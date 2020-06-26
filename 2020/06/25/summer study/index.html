@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="暑期学习记录Day 0125&#x2F;06&#x2F;2020 JAVA反射获取Class实例：  通过静态变量class获取，即直接通过类名获取  通过调用Class.forName(name)方法获取，传递类完整名称为参数  通过实例变量的getClass()方法获取   Class实例在JVM中是唯一的 12345678&#x2F;&#x2F; exampleClass c1 = String.class;Class c2 =">
+<meta name="description" content="暑期学习记录Day 0125&#x2F;06&#x2F;2020 JAVA反射获取Class实例： 通过静态变量class获取，即直接通过类名获取  通过调用Class.forName(name)方法获取，传递类完整名称为参数  通过实例变量的getClass()方法获取   Class实例在JVM中是唯一的 12345678&#x2F;&#x2F; exampleClass c1 = String.class;Class c2 = C">
 <meta name="keywords" content="自学总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="暑期学习">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;25&#x2F;summer%20study&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="暑期学习记录Day 0125&#x2F;06&#x2F;2020 JAVA反射获取Class实例：  通过静态变量class获取，即直接通过类名获取  通过调用Class.forName(name)方法获取，传递类完整名称为参数  通过实例变量的getClass()方法获取   Class实例在JVM中是唯一的 12345678&#x2F;&#x2F; exampleClass c1 = String.class;Class c2 =">
+<meta property="og:description" content="暑期学习记录Day 0125&#x2F;06&#x2F;2020 JAVA反射获取Class实例： 通过静态变量class获取，即直接通过类名获取  通过调用Class.forName(name)方法获取，传递类完整名称为参数  通过实例变量的getClass()方法获取   Class实例在JVM中是唯一的 12345678&#x2F;&#x2F; exampleClass c1 = String.class;Class c2 = C">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-25T10:46:16.320Z">
+<meta property="og:updated_time" content="2020-06-26T03:40:11.216Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.3k words
+                  5.6k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5 minutues
+                  24 minutues
                 </span>
               
             </div>
@@ -427,8 +427,7 @@
 
       
         <h1 id="暑期学习记录"><a href="#暑期学习记录" class="headerlink" title="暑期学习记录"></a>暑期学习记录</h1><h2 id="Day-01"><a href="#Day-01" class="headerlink" title="Day 01"></a>Day 01</h2><p><em>25/06/2020</em></p>
-<h4 id="JAVA反射"><a href="#JAVA反射" class="headerlink" title="JAVA反射"></a>JAVA反射</h4><p><strong>获取Class实例：</strong></p>
-<ul>
+<h3 id="JAVA反射"><a href="#JAVA反射" class="headerlink" title="JAVA反射"></a>JAVA反射</h3><h4 id="获取Class实例："><a href="#获取Class实例：" class="headerlink" title="获取Class实例："></a>获取Class实例：</h4><ul>
 <li><p>通过静态变量class获取，即直接通过类名获取</p>
 </li>
 <li><p>通过调用Class.forName(name)方法获取，传递类完整名称为参数</p>
@@ -439,8 +438,7 @@
 <p>Class实例在JVM中是唯一的</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example</span></span><br><span class="line">Class c1 = String<span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line">Class c2 = Class.forName(<span class="string">"java.lang.String"</span>);</span><br><span class="line">String s = <span class="string">"hello"</span>;</span><br><span class="line">Class c3 = s.getClass();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可直接通过==符号判断两Class实例是否相同</span></span><br><span class="line"><span class="keyword">boolean</span> b = (c1 == c2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>访问字段：</strong></p>
-<ul>
+<h4 id="访问字段"><a href="#访问字段" class="headerlink" title="访问字段"></a>访问字段</h4><ul>
 <li>Field getField(name)：根据字段名获取某个public的field（包括父类）</li>
 <li>Field getDeclaredField(name)：根据字段名获取当前类的某个field（不包括父类）</li>
 <li>Field[] getFields()：获取所有public的field（包括父类）</li>
@@ -457,8 +455,7 @@
 <p>通过Field实例获取或修改字段的值</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 还是上面Student的例子</span></span><br><span class="line">Student s = <span class="keyword">new</span> Student();</span><br><span class="line">f1 = s.getclass().getField(<span class="string">"age"</span>);</span><br><span class="line">f2 = s.getclass().getDeclaredField(<span class="string">"age"</span>);</span><br><span class="line">Object value = f1.get(s); <span class="comment">// 获取age字段的值 此处为0</span></span><br><span class="line">f2.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">Object value = f2.get(s); <span class="comment">// 要想获得private修饰字段的值，需要使用setAccessible方法 不过这也不是万能的 有些是可以限制的</span></span><br><span class="line">f1.set(s, <span class="number">15</span>); <span class="comment">// 设置字段age的值 设置为15</span></span><br><span class="line">f2.set(s, <span class="string">"hello"</span>); <span class="comment">// 同理</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>获取方法：</strong></p>
-<ul>
+<h4 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h4><ul>
 <li><code>Method getMethod(name, Class...)</code>：获取某个<code>public</code>的<code>Method</code>（包括父类）</li>
 <li><code>Method getDeclaredMethod(name, Class...)</code>：获取当前类的某个<code>Method</code>（不包括父类）</li>
 <li><code>Method[] getMethods()</code>：获取所有<code>public</code>的<code>Method</code>（包括父类）</li>
@@ -480,8 +477,7 @@
 <p>即在子类重写了父类方法时，反射机制又是如何呢？也同样遵循多态的原则。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">P</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">prin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"p"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">P</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">prin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"c"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Method m = P.class.getMethod("prin");</span><br><span class="line">m.invoke(<span class="keyword">new</span> P()); <span class="comment">// p</span></span><br><span class="line">m.invoke(<span class="keyword">new</span> C()); <span class="comment">// c</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>调用构造方法</strong></p>
-<p>通过反射创建实例：</p>
+<h4 id="调用构造方法"><a href="#调用构造方法" class="headerlink" title="调用构造方法"></a>调用构造方法</h4><p>通过反射创建实例：</p>
 <ul>
 <li><code>newInstance()方法</code>，要求该构造方法为public无参数构造方法</li>
 <li>通过Constructor对象来实现能够调用任意的构造方法</li>
@@ -495,8 +491,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Student s = Student<span class="class">.<span class="keyword">class</span>.<span class="title">newInstance</span>()</span>;</span><br><span class="line"><span class="comment">// Constructor</span></span><br><span class="line">Constructor c = Student<span class="class">.<span class="keyword">class</span>.<span class="title">getConstructor</span>(<span class="title">Student</span>.<span class="title">class</span>)</span>;</span><br><span class="line"><span class="comment">// 同样对于私有构造方法 需要调用setAccessible(true)方法</span></span><br><span class="line">Student s2 = (Student) c.newInstance(); <span class="comment">// 这里的newInstance方法可以传递参数 具体根据构造方法来对应</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>获取继承关系</strong></p>
-<p>获取父类Class实例：</p>
+<h4 id="获取继承关系"><a href="#获取继承关系" class="headerlink" title="获取继承关系"></a>获取继承关系</h4><p>获取父类Class实例：</p>
 <p>getSuperClass()方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class i = <span class="keyword">int</span><span class="class">.<span class="keyword">class</span></span>;</span><br><span class="line">Class n = i.getSuperClass(); <span class="comment">// 获取父类 也就是Number</span></span><br><span class="line">Class s = n.getSuperClass().getSuperClass(); <span class="comment">// 如果已经不存在父类 则返回null</span></span><br></pre></td></tr></table></figure>
 
@@ -508,8 +503,7 @@
 <p>使用isAssignableFrom()方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Number<span class="class">.<span class="keyword">class</span>.<span class="title">isAssignableFrom</span>(<span class="title">Integer</span>.<span class="title">class</span>)</span>; <span class="comment">// true，因为Integer可以赋值给Number</span></span><br><span class="line"><span class="comment">// 可以类比instanceof</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>动态代理</strong></p>
-<p>可以在运行期动态创建某个<code>interface</code>的实例。</p>
+<h4 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h4><p>可以在运行期动态创建某个<code>interface</code>的实例。</p>
 <p>JDK提供的动态创建接口对象的方式，就叫动态代理。</p>
 <p>即可以实现在不编写实现类的情况下，创建接口的实例。利用Proxy.newProxyInstance()方法</p>
 <p>在运行期动态创建一个<code>interface</code>实例的方法如下：</p>
@@ -524,6 +518,223 @@
 <li>将返回的<code>Object</code>强制转型为接口。</li>
 </ol>
 <p>但实质其实就是JDK帮我们自动编写了一个上述类（不需要源码，可以直接生成字节码），并不存在可以直接实例化接口的黑魔法。</p>
+<p>参考：廖雪峰博客-Java</p>
+<hr>
+<h2 id="Day-02"><a href="#Day-02" class="headerlink" title="Day 02"></a>Day 02</h2><p><em>26/06/2020</em></p>
+<h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><p>定义：XML全称为Extensible Markup Language，意思是可扩展的标记语言。XML语法上和HTML比较相似，但HTML中的元素是固定的，而XML的标签是可以由用户自定义的。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--部分xml 例子--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">student</span> <span class="attr">number</span>=<span class="string">"1001"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>zhangSan<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>23<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sex</span>&gt;</span>male<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">teacher</span> <span class="attr">name</span>=<span class="string">”liSi”</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">wife</span> <span class="attr">id</span>=<span class="string">”xxx”</span>&gt;</span><span class="tag">&lt;<span class="name">name</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">name</span>&gt;</span><span class="tag">&lt;/<span class="name">wife</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">teacher</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="XML语法"><a href="#XML语法" class="headerlink" title="XML语法"></a>XML语法</h4><p>文档声明：</p>
+<ul>
+<li><p>文档声明必须为&lt;?xml开头，以?&gt;结束；</p>
+</li>
+<li><p>文档声明必须从文档的0行0列位置开始；</p>
+</li>
+<li><p>文档声明只有三个属性：</p>
+<ul>
+<li><p>versioin：指定XML文档版本。必须属性，因为我们不会选择1.1，只会选择1.0；</p>
+</li>
+<li><p>encoding：指定当前文档的编码。可选属性，默认值是utf-8；</p>
+</li>
+<li><p>standalone：指定文档独立性。可选属性，默认值为yes，表示当前文档是独立文档。如果为no表示当前文档不是独立的文档，会依赖外部文件。</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>元素</strong></p>
+<p>元素是XML文档中最重要的组成部分：</p>
+<ul>
+<li><p>普通元素的结构：开始标签、元素体、结束标签，例如：<code>&lt;hello&gt;大家好&lt;/hello&gt;</code>；</p>
+</li>
+<li><p>元素体：元素体可以是元素，也可以是文本，例如：<code>&lt;b&gt;&lt;a&gt;你好&lt;/a&gt;&lt;/b&gt;</code>，其中<code>&lt;b&gt;</code>元素的元素体是<code>&lt;a&gt;</code>元素，而<code>&lt;a&gt;</code>元素的元素体是文本；</p>
+</li>
+<li><p>空元素：空元素只有开始标签，而没有结束标签，例如：<code>&lt;c/&gt;</code>，但元素必须自己闭合。</p>
+</li>
+</ul>
+<p>元素属性：</p>
+<ul>
+<li><p>属性是元素的一部分，它必须出现在元素的开始标签中；</p>
+</li>
+<li><p>属性的定义格式：属性名=属性值，其中属性值必须使用单引或双引；</p>
+</li>
+<li><p>一个元素可以有0~N个属性，但一个元素中不能出现同名属性；</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">student</span> <span class="attr">number</span>=<span class="string">"1001"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--.......--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>转义</strong></p>
+<p>转义字符：例如<code>&lt;</code>,<code>&gt;</code>等等这类符号，需要使用相应的转义字符来代替。例如：<code>&lt;</code>用<code>&amp;lt;</code>代替。</p>
+<p>CDATA段：由于使用转义字符会大大降低XML文档可读性，使用CDATA段就不会有这种问题，格式如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>&lt;![CDATA[&lt;a&gt;]]&gt;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，在CDATA段中不能包含“]]&gt;”，即CDATA段的结束定界符。</p>
+<p><strong>处理指令</strong></p>
+<p>处理指令，简称PI（Processing instruction）。处理指令用来指挥解析器如何解析XML文档内容。</p>
+<p>例如，在XML文档中可以使用xml-stylesheet指令，通知XML解析器，应用css文件显示xml文档内容。</p>
+<p>放于文档声明下方</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="gbk"?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type="text/css" href="a.css"?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>格式</strong></p>
+<p>格式良好的XML就是格式正确的XML文档，只有XML的格式是良好的，XML解释器才能解释它。下面是对格式良好XML文档的要求：</p>
+<ul>
+<li><p>必须要有XML文档声明；</p>
+</li>
+<li><p>必须且仅能有一个根元素；</p>
+</li>
+<li><p>元素和属性的命名必须遵循XML要求：</p>
+<ul>
+<li><p>XML命名区分大小写，例如<code>&lt;a&gt;</code>和<code>&lt;A&gt;</code>是两上不同的元素；</p>
+</li>
+<li><p>名称中可以包含：字母、数字、下划线、减号，但不能以数字、减号开头；</p>
+</li>
+<li><p>不能以xml开头，无论是大写还是小写都不可以，例如<code>&lt;xml&gt;</code>、<code>&lt;Xml&gt;</code>、<code>&lt;XML&gt;</code>都是错误的；</p>
+</li>
+<li><p>不能包含空格，例如<code>&lt;ab cd&gt;</code>是错误的。</p>
+</li>
+</ul>
+</li>
+<li><p>元素之间必须合理包含，例如：<code>&lt;a&gt;&lt;b&gt;xxx&lt;/b&gt;&lt;/a&gt;</code>是合理的，而<code>&lt;a&gt;&lt;b&gt;xxx&lt;/a&gt;&lt;/b&gt;</code>就是错误的包含。</p>
+</li>
+</ul>
+<h3 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h3><p>定义：DTD（Document Type Definition），文档类型定义，用来约束XML文档。或者可以把DTD理解为创建XML文档的结构！例如可以用DTD要求XML文档的根元素名为<code>&lt;students&gt;</code>，<code>&lt;students&gt;</code>中可以有1~N个<code>&lt;student&gt;</code>，<code>&lt;student&gt;</code>子元素为<code>&lt;name&gt;</code>、<code>&lt;age&gt;</code>和<code>&lt;sex&gt;</code>，<code>&lt;student&gt;</code>元素还有number属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--例子--&gt;</span><br><span class="line">&lt;!ELEMENT students (student+)&gt;	&lt;!--students元素包含1-n个student元素--&gt;</span><br><span class="line">&lt;!ELEMENT student (name,age,sex)&gt;	&lt;!--内容依次为name age sex三个元素--&gt;</span><br><span class="line">&lt;!ELEMENT name (#PCDATA)&gt;	&lt;!--定义name元素内容为文本--&gt;</span><br><span class="line">&lt;!ELEMENT age (#PCDATA)&gt;	&lt;!--定义age元素内容为文本--&gt;</span><br><span class="line">&lt;!ELEMENT sex (#PCDATA)&gt;	&lt;!--定义sex元素内容为文本--&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ul>
+<li><p>内部DTD：在XML文档内部嵌入DTD，只对当前XML文档有效；</p>
+</li>
+<li><p>外部DTD：独立的DTD文件，扩展名为.dtd；</p>
+<ul>
+<li><p>本地DTD：DTD文件在本地，不在网络上。自己项目，或本公司内部使用的；</p>
+</li>
+<li><p>公共DTD：DTD文件在网络上，不在本地。都是大公司或组织发布的，共大家使用！</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>内部DTD</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot; ?&gt;</span><br><span class="line">&lt;!--内部DTD例子--&gt;</span><br><span class="line">&lt;!DOCTYPE students [</span><br><span class="line">&lt;!ELEMENT students (student+)&gt;</span><br><span class="line">&lt;!ELEMENT student (name, age, sex)&gt;</span><br><span class="line">&lt;!ELEMENT name (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT age (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT sex (#PCDATA)&gt;</span><br><span class="line">]&gt;</span><br><span class="line">&lt;students&gt;</span><br><span class="line">	&lt;student&gt;</span><br><span class="line">		&lt;name&gt;zhangSan&lt;/name&gt;</span><br><span class="line">		&lt;age&gt;23&lt;/age&gt;</span><br><span class="line">		&lt;sex&gt;male&lt;/sex&gt;</span><br><span class="line">	&lt;/student&gt;</span><br><span class="line">&lt;/students&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>位置：内部DTD在文档声明下面，在根元素上面；</p>
+</li>
+<li><p>语法格式：放到<code>&lt;!DOCTYPE 根元素名称[ ]&gt;</code>之间；</p>
+</li>
+<li><p>只对当前XML文档有效；</p>
+</li>
+</ul>
+<p>本地DTD</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE students SYSTEM &quot;students.dtd&quot;&gt;	&lt;!--此处为dtd文件路径--&gt;</span><br><span class="line">&lt;students&gt;</span><br><span class="line">	&lt;student&gt;</span><br><span class="line">		&lt;name&gt;zhangSan&lt;/name&gt;</span><br><span class="line">		&lt;age&gt;23&lt;/age&gt;</span><br><span class="line">		&lt;sex&gt;male&lt;/sex&gt;</span><br><span class="line">	&lt;/student&gt;</span><br><span class="line">&lt;/students&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>位置：本地硬盘上；</p>
+</li>
+<li><p>语法格式：直接定义元素或属性即可；</p>
+</li>
+<li><p>本地所有XML文档都可以引用这个dtd文件；</p>
+</li>
+</ul>
+<p>公共DTD</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE students PUBLIC &quot;-//qdmmy6//DTD ST 1.0//ZH&quot; &quot;http://www.qdmmy6.com/xml/dtds/st.dtd&quot;&gt;</span><br><span class="line">&lt;students&gt;</span><br><span class="line">	&lt;student&gt;</span><br><span class="line">		&lt;name&gt;zhangSan&lt;/name&gt;</span><br><span class="line">		&lt;age&gt;23&lt;/age&gt;</span><br><span class="line">		&lt;sex&gt;male&lt;/sex&gt;</span><br><span class="line">	&lt;/student&gt;</span><br><span class="line">&lt;/students&gt;</span><br></pre></td></tr></table></figure>
+
+<p>格式为：<code>&lt;!DOCTYPE 根元素 PUBLIC &quot;DTD名称&quot; &quot;DTD网址&quot;&gt;</code></p>
+<h4 id="DTD语法"><a href="#DTD语法" class="headerlink" title="DTD语法"></a>DTD语法</h4><h5 id="定义元素"><a href="#定义元素" class="headerlink" title="定义元素"></a>定义元素</h5><p>定义元素语法：<code>&lt;!ELEMENT 元素名 元素描述&gt;</code></p>
+<ul>
+<li><p><code>&lt;!ELEMENT name (#PCDATA)&gt;</code>，定义名为name的元素，内容为文本类型。</p>
+</li>
+<li><p><code>&lt;!ELEMENT student (name,age,sex)&gt;</code>，定义名为student元素，内容依次为name、age、sex元素；</p>
+</li>
+<li><p><code>&lt;!ELEMENT student ANY&gt;</code>，定义名为student元素，内容任意；</p>
+</li>
+<li><p><code>&lt;!ELEMENT student EMPTY&gt;</code>，定义名为student元素，不能有内容，即空元素，注意空元素是可以有属性的。 </p>
+</li>
+</ul>
+<p>子元素出现次数</p>
+<p>可以使用<code>*</code>、<code>+</code>、<code>?</code>来指定子元素出现的次数</p>
+<p><code>*</code>：可以出现0<del>N次；<code>+</code>：可以出现1</del>N次；<code>?</code>：可以出现0~1次。</p>
+<p>例如：<code>&lt;!ELEMENT student(name,age?,hobby*,grade+) &gt;</code>，定义student元素，第一子元素为name，必须且仅能出现一次，age是可有可无的，hobby可以出现0<del>N次，grade可以出现1</del>N次。</p>
+<p>枚举类型子元素</p>
+<p><code>&lt;!ELEMENT student (name | age | sex)&gt;</code>，表示student子元素为name、age、sex其中之一，必须仅且能选择其一。</p>
+<h5 id="定义属性"><a href="#定义属性" class="headerlink" title="定义属性"></a>定义属性</h5><p>定义属性的语法：</p>
+<p><code>&lt;!ATTLIST 元素名 属性名 属性类型 设置说明&gt;</code></p>
+<p>例如：<code>&lt;!ATTLIST student number CDATA #REQUIRED&gt;</code>，给student元素定义属性number，类型为文本，这个默认是必须的。</p>
+<p>属性设置说明：</p>
+<p><code>#REQUIRED</code>：说明属性是必须的；<code>#IMPLIED</code>：说明属性是可选的；<code>默认值</code>：在不给出属性值时，使用默认值。</p>
+<p> 属性的类型：</p>
+<ul>
+<li><p><code>CDATA</code>：文本类型；</p>
+</li>
+<li><p><code>Enumerated</code>：枚举类型；</p>
+</li>
+<li><p><code>ID</code>：ID类型，ID类型的属性用来标识元素的唯一性，即元素的ID属性值不能与其他元素的ID属性值相同；</p>
+</li>
+<li><p><code>IDREF</code>：ID引用类型，用来指定另一个元素，与另一个元素建立关联关系，IDREF类型的属性值必须是另一个元素的ID。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--例子--&gt;</span><br><span class="line">&lt;!ELEMENT students (student+) &gt; </span><br><span class="line">&lt;!ELEMENT student EMPTY&gt; </span><br><span class="line">&lt;!ATTLIST student number ID #REQUIRED&gt; </span><br><span class="line">&lt;!ATTLIST student name CDATA #REQUIRED&gt; </span><br><span class="line">&lt;!ATTLIST student sex (male | female) &quot;male&quot; &gt; </span><br><span class="line">&lt;!ATTLIST student friend IDREF #IMPLIED&gt;  </span><br><span class="line">&lt;!--上面为students.dtd文件内容--&gt;</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE students SYSTEM &quot;students.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;students&gt;</span><br><span class="line">    &lt;student number=&quot;itcast_001&quot; name=&quot;zhangSan&quot;/&gt;</span><br><span class="line">    &lt;student number=&quot;itcast_002&quot; name=&quot;liSi&quot; sex=&quot;male&quot;/&gt;</span><br><span class="line">    &lt;student number=&quot;itcast_003&quot; name=&quot;wangWu&quot; sex=&quot;female&quot; friend=&quot;itcast_002&quot;/&gt;</span><br><span class="line">&lt;/students&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="定义实体"><a href="#定义实体" class="headerlink" title="定义实体"></a>定义实体</h5><p>将多而长的字符串定义为用简单符号表示的实体，从而在使用时只用使用该符号就可以了，方便且简洁。</p>
+<p>实体分为两种：一般实体和参数实体。</p>
+<ul>
+<li><p>一般实体：在XML文档中使用；</p>
+<ul>
+<li>定义一般实体：<code>&lt;!ENTITY 实体名 “实体值&quot;&gt;</code>，例如：<code>&lt;!ENTITY 大美女 “白冰&quot;&gt;</code>；</li>
+<li>一般实体引用：<code>&amp;实体名;</code>，例如<code>&lt;xxx&gt;&amp;大美女;&lt;/xxx&gt;</code>。</li>
+</ul>
+</li>
+<li><p>参数实体：在DTD使用。</p>
+<ul>
+<li>定义参数实体：<code>&lt;!ENTITY % 实体名 &quot;实体值&quot;&gt;</code>，“%”与实体名之间的空格是必须的；例如：<code>&lt;!ENTITY % friend &quot;student friend IDREF #IMPLIED&quot;&gt;</code></li>
+<li>参数实体引用：<code>%实体名;</code>；例如：<code>&lt;!ATTLIST %friend;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p>参数实体是在DTD内部使用，而不是在XML中使用。在内部DTD中使用参数实体会有诸多限制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--参数实体例子--&gt;</span><br><span class="line">&lt;!ELEMENT students (student+) &gt;</span><br><span class="line">&lt;!ELEMENT student EMPTY&gt;</span><br><span class="line">&lt;!ATTLIST student number ID #REQUIRED&gt;</span><br><span class="line">&lt;!ATTLIST student name CDATA #REQUIRED&gt;</span><br><span class="line">&lt;!ATTLIST student sex (male | female) &quot;male&quot;&gt;</span><br><span class="line">&lt;!ENTITY % friend &quot;&lt;!ATTLIST student friend IDREF #IMPLIED&gt;&quot;&gt;	&lt;!--定义--&gt;</span><br><span class="line">%friend;	&lt;!--使用--&gt;</span><br><span class="line">&lt;!ENTITY itcast &quot;北京传智播客教育科技有限公司&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h3><p>特点：</p>
+<ul>
+<li><p>Schema是新的XML文档约束；</p>
+</li>
+<li><p>Schema要比DTD强大很多；</p>
+</li>
+<li><p>Schema本身也是XML文档，但Schema文档的扩展名为xsd，而不是xml。</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--students.xsd--&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml version="1.0"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xsd:schema</span> <span class="attr">xmlns</span>=<span class="string">"http://www.itcast.cn/xml"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:xsd</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">targetNamespace</span>=<span class="string">"http://www.itcast.cn/xml"</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">elementFormDefault</span>=<span class="string">"qualified"</span>&gt;</span>	<span class="comment">&lt;!--指定名称空间--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsd:element</span> <span class="attr">name</span>=<span class="string">"students"</span> <span class="attr">type</span>=<span class="string">"studentsType"</span>/&gt;</span>	<span class="comment">&lt;!--定义studentsType类型--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsd:complexType</span> <span class="attr">name</span>=<span class="string">"studentsType"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsd:sequence</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:element</span> <span class="attr">name</span>=<span class="string">"student"</span> <span class="attr">type</span>=<span class="string">"studentType"</span> <span class="attr">minOccurs</span>=<span class="string">"0"</span> <span class="attr">maxOccurs</span>=<span class="string">"unbounded"</span>/&gt;</span>	<span class="comment">&lt;!--指定其包含的student元素数目--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">xsd:sequence</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsd:complexType</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsd:complexType</span> <span class="attr">name</span>=<span class="string">"studentType"</span>&gt;</span>	<span class="comment">&lt;!--定义studentType类型--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsd:sequence</span>&gt;</span>	<span class="comment">&lt;!--指定其元素按顺序出现--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:element</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">type</span>=<span class="string">"xsd:string"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:element</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">type</span>=<span class="string">"ageType"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:element</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">type</span>=<span class="string">"sexType"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">xsd:sequence</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsd:attribute</span> <span class="attr">name</span>=<span class="string">"number"</span> <span class="attr">type</span>=<span class="string">"numberType"</span> <span class="attr">use</span>=<span class="string">"required"</span>/&gt;</span>	<span class="comment">&lt;!--指定其包含的属性--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsd:complexType</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsd:simpleType</span> <span class="attr">name</span>=<span class="string">"sexType"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsd:restriction</span> <span class="attr">base</span>=<span class="string">"xsd:string"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:enumeration</span> <span class="attr">value</span>=<span class="string">"male"</span>/&gt;</span>	<span class="comment">&lt;!--指定枚举选项--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:enumeration</span> <span class="attr">value</span>=<span class="string">"female"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">xsd:restriction</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsd:simpleType</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsd:simpleType</span> <span class="attr">name</span>=<span class="string">"ageType"</span>&gt;</span>	<span class="comment">&lt;!--定义ageType类型--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsd:restriction</span> <span class="attr">base</span>=<span class="string">"xsd:integer"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:minInclusive</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:maxInclusive</span> <span class="attr">value</span>=<span class="string">"100"</span>/&gt;</span>	<span class="comment">&lt;!--指定范围--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">xsd:restriction</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsd:simpleType</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">xsd:simpleType</span> <span class="attr">name</span>=<span class="string">"numberType"</span>&gt;</span>	<span class="comment">&lt;!--定义numberType类型--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">xsd:restriction</span> <span class="attr">base</span>=<span class="string">"xsd:string"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">xsd:pattern</span> <span class="attr">value</span>=<span class="string">"ITCAST_\d&#123;4&#125;"</span>/&gt;</span>	<span class="comment">&lt;!--正则表达式--&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">xsd:restriction</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">xsd:simpleType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xsd:schema</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--students.xml--&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml version="1.0"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">students</span> <span class="attr">xmlns</span>=<span class="string">"http://www.itcast.cn/xml"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.itcast.cn/xml students.xsd"</span> &gt;</span>	<span class="comment">&lt;!--指定约束文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">student</span> <span class="attr">number</span>=<span class="string">"ITCAST_1001"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>zhangSan<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>20<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sex</span>&gt;</span>male<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">student</span> <span class="attr">number</span>=<span class="string">"ITCAST_1002"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>liSi<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>25<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sex</span>&gt;</span>female<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">students</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="schema名称空间"><a href="#schema名称空间" class="headerlink" title="schema名称空间"></a>schema名称空间</h4><p>名称空间定义：如果一个XML文档中使用多个Schema文件，而这些Schema文件中定义了相同名称的元素时就会出现名字冲突。这就像一个Java文件中使用了import java.util.*和import java.sql.*时，在使用Date类时，那么就不明确Date是哪个包下的Date了。</p>
+<p>总之名称空间就是用来处理元素和属性的名称冲突问题，与Java中的包是同一用途。如果每个元素和属性都有自己的名称空间，那么就不会出现名字冲突问题，就像是每个类都有自己所在的包一样，那么类名就不会出现冲突。</p>
+<h5 id="目标名称空间"><a href="#目标名称空间" class="headerlink" title="目标名称空间"></a>目标名称空间</h5><p>在XSD文件中为定义的元素指定名称，即指定目标名称空间。这需要给<code>&lt;xsd:schema&gt;</code>元素添加<code>targetNamespace</code>属性。</p>
+<p>例如：<code>&lt;xsd:schema targetNamespace=&quot;http://www.itcast.cn/xml&quot;&gt;</code></p>
+<p>名称空间可以是任意字符串，但通常我们会使用公司的域名作为名称空间，这与Java中的包名使用域名的倒序是一样的！千万不要以为这个域名是真实的，它可以是不存在的域名。</p>
+<p>如果每个公司发布的Schema都随意指定名称空间，如a、b之类的，那么很可能会出现名称空间的名字冲突，所以还是使用域名比较安全，因为域名是唯一的。</p>
+<p>当使用了<code>targetNamespace</code>指定目标名称空间后，那么当前XSD文件中定义的元素和属性就在这个名称空间之中了。</p>
+<h5 id="XML指定XSD文件"><a href="#XML指定XSD文件" class="headerlink" title="XML指定XSD文件"></a>XML指定XSD文件</h5><p>在XML文件中需要指定XSD约束文件，这需要使用在根元素中使用<code>schemaLocation</code>属性来指定XSD文件的路径，以及目标名称空间。格式为：<code>schemaLocation=”目标名称空间 XSD文件路径”</code></p>
+<p>例如：<code>&lt;students schemaLocation=&quot;http://www.itcast.cn/xml students.xsd&quot;&gt;</code></p>
+<p><code>schemaLocation</code>是用来指定XSD文件的路径，也就是说为当前XML文档指定约束文件。但它不只要指定XSD文件的位置，还要指定XSD文件的目标名称空间。</p>
+<p>其中<code>http://www.itcast.cn/xml</code>为目标名称空间，<code>students.xsd</code>为XSD文件的位置，它们中间使用空白符（空格或换行）分隔。</p>
+<p>也可以指定多个XSD文件，格式为：</p>
+<p><code>schemaLocation=”目标名称空间1 XSD文件路径1 目标名称空间2 XSD文件路径2”</code></p>
+<p>下面是spring配置文件的例子，它一共指定两个XSD文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans</span><br><span class="line">    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans </span><br><span class="line">                      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd </span><br><span class="line">                      http://www.springframework.org/schema/aop </span><br><span class="line">                      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd&quot;&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="定义名称空间"><a href="#定义名称空间" class="headerlink" title="定义名称空间"></a>定义名称空间</h5><p>现在我们已经知道一个XML中可以指定多个XSD文件，例如上面Spring的配置文件中就指定了多个XSD文件，那么如果我在<code>&lt;beans&gt;</code>元素中给出一个子元素<code>&lt;bean&gt;</code>，你知道它是哪个名称空间中的么？显然是无法知道的。</p>
+<p>所以只是使用<code>schemaLocation</code>指定XSD是不够的，它只是导入了这个XSD及XSD的名称空间而已。<code>schemaLocation</code>的作用就相当于Java中导入Jar包的作用！最终还是在Java文件中使用import来指定包名的。</p>
+<p><code>xmlns</code>是用来指定名称空间前缀的，所谓前缀就是“简称”，例如中华人民共和国简称中国一样，然后我们在每个元素前面加上前缀，就可以处理名字冲突了。</p>
+<p>格式为：<code>xmln:前缀=”名称空间”</code></p>
+<p>注意，使用<code>xmlns</code>指定的名称空间必须是在<code>schemaLocation</code>中存在的名称空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;beans</span><br><span class="line">xmlns:b=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;	&lt;!--这里指定了两个前缀--&gt;</span><br><span class="line">    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans </span><br><span class="line">                      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd </span><br><span class="line">                      http://www.springframework.org/schema/aop </span><br><span class="line">                      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd&quot;&gt;</span><br><span class="line">&lt;b:bean&gt;&lt;/b:bean&gt;</span><br><span class="line">  &lt;aop:scoped-proxy/&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="默认名称空间"><a href="#默认名称空间" class="headerlink" title="默认名称空间"></a>默认名称空间</h5><p>在一个XML文件中，可以指定一个名称空间没有前缀，那么在当前XML文档中没有前缀的元素就来自默认名称空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;beans</span><br><span class="line">xmlns=&quot;http://www.springframework.org/schema/beans&quot;	&lt;!--默认名称空间--&gt;</span><br><span class="line">xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;</span><br><span class="line">    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans </span><br><span class="line">                      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd </span><br><span class="line">                      http://www.springframework.org/schema/aop </span><br><span class="line">                      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd&quot;&gt;</span><br><span class="line">&lt;bean&gt;&lt;/bean&gt;	&lt;!--使用默认名称空间--&gt;</span><br><span class="line">  &lt;aop:scoped-proxy/&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="W3C的元素和属性"><a href="#W3C的元素和属性" class="headerlink" title="W3C的元素和属性"></a>W3C的元素和属性</h5><p>如果我们的XML文件中需要使用W3C提供的元素和属性，那么可以不在schemaLocation属性中指定XSD文件的位置，但一定要定义名称空间，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;beans xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;	&lt;!--指定名称空间--&gt;</span><br><span class="line">      xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans </span><br><span class="line">                      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd </span><br><span class="line">                      http://www.springframework.org/schema/aop </span><br><span class="line">                      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd&quot;&gt;</span><br><span class="line">				&lt;!--这里无需指定--&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上面定义了一个名称空间，前缀为xsi，名称空间为<code>http://www.w3.org/2001/XMLSchema-instance</code>。这个名称空间无需在<code>schemaLocation</code>中存在。</p>
+<p>你可能已经发现了，<code>schemaLocation</code>这个属性其实是w3c定义的属性，与元素一定，属性也需要指定“出处”，<code>xsi:schemaLocation</code>中的<code>xsi</code>就是名称空间前缀。也就是说，上面我们在没有指定<code>xsi</code>名称空间时，就直接使用<code>schemaLocation</code>是错误的。</p>
 
       
     </div>
@@ -731,7 +942,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#暑期学习记录"><span class="nav-number">1.</span> <span class="nav-text">暑期学习记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01"><span class="nav-number">1.1.</span> <span class="nav-text">Day 01</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JAVA反射"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">JAVA反射</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#暑期学习记录"><span class="nav-number">1.</span> <span class="nav-text">暑期学习记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01"><span class="nav-number">1.1.</span> <span class="nav-text">Day 01</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA反射"><span class="nav-number">1.1.1.</span> <span class="nav-text">JAVA反射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取Class实例："><span class="nav-number">1.1.1.1.</span> <span class="nav-text">获取Class实例：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问字段"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">访问字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取方法"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">获取方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调用构造方法"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">调用构造方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取继承关系"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">获取继承关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态代理"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">动态代理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-02"><span class="nav-number">1.2.</span> <span class="nav-text">Day 02</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XML"><span class="nav-number">1.2.1.</span> <span class="nav-text">XML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XML语法"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">XML语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DTD"><span class="nav-number">1.2.2.</span> <span class="nav-text">DTD</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DTD语法"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">DTD语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义元素"><span class="nav-number">1.2.2.2.1.</span> <span class="nav-text">定义元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定义属性"><span class="nav-number">1.2.2.2.2.</span> <span class="nav-text">定义属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定义实体"><span class="nav-number">1.2.2.2.3.</span> <span class="nav-text">定义实体</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Schema"><span class="nav-number">1.2.3.</span> <span class="nav-text">Schema</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#schema名称空间"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">schema名称空间</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#目标名称空间"><span class="nav-number">1.2.3.1.1.</span> <span class="nav-text">目标名称空间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#XML指定XSD文件"><span class="nav-number">1.2.3.1.2.</span> <span class="nav-text">XML指定XSD文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定义名称空间"><span class="nav-number">1.2.3.1.3.</span> <span class="nav-text">定义名称空间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#默认名称空间"><span class="nav-number">1.2.3.1.4.</span> <span class="nav-text">默认名称空间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#W3C的元素和属性"><span class="nav-number">1.2.3.1.5.</span> <span class="nav-text">W3C的元素和属性</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -765,7 +976,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.5k</span>
+    <span title="Site words total count">59.9k</span>
   
 </div>
 
