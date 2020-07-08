@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="JavaWebDay 01 内容04&#x2F;07&#x2F;2020  * Junit单元测试 * 反射 * 注解Junit单元测试：* 测试分类：     * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。             * 白盒测试：需要写代码。关注程序具体的执行流程。  * Junit使用：白盒测试     * 步骤：         1. 定义一个测试类(测试用例)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-08T00:11:36.715Z">
+<meta property="og:updated_time" content="2020-07-08T10:54:05.147Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  9k words
+                  10k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  38 minutues
+                  42 minutues
                 </span>
               
             </div>
@@ -1619,7 +1619,171 @@
     * 回滚事务: void rollback()
         * 在catch中回滚事务</code></pre><hr>
 <h2 id="Day-05-内容："><a href="#Day-05-内容：" class="headerlink" title="Day 05 内容："></a>Day 05 内容：</h2><pre><code>1. 数据库连接池
-2. Spring JDBC : JDBC Template</code></pre>
+2. Spring JDBC : JDBC Template</code></pre><h3 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h3><pre><code>1. 概念：其实就是一个容器(集合)，存放数据库连接的容器
+    当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。
+
+2. 好处：
+    1. 节约资源
+    2. 用户访问高效
+
+3. 实现：
+    1. 标准接口：DataSource    javax.sql包下的
+        1. 方法：
+            * 获取连接：getConnection()
+            * 归还连接：Connection.close()
+                如果连接对象Connection是从连接池中获取的，那么调用Connection.close()，则不会再关闭连接，而是归还连接。
+
+    2. 一般我们不去实现它，由数据库厂商实现
+        1. C3P0：数据库连接池技术
+        2. Druid：数据库连接池实现技术，由阿里巴巴提供的
+
+4. C3P0：数据库连接池技术
+    * 步骤：
+        1. 导入jar包 (两个)c3p0-0.6.5.2.jar mchange-commons-java-0.2.12.jar
+            * 不要忘记导入数据库驱动jar包
+        2. 定义配置文件：
+            * 名称：c3p0.properties 或者 c3p0-config.xml
+            * 路径：直接将文件放在src目录下即可
+
+        3. 创建核心对象：数据库连接池对象 ComboPooledDataSource
+        4. 获取连接：getConnection()
+
+5. Druid：数据库连接池实现技术，由阿里巴巴提供的
+    1. 步骤：
+        1. 导入jar包 druid-1.0.9.jar
+        2. 定义配置文件：
+            * 是properties形式的
+            * 可以叫任意名称，可以放在任意目录下
+        3. 加载配置文件     Properties
+        4. 获取数据库连接池对象：通过工厂类来获取    DruidDataSourceFactory
+        5. 获取连接：getConnection()
+
+    2. 定义工具类
+        1. 定义一个类 JDBCUtils
+        2. 提供静态代码块加载配置文件，初始化连接池对象
+        3. 提供方法
+            1. 获取连接方法：通过数据库连接池获取连接
+            2. 释放资源
+            3. 获取连接池的方法
+            代码:
+                /**
+                 * Druid连接池的工具类
+                 */
+                public class JDBCUtils {
+
+                    // 1.定义成员变量 DataSource
+                    private static DataSource ds;
+
+                    static {
+                        try {
+                            // 1.加载配置文件
+                            Properties pro = new Properties();
+                            pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;));
+                            // 2.获取DataSource
+                            ds = DruidDataSourceFactory.createDataSource(pro);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    /**
+                     * 获取连接
+                     */
+                    public static Connection getConnection() throws SQLException {
+                        return ds.getConnection();
+                    }
+
+                    /**
+                     * 释放资源
+                     * @param statement
+                     * @param connection
+                     */
+                    public static void close(Statement statement, Connection connection){
+                        if(statement != null){
+                            try {
+                                statement.close();
+                            } catch (SQLException throwables) {
+                                throwables.printStackTrace();
+                            }
+                        }
+
+                        if(connection != null){
+                            try {
+                                connection.close();
+                            } catch (SQLException throwables) {
+                                throwables.printStackTrace();
+                            }
+                        }
+                    }
+
+                    public static void close(ResultSet resultSet, Statement statement, Connection connection){
+                        if(statement != null){
+                            try {
+                                statement.close();
+                            } catch (SQLException throwables) {
+                                throwables.printStackTrace();
+                            }
+                        }
+
+                        if(connection != null){
+                            try {
+                                connection.close();
+                            } catch (SQLException throwables) {
+                                throwables.printStackTrace();
+                            }
+                        }
+
+                        if(resultSet != null){
+                            try {
+                                resultSet.close();
+                            } catch (SQLException throwables) {
+                                throwables.printStackTrace();
+                            }
+                        }
+                    }
+
+                    /**
+                     * 获取连接池方法
+                     */
+                    public static DataSource getDataSource(){
+                        return ds;
+                    }
+                }</code></pre><h3 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h3><pre><code>* Spring框架对JDBC的简单封装。提供了JDBC Template对象简化JDBC的开发
+* 步骤：
+    1. 导入jar包
+    2. 创建JdbcTemplate对象。依赖于数据源DataSource
+        * JdbcTemplate template = new JdbcTemplate(ds);
+
+    3. 调用JdbcTemplate的方法来完成CRUD的操作
+        * update(): 执行DML语句。增、删、改语句
+        * queryForMap(): 查询结果，将结果集封装为Map集合，将列名作为key，将值作为value，将这条记录封装为value
+            * 注意：这个方法查询的结果集长度只能是1
+        * queryForList(): 查询结果，将结果集封装为list集合
+            * 注意：将每一条记录封装为Map集合，再将Map集合装载在List集合中
+        * query(): 查询结果，将结果封装为JavaBean对象
+            * query方法的参数：RowMapper
+                * 一般使用BeanPropertiyRowMapper实现类。可以完成数据到JavaBean的自动封装。
+                * new BeanPropertyRowMapper&lt;类型&gt;(类型.class)
+        * queryForObject(): 查询结果，将结果封装为对象
+            * 一般用于聚合函数的查询 
+
+    4. 练习：
+        * 需求：
+            1. 修改1号数据的 salary 为 10000
+            2. 添加一条记录
+            3. 删除刚才添加的记录
+            4. 查询id为1的记录，将其封装为Map集合
+            5. 查询所有的记录，将其封装为List集合
+            6. 查询所有记录，将其封装为Emp对象的List集合
+            7. 查询总的记录数</code></pre><hr>
+<h2 id="Day-06-内容："><a href="#Day-06-内容：" class="headerlink" title="Day 06 内容："></a>Day 06 内容：</h2><pre><code>1. web概念概述
+2. HTML</code></pre><h3 id="web概念概述"><a href="#web概念概述" class="headerlink" title="web概念概述"></a>web概念概述</h3><pre><code>* JavaWeb：
+    * 使用Java语言开发基于互联网的项目
+
+* 软件的架构：
+    1. C/S：Client/Server 客户端/服务器端
+        * 在用户本地
+    2. B/S：</code></pre>
       
     </div>
     
@@ -1826,7 +1990,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01-内容"><span class="nav-number">1.1.</span> <span class="nav-text">Day 01 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Junit单元测试："><span class="nav-number">1.1.1.</span> <span class="nav-text">Junit单元测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射：框架设计的灵魂"><span class="nav-number">1.1.2.</span> <span class="nav-text">反射：框架设计的灵魂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解："><span class="nav-number">1.1.3.</span> <span class="nav-text">注解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-02-内容"><span class="nav-number">1.2.</span> <span class="nav-text">Day 02 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据库的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库软件"><span class="nav-number">1.2.2.</span> <span class="nav-text">MySQL数据库软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL"><span class="nav-number">1.2.3.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL：操作数据库、表"><span class="nav-number">1.2.4.</span> <span class="nav-text">DDL：操作数据库、表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-03-内容"><span class="nav-number">1.3.</span> <span class="nav-text">Day 03 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL-查询语句"><span class="nav-number">1.3.1.</span> <span class="nav-text">DQL:查询语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL：查询表中的记录"><span class="nav-number">1.3.2.</span> <span class="nav-text">DQL：查询表中的记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日内容"><span class="nav-number">1.3.3.</span> <span class="nav-text">今日内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多表查询"><span class="nav-number">1.3.4.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.3.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCL"><span class="nav-number">1.3.6.</span> <span class="nav-text">DCL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-04-内容："><span class="nav-number">1.4.</span> <span class="nav-text">Day 04 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-number">1.4.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽取JDBC工具类-JDBCUtils"><span class="nav-number">1.4.2.</span> <span class="nav-text">抽取JDBC工具类 : JDBCUtils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">1.4.3.</span> <span class="nav-text">JDBC控制事务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-05-内容："><span class="nav-number">1.5.</span> <span class="nav-text">Day 05 内容：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01-内容"><span class="nav-number">1.1.</span> <span class="nav-text">Day 01 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Junit单元测试："><span class="nav-number">1.1.1.</span> <span class="nav-text">Junit单元测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射：框架设计的灵魂"><span class="nav-number">1.1.2.</span> <span class="nav-text">反射：框架设计的灵魂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解："><span class="nav-number">1.1.3.</span> <span class="nav-text">注解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-02-内容"><span class="nav-number">1.2.</span> <span class="nav-text">Day 02 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据库的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库软件"><span class="nav-number">1.2.2.</span> <span class="nav-text">MySQL数据库软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL"><span class="nav-number">1.2.3.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL：操作数据库、表"><span class="nav-number">1.2.4.</span> <span class="nav-text">DDL：操作数据库、表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-03-内容"><span class="nav-number">1.3.</span> <span class="nav-text">Day 03 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL-查询语句"><span class="nav-number">1.3.1.</span> <span class="nav-text">DQL:查询语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL：查询表中的记录"><span class="nav-number">1.3.2.</span> <span class="nav-text">DQL：查询表中的记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日内容"><span class="nav-number">1.3.3.</span> <span class="nav-text">今日内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多表查询"><span class="nav-number">1.3.4.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.3.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCL"><span class="nav-number">1.3.6.</span> <span class="nav-text">DCL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-04-内容："><span class="nav-number">1.4.</span> <span class="nav-text">Day 04 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-number">1.4.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽取JDBC工具类-JDBCUtils"><span class="nav-number">1.4.2.</span> <span class="nav-text">抽取JDBC工具类 : JDBCUtils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">1.4.3.</span> <span class="nav-text">JDBC控制事务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-05-内容："><span class="nav-number">1.5.</span> <span class="nav-text">Day 05 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.5.1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">1.5.2.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-06-内容："><span class="nav-number">1.6.</span> <span class="nav-text">Day 06 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web概念概述"><span class="nav-number">1.6.1.</span> <span class="nav-text">web概念概述</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1860,7 +2024,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">108.1k</span>
+    <span title="Site words total count">109.2k</span>
   
 </div>
 
