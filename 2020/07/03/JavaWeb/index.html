@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="JavaWebDay 01 内容04&#x2F;07&#x2F;2020  * Junit单元测试 * 反射 * 注解Junit单元测试：* 测试分类：       * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。             * 白盒测试：需要写代码。关注程序具体的执行流程。  * Junit使用：白盒测试     * 步骤：         1. 定义一个测试类(测试用例)">
+<meta name="description" content="JavaWebDay 01 内容04&#x2F;07&#x2F;2020  * Junit单元测试 * 反射 * 注解Junit单元测试：* 测试分类：     * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。             * 白盒测试：需要写代码。关注程序具体的执行流程。  * Junit使用：白盒测试     * 步骤：         1. 定义一个测试类(测试用例)">
 <meta name="keywords" content="Java自学总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;03&#x2F;JavaWeb&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="JavaWebDay 01 内容04&#x2F;07&#x2F;2020  * Junit单元测试 * 反射 * 注解Junit单元测试：* 测试分类：       * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。             * 白盒测试：需要写代码。关注程序具体的执行流程。  * Junit使用：白盒测试     * 步骤：         1. 定义一个测试类(测试用例)">
+<meta property="og:description" content="JavaWebDay 01 内容04&#x2F;07&#x2F;2020  * Junit单元测试 * 反射 * 注解Junit单元测试：* 测试分类：     * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。             * 白盒测试：需要写代码。关注程序具体的执行流程。  * Junit使用：白盒测试     * 步骤：         1. 定义一个测试类(测试用例)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-08T00:06:49.448Z">
+<meta property="og:updated_time" content="2020-07-08T00:11:36.715Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -430,18 +430,18 @@
 <pre><code>* Junit单元测试
 * 反射
 * 注解</code></pre><h3 id="Junit单元测试："><a href="#Junit单元测试：" class="headerlink" title="Junit单元测试："></a>Junit单元测试：</h3><pre><code>* 测试分类：
-      * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。
+    * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。
             * 白盒测试：需要写代码。关注程序具体的执行流程。
 
 * Junit使用：白盒测试
     * 步骤：
         1. 定义一个测试类(测试用例)
-                    * 建议：
-                            * 测试类名：被测试的类名Test    calculatorTest
-                            * 包名：xxx.xxx.xxx.test
-         2. 定义测试方法：可以独立运行
+            * 建议：
+                * 测试类名：被测试的类名Test    calculatorTest
+                * 包名：xxx.xxx.xxx.test
+        2. 定义测试方法：可以独立运行
 
-              * 建议：
+            * 建议：
                 * 方法名：test测试的方法名    testadd
                 * 返回值：void
                 * 参数列表：空参
@@ -602,17 +602,12 @@
         2. 给解析程序用
     3. 注解不是程序的一部分，可以理解为注解就是一个标签</code></pre><hr>
 <h2 id="Day-02-内容"><a href="#Day-02-内容" class="headerlink" title="Day 02 内容"></a>Day 02 内容</h2><p><em>05/07/2020</em></p>
-<ul>
-<li>数据库的基本概念</li>
-<li>MySQL数据库软件<ul>
-<li>安装</li>
-<li>卸载</li>
-<li>配置</li>
-</ul>
-</li>
-<li>SQL</li>
-</ul>
-<h3 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h3><pre><code>1. 数据库的英文单词：DataBase 简称 ： DB
+<pre><code>* 数据库的基本概念
+* MySQL数据库软件
+    * 安装
+    * 卸载
+    * 配置
+* SQL</code></pre><h3 id="数据库的基本概念"><a href="#数据库的基本概念" class="headerlink" title="数据库的基本概念"></a>数据库的基本概念</h3><pre><code>1. 数据库的英文单词：DataBase 简称 ： DB
 2. 什么是数据库？
     * 用于存储和管理数据的仓库。
 
@@ -1376,6 +1371,7 @@
                         * 细节: 如果连接的是本机mysql服务器，并且mysql服务默认端口为3306，则url可以简写为jdbc:mysql:///数据库名称
                     * user：用户名
                     * password：密码
+
     2. Connection: 数据库连接对象
         1. 功能：
             1. 获取执行sql的对象
@@ -1385,6 +1381,7 @@
                 * 开启事务: void setAutoCommit(boolean autoCommit)    : 调用该方法设置参数为false，即开启事务
                 * 提交事务: void commit()
                 * 回滚事务: void rollback()
+
     3. Statement: 执行sql的对象
         1. 执行sql
             1. booleann execute(String sql) : 可以执行任意的sql 了解
@@ -1457,6 +1454,7 @@
                 1. 定义Emp类
                 2. 定义方法 public List&lt;Emp&gt; findAll(){}
                 3. 实现方法 select * from emp;
+
     5. PreparedStatement: 执行sql的对象
         1. SQL注入问题: 在拼接SQL时，有一些sql的特殊关键字参与字符串的拼接，会造成安全性问题
             1. 输入用户随便，输入密码：a&apos; or &apos;a&apos; = &apos;a
