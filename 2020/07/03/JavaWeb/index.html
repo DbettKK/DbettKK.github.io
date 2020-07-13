@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="JavaWebDay 01 内容04&#x2F;07&#x2F;2020  * Junit单元测试 * 反射 * 注解Junit单元测试：* 测试分类：     * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。             * 白盒测试：需要写代码。关注程序具体的执行流程。  * Junit使用：白盒测试     * 步骤：         1. 定义一个测试类(测试用例)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-11T09:05:11.141Z">
+<meta property="og:updated_time" content="2020-07-13T11:28:17.633Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  14.4k words
+                  16.1k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  59 minutues
+                  66 minutues
                 </span>
               
             </div>
@@ -2259,14 +2259,202 @@
                 * GBK编码：一个汉字两个字节
                 * UTF-8编码：一个汉字三个字节
 
-
 * BOM
 * DOM</code></pre><hr>
 <h2 id="Day-09-内容"><a href="#Day-09-内容" class="headerlink" title="Day 09 内容:"></a>Day 09 内容:</h2><pre><code>1. JavaScript：
     1. ECMAScript
     2. BOM
     3. DOM：
-        1. 事件</code></pre>
+        1. 事件</code></pre><h3 id="DOM简单学习：为了满足案例要求"><a href="#DOM简单学习：为了满足案例要求" class="headerlink" title="DOM简单学习：为了满足案例要求"></a>DOM简单学习：为了满足案例要求</h3><pre><code>* 功能：控制HTML文档的内容
+* 代码：获取页面标签(元素)对象    Element
+    * document.getElementById(&quot;id值&quot;);    通过元素id获取元素对象
+
+* 操作Element对象：
+    1. 修改属性值：
+        1. 明确获取的对象是哪一个
+        2. 查看API文档，找其中有哪些属性可以设置
+    2. 修改标签体内容：
+        * 属性：innerHTML</code></pre><h3 id="事件简单学习"><a href="#事件简单学习" class="headerlink" title="事件简单学习"></a>事件简单学习</h3><pre><code>* 功能：某些组件被执行了某些操作后，触发某些代码的执行。
+* 如何绑定事件
+    1. 直接在HTML标签上，指定事件的属性，属性值就是JS代码
+        1. 事件：onclick--- 单击事件
+
+    2. 通过JS获取元素对象，指定事件属性，设置一个函数</code></pre><h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><pre><code>* 分析
+    1. 获取图片对象
+    2. 绑定单击事件
+    3. 每次点击切换图片
+        * 规则，如果on换为off，反之亦然
+        * 使用标记flag完成</code></pre><h3 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h3><pre><code>1. 概念：Browser Object Model 浏览器对象模型
+    * 将浏览器的各个部分封装成对象。
+2. 组成
+    * Window：窗口对象
+    * Navigator：浏览器对象
+    * Screen：显示器屏幕对象
+    * History：历史记录对象
+    * Location：地址栏对象
+
+3. Window：窗口对象
+    1. 创建
+    2. 方法
+        1. 与弹出框有关的方法
+            alert()    弹出警告框
+            confirm()    弹出对话框(确认或者取消)
+                * 如果点击确定 返回true
+                * 点击取消 返回false
+            prompt()    弹出可输入的对话框
+                * 返回值，获取用画输入的内容
+        2. 与打开关闭有关的方法
+            close() 关闭浏览器窗口
+                * 谁调用关谁
+            open() 打开一个浏览器窗口
+                * 返回新的Window对象
+        3. 与定时器有关的方法
+            setTimeout()    在指定的毫秒数后调用函数或计算表达式。
+                * 参数：
+                    1. js代码或者方法对象
+                    2. 毫秒值
+                * 返回值：唯一标识，用于取消定时器
+            clearTimeout()    取消由setTimeout()方法设置的timeout。
+
+            setInterval()    按照指定的周期（以毫秒计）来调用函数或计算表达式。
+            clearInterval()    取消由setInterval()设置的timeout。
+    3. 属性
+        1. 获取其他BOM对象
+            history
+            location
+            Navigator
+            Screen
+        2. 获取DOM对象
+            document
+    4. 特点
+        * Window对象不需要创建可以直接使用 window来使用 window.方法名();
+        * window引用可以省略。    方法名();
+
+4. Location：地址栏对象
+    1. 创建(获取)：
+        1. window.location
+        2. location
+    2. 方法
+        * reload() 重新加载当前文档 刷新
+    3. 属性
+        * href 设置或返回完整的URL
+
+5. History：历史记录对象
+    1. 创建(获取):
+        1. window.history
+        2. history
+
+    2. 方法：
+        * back()    加载history列表中的前一个 URL。
+        * forward()    加载history列表中的下一个 URL。
+        * go(参数)    加载history列表中的某个具体页面。
+            * 参数
+                * 正数：前进几个历史记录
+                * 负数：后退几个历史记录
+
+    3. 属性
+        * length    返回浏览器历史列表中的 URL 数量。</code></pre><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><pre><code>* 概念：Document Object Model 文档对象模型
+    * 将标记语言文档的各个部分，封装为对象。可以使用这些对象，对标记语言文档进行CRUD的动态操作
+* W3C DOM 标准被分为3个不同的部分：
+    * 核心DOM - 针对任何结构化文档的标准模型
+        * Document：文档对象
+        * Element：元素对象
+        * Attribute：属性对象
+        * Text：文本对象
+        * Comment：注释对象
+
+        * Node：节点对象，其他5个的父对象
+    * XML DOM - 针对XML文档的标准模型
+    * HTML DOM - 针对HTML文档的标准模型 
+
+* 核心DOM模型：
+    * Document：文档对象
+        1. 创建(获取)，在html dom模型中可以使用window对象来获取
+            1. window.document
+            2. document
+        2. 方法
+            1. 获取Element对象：
+                1. getElementById()：根据id属性值获取元素对象，id属性值一般唯一
+                2. getElementByTagName()：根据元素名称获取元素对象们，返回值是一个数组
+                3. getElementByClassName()：根据Class属性值获取元素对象们，返回值是一个数组
+                4. getElementByName()：根据name属性值获取元素对象们，返回值是一个数组
+            2. 创建其他DOM对象
+                createAttribute(name)
+                createComment()
+                createElement()
+                createTextNode()
+    * Element：元素对象
+        1. 创建(获取)，通过document来获取和创建
+        2. 方法：
+            1. removeAttribute()：删除属性
+            2. setAttribute()：设置属性
+    * Node：节点对象，其他5个的父对象
+        * 特点：所有dom对象都可以被认为是一个节点
+        * 方法：
+            * CRUD dom树
+                * appendChild()：向节点的子节点列表的结尾添加新的子节点。
+                * removeChild()：删除（并返回）当前节点的指定子节点。
+                * replaceChild()：用新节点替换一个子节点。
+        * 属性
+            * parentNode：返回节点的父节点。
+
+* HTML DOM
+    1. 标签体的设置和获取：innerHTML
+    2. 使用html元素对象和属性
+    3. 控制样式
+        1. 使用元素的style属性来设置
+            如： div.style.fontSize = &quot;20px&quot;;
+        2. 提前定义好类选择器的样式，通过元素的className属性来设置其class属性值</code></pre><h3 id="事件监听机制"><a href="#事件监听机制" class="headerlink" title="事件监听机制"></a>事件监听机制</h3><pre><code>* 概念：某些组件被执行了某些操作后，触发某些代码的执行。
+    * 事件：某些操作    如：单击、双击、键盘
+    * 事件源：组件    如：按钮、文本输入框
+    * 监听器：代码    
+    * 注册监听：将事件源、事件、监听器绑定在一起。当事件源上发生了某个事件，则触发执行某个监听器代码
+
+* 常见的事件：
+    1. 点击事件：
+        1. onclick：单击事件。
+        2. ondblclick：双击事件。
+    2. 焦点事件：
+        1. onblur：失去焦点。
+            * 一般用于表单验证
+        2. onfocus：元素获得焦点。
+
+    3. 加载事件
+        1. onload：一张页面或一张图像加载完成。
+
+    4. 鼠标事件
+        1. onmousedown    鼠标按钮被按下。
+            * 定义方法时，定义一个形参，接收event对象。
+            * event对象的button属性可以获取鼠标哪个键被点击了
+        2. onmousemove    鼠标被移动。
+        3. onmouseout    鼠标从某元素移开。
+        4. onmouseover    鼠标移到某元素之上。
+        5. onmouseup    鼠标按键被松开。
+
+    5. 键盘事件
+        1. onkeydown    某个键盘按键被按下。
+        2. onkeyup    某个键盘按键被松开。
+        3. onkeypress    某个键盘按键被按下并松开。
+
+    6. 选择和改变
+        1. onchange    域的内容被改变。
+        2. onselect    文本被选中。
+
+    7. 表单事件
+        1. onsubmit 确认按钮被点击。
+            * 可以阻止表单的提交
+                * 方法返回false，则表单被阻止提交
+                * 注意：
+                    如果在标签中使用onsubmit 如&lt;form onsubmit=&apos;false&apos;&gt;&lt;/from&gt;
+                    这样是无法实现的，原因是在系统进行创建html页面时会调用onsubmit = function(){&quot;onsubmit=内的内容&quot;}也就是onsubmit = function(){false}，这个就相当于是没有返回值的，所以无法完成，要想完成，可以通过&lt;form onsubmit=&apos;return false&apos;&gt;&lt;/from&gt;这样来完成，或者在script标签中通过DOM获取form对象设置onsubmit来完成，即document.getElementById(&apos;form&apos;).onsubmit=function (){return false};即可
+        2. onreset    重置按钮被点击。
+
+* 案例
+    ...
+    见相应教程 这里就不赘述了
+    https://www.bilibili.com/video/BV1J4411877m?p=189
+    https://www.bilibili.com/video/BV1J4411877m?p=190</code></pre><hr>
+<h2 id="Day-10-内容："><a href="#Day-10-内容：" class="headerlink" title="Day 10 内容："></a>Day 10 内容：</h2><pre><code>1. Bootstrap</code></pre>
       
     </div>
     
@@ -2473,7 +2661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01-内容"><span class="nav-number">1.1.</span> <span class="nav-text">Day 01 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Junit单元测试："><span class="nav-number">1.1.1.</span> <span class="nav-text">Junit单元测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射：框架设计的灵魂"><span class="nav-number">1.1.2.</span> <span class="nav-text">反射：框架设计的灵魂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解："><span class="nav-number">1.1.3.</span> <span class="nav-text">注解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-02-内容"><span class="nav-number">1.2.</span> <span class="nav-text">Day 02 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据库的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库软件"><span class="nav-number">1.2.2.</span> <span class="nav-text">MySQL数据库软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL"><span class="nav-number">1.2.3.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL：操作数据库、表"><span class="nav-number">1.2.4.</span> <span class="nav-text">DDL：操作数据库、表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-03-内容"><span class="nav-number">1.3.</span> <span class="nav-text">Day 03 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL-查询语句"><span class="nav-number">1.3.1.</span> <span class="nav-text">DQL:查询语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL：查询表中的记录"><span class="nav-number">1.3.2.</span> <span class="nav-text">DQL：查询表中的记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日内容"><span class="nav-number">1.3.3.</span> <span class="nav-text">今日内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多表查询"><span class="nav-number">1.3.4.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.3.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCL"><span class="nav-number">1.3.6.</span> <span class="nav-text">DCL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-04-内容："><span class="nav-number">1.4.</span> <span class="nav-text">Day 04 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-number">1.4.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽取JDBC工具类-JDBCUtils"><span class="nav-number">1.4.2.</span> <span class="nav-text">抽取JDBC工具类 : JDBCUtils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">1.4.3.</span> <span class="nav-text">JDBC控制事务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-05-内容："><span class="nav-number">1.5.</span> <span class="nav-text">Day 05 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.5.1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">1.5.2.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-06-内容："><span class="nav-number">1.6.</span> <span class="nav-text">Day 06 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web概念概述"><span class="nav-number">1.6.1.</span> <span class="nav-text">web概念概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.6.2.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：旅游网站首页"><span class="nav-number">1.6.3.</span> <span class="nav-text">案例：旅游网站首页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-07-内容："><span class="nav-number">1.7.</span> <span class="nav-text">Day 07 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML标签：表单标签"><span class="nav-number">1.7.1.</span> <span class="nav-text">HTML标签：表单标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-页面美化和布局控制"><span class="nav-number">1.7.2.</span> <span class="nav-text">CSS: 页面美化和布局控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-08-内容："><span class="nav-number">1.8.</span> <span class="nav-text">Day 08 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">1.8.1.</span> <span class="nav-text">JavaScript:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-09-内容"><span class="nav-number">1.9.</span> <span class="nav-text">Day 09 内容:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01-内容"><span class="nav-number">1.1.</span> <span class="nav-text">Day 01 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Junit单元测试："><span class="nav-number">1.1.1.</span> <span class="nav-text">Junit单元测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射：框架设计的灵魂"><span class="nav-number">1.1.2.</span> <span class="nav-text">反射：框架设计的灵魂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解："><span class="nav-number">1.1.3.</span> <span class="nav-text">注解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-02-内容"><span class="nav-number">1.2.</span> <span class="nav-text">Day 02 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据库的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库软件"><span class="nav-number">1.2.2.</span> <span class="nav-text">MySQL数据库软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL"><span class="nav-number">1.2.3.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL：操作数据库、表"><span class="nav-number">1.2.4.</span> <span class="nav-text">DDL：操作数据库、表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-03-内容"><span class="nav-number">1.3.</span> <span class="nav-text">Day 03 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL-查询语句"><span class="nav-number">1.3.1.</span> <span class="nav-text">DQL:查询语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL：查询表中的记录"><span class="nav-number">1.3.2.</span> <span class="nav-text">DQL：查询表中的记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日内容"><span class="nav-number">1.3.3.</span> <span class="nav-text">今日内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多表查询"><span class="nav-number">1.3.4.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.3.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCL"><span class="nav-number">1.3.6.</span> <span class="nav-text">DCL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-04-内容："><span class="nav-number">1.4.</span> <span class="nav-text">Day 04 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-number">1.4.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽取JDBC工具类-JDBCUtils"><span class="nav-number">1.4.2.</span> <span class="nav-text">抽取JDBC工具类 : JDBCUtils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">1.4.3.</span> <span class="nav-text">JDBC控制事务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-05-内容："><span class="nav-number">1.5.</span> <span class="nav-text">Day 05 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.5.1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">1.5.2.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-06-内容："><span class="nav-number">1.6.</span> <span class="nav-text">Day 06 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web概念概述"><span class="nav-number">1.6.1.</span> <span class="nav-text">web概念概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.6.2.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：旅游网站首页"><span class="nav-number">1.6.3.</span> <span class="nav-text">案例：旅游网站首页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-07-内容："><span class="nav-number">1.7.</span> <span class="nav-text">Day 07 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML标签：表单标签"><span class="nav-number">1.7.1.</span> <span class="nav-text">HTML标签：表单标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-页面美化和布局控制"><span class="nav-number">1.7.2.</span> <span class="nav-text">CSS: 页面美化和布局控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-08-内容："><span class="nav-number">1.8.</span> <span class="nav-text">Day 08 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">1.8.1.</span> <span class="nav-text">JavaScript:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-09-内容"><span class="nav-number">1.9.</span> <span class="nav-text">Day 09 内容:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM简单学习：为了满足案例要求"><span class="nav-number">1.9.1.</span> <span class="nav-text">DOM简单学习：为了满足案例要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件简单学习"><span class="nav-number">1.9.2.</span> <span class="nav-text">事件简单学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">1.9.3.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOM"><span class="nav-number">1.9.4.</span> <span class="nav-text">BOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">1.9.5.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件监听机制"><span class="nav-number">1.9.6.</span> <span class="nav-text">事件监听机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-10-内容："><span class="nav-number">1.10.</span> <span class="nav-text">Day 10 内容：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -2507,7 +2695,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">113.5k</span>
+    <span title="Site words total count">115.3k</span>
   
 </div>
 
