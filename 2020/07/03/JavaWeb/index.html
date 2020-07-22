@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="JavaWeb摘要主要用于记录JavaWeb的学习过程，希望对大家有所帮助。 该学习是基于黑马的JavaWeb课程，感兴趣的盆友可以在b站搜索javaweb进行观看学习。Day 01 内容04&#x2F;07&#x2F;2020  * Junit单元测试 * 反射 * 注解Junit单元测试：* 测试分类：     * 黑盒测试：不需要写代码，给输入值，看程序能否输出期望值。             * 白盒测试：需">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-21T04:15:54.842Z">
+<meta property="og:updated_time" content="2020-07-22T14:10:12.026Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  23.7k words
+                  24.7k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  95 minutues
+                  99 minutues
                 </span>
               
             </div>
@@ -2658,7 +2658,7 @@
         2. Xpath：XPath即为XML路径语言（XML Path Language），它是一种用来确定XML文档中某部分位置的语言。
             * 使用Jsoup的Xpath需要额外导入jar包
             * 查询w3cschool的参考手册，使用xpath语法完成查询</code></pre><hr>
-<h2 id="Day-11-内容：-1"><a href="#Day-11-内容：-1" class="headerlink" title="Day 11 内容："></a>Day 11 内容：</h2><pre><code>1. web相关概念回顾
+<h2 id="Day-12-内容："><a href="#Day-12-内容：" class="headerlink" title="Day 12 内容："></a>Day 12 内容：</h2><pre><code>1. web相关概念回顾
 2. web服务器软件：Tomcat
 3. Servlet入门学习</code></pre><h3 id="web相关概念回顾"><a href="#web相关概念回顾" class="headerlink" title="web相关概念回顾"></a>web相关概念回顾</h3><pre><code>1. 软件架构
     1. C/S：客户端/服务器端
@@ -2796,7 +2796,7 @@
         * tomcat真正访问的是&quot;tomcat部署的web项目&quot;，&quot;tomcat部署的web项目&quot;对应着&quot;工作空间项目&quot;中web目录的资源
         * WEB-INF目录下的资源无法被浏览器直接访问
     3. 断点调试：使用&quot;小虫子&quot;启动debug启动</code></pre><hr>
-<h2 id="Day-12-内容："><a href="#Day-12-内容：" class="headerlink" title="Day 12 内容："></a>Day 12 内容：</h2><pre><code>1. Servlet
+<h2 id="Day-13-内容："><a href="#Day-13-内容：" class="headerlink" title="Day 13 内容："></a>Day 13 内容：</h2><pre><code>1. Servlet
 2. HTTP协议
 3. Request</code></pre><h3 id="Servlet："><a href="#Servlet：" class="headerlink" title="Servlet："></a>Servlet：</h3><pre><code>1. 概念
 2. 步骤
@@ -2982,7 +2982,7 @@
             1. setProperty()
             2. getProperty()
             3. populate(Object obj, Map map)：将map集合的键值对信息，封装到对应的JavaBean对象中</code></pre><hr>
-<h2 id="Day-13-内容："><a href="#Day-13-内容：" class="headerlink" title="Day 13 内容："></a>Day 13 内容：</h2><pre><code>1. HTTP协议：响应消息
+<h2 id="Day-14-内容："><a href="#Day-14-内容：" class="headerlink" title="Day 14 内容："></a>Day 14 内容：</h2><pre><code>1. HTTP协议：响应消息
 2. Response对象
 3. ServletContext对象</code></pre><h3 id="HTTP协议："><a href="#HTTP协议：" class="headerlink" title="HTTP协议："></a>HTTP协议：</h3><pre><code>1. 请求消息：客户端发送给服务器端的数据
     * 数据格式：
@@ -3128,7 +3128,7 @@
         * 解决思路：
             1. 获取客户端使用的浏览器版本信息
             2. 根据不同的版本信息，设置filename编码方式不同</code></pre><hr>
-<h2 id="Day-14-内容："><a href="#Day-14-内容：" class="headerlink" title="Day 14 内容："></a>Day 14 内容：</h2><pre><code>1. 会话技术
+<h2 id="Day-15-内容："><a href="#Day-15-内容：" class="headerlink" title="Day 15 内容："></a>Day 15 内容：</h2><pre><code>1. 会话技术
     1. Cookie
     2. Session
 2. JSP：入门学习</code></pre><h3 id="会话技术"><a href="#会话技术" class="headerlink" title="会话技术"></a>会话技术</h3><pre><code>1. 会话：一次会话中包含多次请求和响应。
@@ -3194,7 +3194,112 @@
                 2. 写回cookie：lastTime=...
             2. 没有，是第一次访问
                 1. 响应数据：您好，欢迎您首次访问
-                2. 写回cookie：lastTime=...</code></pre>
+                2. 写回cookie：lastTime=...
+    3. 代码
+        /**
+         * cookie实现访问时间显示
+         */
+        @WebServlet(&quot;/CookieServlet&quot;)
+        public class CookieServlet extends HttpServlet {
+            protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+                response.setContentType(&quot;text/html;charset=utf-8&quot;);
+                Cookie[] cookies = request.getCookies();
+                boolean flag = false;
+                for (Cookie cookie : cookies) {
+                    if(&quot;lastTime&quot;.equals(cookie.getName())){
+                        flag = true;
+                        String decode = cookie.getValue();
+                        String time = URLDecoder.decode(decode, &quot;utf-8&quot;);
+                        response.getWriter().write(&quot;您好，您上次访问时间为&quot; + time);
+
+                        Date date = new Date();
+                        SimpleDateFormat s = new SimpleDateFormat(&quot;yyyy年MM月dd日 hh:mm:ss&quot;);
+                        time = s.format(date);
+                        String encode = URLEncoder.encode(time, &quot;utf-8&quot;);
+                        System.out.println(time);
+                        System.out.println(encode);
+                        cookie.setValue(encode);
+                        response.addCookie(cookie);
+                        break;
+                    }
+                }
+                if(cookies.length == 0 || cookies == null || !flag){
+                    Date date = new Date();
+                    SimpleDateFormat s = new SimpleDateFormat(&quot;yyyy年MM月dd日 hh:mm:ss&quot;);
+                    String time = s.format(date);
+                    String encode = URLEncoder.encode(time, &quot;utf-8&quot;);
+                    System.out.println(time);
+                    Cookie c = new Cookie(&quot;lastTime&quot;, encode);
+                    response.addCookie(c);
+                    response.getWriter().write(&quot;您好，欢迎您首次访问！&quot;);
+                }
+            }
+
+            protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+                doPost(request, response);
+            }
+        }</code></pre><h3 id="JSP：入门学习"><a href="#JSP：入门学习" class="headerlink" title="JSP：入门学习"></a>JSP：入门学习</h3><pre><code>1. 概念：
+    * Java Server Pages：java服务器端页面
+        * 可以理解为：一个特殊的页面，其中既可以指定定义html标签，又可以定义java代码
+        * 用于简化书写！！！
+
+2. 原理：
+    * JSP本质上就是一个Servlet
+
+3. JSP的脚本：JSP定义Java代码的方式
+    1. &lt;% 代码 %&gt;：定义的Java代码，在service方法中。service可以定义什么，该脚本中就可以定义什么。
+    2. &lt;%! 代码 %&gt;：定义的Java代码，在jsp转换后的java类的成员位置。
+    3. &lt;%= 代码 %&gt;：定义的Java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么。
+4. JSP的内置对象
+    * 在jsp页面中不需要获取和创建就可以使用的对象
+    * jsp一共有9个内置对象
+    * 今天学习3个：
+        * request
+        * response
+        * out：字符输出流对象。可以将数据输出到页面上。和response.getWriter().write()类似
+            * response.getWriter().write()和out.write()的区别:
+                * 在tomcat服务器真正给客户端做出响应之前，会先找response缓冲区数据，再找out缓冲区数据。
+                * response.getWriter().write()数据输出永远在out.write()之前</code></pre><h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><pre><code>1. 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession
+2. 快速入门：
+    1. 获取HttpSession对象
+        * request.getSession()
+    2. 使用HttpSession对象
+        getAttribute()
+        setAttribute()
+        removeAttribute()
+3. 原理
+    * Session的实现是依赖于Cookie的。JSESSIONID
+4. 细节
+    1. 当客户端关闭后，服务器不关闭，两次获取的session是否是同一个
+        * 默认情况下不是。
+        * 如果需要相同，则可以创建cookie，键为JSESSIONID，设置最大存活时间，让cookie持久化保存。
+    2. 客户端不关闭，服务器关闭后，两次获取的session是同一个吗
+        * 不是同一个，但是要确保数据不丢失
+            * session的钝化：
+                * 服务器正常关闭之前，将session对象序列化到硬盘上
+            * session的活化：
+                * 在服务器正常启动后，将session文件转化为内存中的session对象即可。
+    3. session什么时候被销毁
+        1. 服务器关闭
+        2. session对象调用invalidate()
+        3. session默认失效时间 30分钟
+            选择性配置修改
+            web.xml -- &lt;session-config&gt;
+
+5. session的特点
+    1. session用于存储一次会话的多次请求的数据，存在服务器端
+    2. session可以存储任意类型，任意大小的数据
+        * session和cookie的区别
+            1. session存储数据在服务器端，而cookie在客户端
+            2. session没有数据大小限制，cookie有
+            3. session数据安全，cookie相对于不安全</code></pre><h3 id="案例：验证码"><a href="#案例：验证码" class="headerlink" title="案例：验证码"></a>案例：验证码</h3><pre><code>1. 案例需求
+    1. 访问带有验证码的登陆页面index.jsp
+    2. 用户输入用户名，密码以及验证码。
+        * 如果用户名和密码输入有误，跳转登录页面，提示：用户名或密码错误
+        * 如果验证码输入有误，则跳转登录页面，提示：验证码错误
+        * 如果全部输入正确，则跳转到success.jsp，显示：用户名，欢迎您
+
+2. 分析</code></pre>
       
     </div>
     
@@ -3401,7 +3506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01-内容"><span class="nav-number">1.2.</span> <span class="nav-text">Day 01 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Junit单元测试："><span class="nav-number">1.2.1.</span> <span class="nav-text">Junit单元测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射：框架设计的灵魂"><span class="nav-number">1.2.2.</span> <span class="nav-text">反射：框架设计的灵魂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解："><span class="nav-number">1.2.3.</span> <span class="nav-text">注解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-02-内容"><span class="nav-number">1.3.</span> <span class="nav-text">Day 02 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的基本概念"><span class="nav-number">1.3.1.</span> <span class="nav-text">数据库的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库软件"><span class="nav-number">1.3.2.</span> <span class="nav-text">MySQL数据库软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL"><span class="nav-number">1.3.3.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL：操作数据库、表"><span class="nav-number">1.3.4.</span> <span class="nav-text">DDL：操作数据库、表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-03-内容"><span class="nav-number">1.4.</span> <span class="nav-text">Day 03 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL-查询语句"><span class="nav-number">1.4.1.</span> <span class="nav-text">DQL:查询语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL：查询表中的记录"><span class="nav-number">1.4.2.</span> <span class="nav-text">DQL：查询表中的记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日内容"><span class="nav-number">1.4.3.</span> <span class="nav-text">今日内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多表查询"><span class="nav-number">1.4.4.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.4.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCL"><span class="nav-number">1.4.6.</span> <span class="nav-text">DCL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-04-内容："><span class="nav-number">1.5.</span> <span class="nav-text">Day 04 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-number">1.5.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽取JDBC工具类-JDBCUtils"><span class="nav-number">1.5.2.</span> <span class="nav-text">抽取JDBC工具类 : JDBCUtils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">1.5.3.</span> <span class="nav-text">JDBC控制事务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-05-内容："><span class="nav-number">1.6.</span> <span class="nav-text">Day 05 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.6.1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">1.6.2.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-06-内容："><span class="nav-number">1.7.</span> <span class="nav-text">Day 06 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web概念概述"><span class="nav-number">1.7.1.</span> <span class="nav-text">web概念概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.7.2.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：旅游网站首页"><span class="nav-number">1.7.3.</span> <span class="nav-text">案例：旅游网站首页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-07-内容："><span class="nav-number">1.8.</span> <span class="nav-text">Day 07 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML标签：表单标签"><span class="nav-number">1.8.1.</span> <span class="nav-text">HTML标签：表单标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-页面美化和布局控制"><span class="nav-number">1.8.2.</span> <span class="nav-text">CSS: 页面美化和布局控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-08-内容："><span class="nav-number">1.9.</span> <span class="nav-text">Day 08 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">1.9.1.</span> <span class="nav-text">JavaScript:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-09-内容"><span class="nav-number">1.10.</span> <span class="nav-text">Day 09 内容:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM简单学习：为了满足案例要求"><span class="nav-number">1.10.1.</span> <span class="nav-text">DOM简单学习：为了满足案例要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件简单学习"><span class="nav-number">1.10.2.</span> <span class="nav-text">事件简单学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">1.10.3.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOM"><span class="nav-number">1.10.4.</span> <span class="nav-text">BOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">1.10.5.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件监听机制"><span class="nav-number">1.10.6.</span> <span class="nav-text">事件监听机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-10-内容："><span class="nav-number">1.11.</span> <span class="nav-text">Day 10 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Boostrap"><span class="nav-number">1.11.1.</span> <span class="nav-text">Boostrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式布局"><span class="nav-number">1.11.2.</span> <span class="nav-text">响应式布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS样式和JS插件"><span class="nav-number">1.11.3.</span> <span class="nav-text">CSS样式和JS插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-11-内容："><span class="nav-number">1.12.</span> <span class="nav-text">Day 11 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XML"><span class="nav-number">1.12.1.</span> <span class="nav-text">XML</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-11-内容：-1"><span class="nav-number">1.13.</span> <span class="nav-text">Day 11 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web相关概念回顾"><span class="nav-number">1.13.1.</span> <span class="nav-text">web相关概念回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web服务器软件"><span class="nav-number">1.13.2.</span> <span class="nav-text">web服务器软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet：-server-applet"><span class="nav-number">1.13.3.</span> <span class="nav-text">Servlet： server applet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-12-内容："><span class="nav-number">1.14.</span> <span class="nav-text">Day 12 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet："><span class="nav-number">1.14.1.</span> <span class="nav-text">Servlet：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP："><span class="nav-number">1.14.2.</span> <span class="nav-text">HTTP：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request："><span class="nav-number">1.14.3.</span> <span class="nav-text">Request：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：用户登录"><span class="nav-number">1.14.4.</span> <span class="nav-text">案例：用户登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-13-内容："><span class="nav-number">1.15.</span> <span class="nav-text">Day 13 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP协议："><span class="nav-number">1.15.1.</span> <span class="nav-text">HTTP协议：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Response对象"><span class="nav-number">1.15.2.</span> <span class="nav-text">Response对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletContext对象"><span class="nav-number">1.15.3.</span> <span class="nav-text">ServletContext对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-1"><span class="nav-number">1.15.4.</span> <span class="nav-text">案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-14-内容："><span class="nav-number">1.16.</span> <span class="nav-text">Day 14 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#会话技术"><span class="nav-number">1.16.1.</span> <span class="nav-text">会话技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">1.16.2.</span> <span class="nav-text">Cookie</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01-内容"><span class="nav-number">1.2.</span> <span class="nav-text">Day 01 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Junit单元测试："><span class="nav-number">1.2.1.</span> <span class="nav-text">Junit单元测试：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反射：框架设计的灵魂"><span class="nav-number">1.2.2.</span> <span class="nav-text">反射：框架设计的灵魂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解："><span class="nav-number">1.2.3.</span> <span class="nav-text">注解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-02-内容"><span class="nav-number">1.3.</span> <span class="nav-text">Day 02 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的基本概念"><span class="nav-number">1.3.1.</span> <span class="nav-text">数据库的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库软件"><span class="nav-number">1.3.2.</span> <span class="nav-text">MySQL数据库软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL"><span class="nav-number">1.3.3.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL：操作数据库、表"><span class="nav-number">1.3.4.</span> <span class="nav-text">DDL：操作数据库、表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-03-内容"><span class="nav-number">1.4.</span> <span class="nav-text">Day 03 内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL-查询语句"><span class="nav-number">1.4.1.</span> <span class="nav-text">DQL:查询语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL：查询表中的记录"><span class="nav-number">1.4.2.</span> <span class="nav-text">DQL：查询表中的记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日内容"><span class="nav-number">1.4.3.</span> <span class="nav-text">今日内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多表查询"><span class="nav-number">1.4.4.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务"><span class="nav-number">1.4.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCL"><span class="nav-number">1.4.6.</span> <span class="nav-text">DCL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-04-内容："><span class="nav-number">1.5.</span> <span class="nav-text">Day 04 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-number">1.5.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽取JDBC工具类-JDBCUtils"><span class="nav-number">1.5.2.</span> <span class="nav-text">抽取JDBC工具类 : JDBCUtils</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">1.5.3.</span> <span class="nav-text">JDBC控制事务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-05-内容："><span class="nav-number">1.6.</span> <span class="nav-text">Day 05 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.6.1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">1.6.2.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-06-内容："><span class="nav-number">1.7.</span> <span class="nav-text">Day 06 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web概念概述"><span class="nav-number">1.7.1.</span> <span class="nav-text">web概念概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.7.2.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：旅游网站首页"><span class="nav-number">1.7.3.</span> <span class="nav-text">案例：旅游网站首页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-07-内容："><span class="nav-number">1.8.</span> <span class="nav-text">Day 07 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML标签：表单标签"><span class="nav-number">1.8.1.</span> <span class="nav-text">HTML标签：表单标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-页面美化和布局控制"><span class="nav-number">1.8.2.</span> <span class="nav-text">CSS: 页面美化和布局控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-08-内容："><span class="nav-number">1.9.</span> <span class="nav-text">Day 08 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">1.9.1.</span> <span class="nav-text">JavaScript:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-09-内容"><span class="nav-number">1.10.</span> <span class="nav-text">Day 09 内容:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM简单学习：为了满足案例要求"><span class="nav-number">1.10.1.</span> <span class="nav-text">DOM简单学习：为了满足案例要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件简单学习"><span class="nav-number">1.10.2.</span> <span class="nav-text">事件简单学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">1.10.3.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOM"><span class="nav-number">1.10.4.</span> <span class="nav-text">BOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">1.10.5.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件监听机制"><span class="nav-number">1.10.6.</span> <span class="nav-text">事件监听机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-10-内容："><span class="nav-number">1.11.</span> <span class="nav-text">Day 10 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Boostrap"><span class="nav-number">1.11.1.</span> <span class="nav-text">Boostrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式布局"><span class="nav-number">1.11.2.</span> <span class="nav-text">响应式布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS样式和JS插件"><span class="nav-number">1.11.3.</span> <span class="nav-text">CSS样式和JS插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-11-内容："><span class="nav-number">1.12.</span> <span class="nav-text">Day 11 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XML"><span class="nav-number">1.12.1.</span> <span class="nav-text">XML</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-12-内容："><span class="nav-number">1.13.</span> <span class="nav-text">Day 12 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web相关概念回顾"><span class="nav-number">1.13.1.</span> <span class="nav-text">web相关概念回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web服务器软件"><span class="nav-number">1.13.2.</span> <span class="nav-text">web服务器软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet：-server-applet"><span class="nav-number">1.13.3.</span> <span class="nav-text">Servlet： server applet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-13-内容："><span class="nav-number">1.14.</span> <span class="nav-text">Day 13 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet："><span class="nav-number">1.14.1.</span> <span class="nav-text">Servlet：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP："><span class="nav-number">1.14.2.</span> <span class="nav-text">HTTP：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request："><span class="nav-number">1.14.3.</span> <span class="nav-text">Request：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：用户登录"><span class="nav-number">1.14.4.</span> <span class="nav-text">案例：用户登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-14-内容："><span class="nav-number">1.15.</span> <span class="nav-text">Day 14 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP协议："><span class="nav-number">1.15.1.</span> <span class="nav-text">HTTP协议：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Response对象"><span class="nav-number">1.15.2.</span> <span class="nav-text">Response对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletContext对象"><span class="nav-number">1.15.3.</span> <span class="nav-text">ServletContext对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-1"><span class="nav-number">1.15.4.</span> <span class="nav-text">案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-15-内容："><span class="nav-number">1.16.</span> <span class="nav-text">Day 15 内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#会话技术"><span class="nav-number">1.16.1.</span> <span class="nav-text">会话技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">1.16.2.</span> <span class="nav-text">Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP：入门学习"><span class="nav-number">1.16.3.</span> <span class="nav-text">JSP：入门学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">1.16.4.</span> <span class="nav-text">Session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：验证码"><span class="nav-number">1.16.5.</span> <span class="nav-text">案例：验证码</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -3435,7 +3540,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">122.8k</span>
+    <span title="Site words total count">123.9k</span>
   
 </div>
 
