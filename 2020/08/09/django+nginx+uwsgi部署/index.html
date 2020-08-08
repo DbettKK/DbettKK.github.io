@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="环境搭建," />
 
 
 
@@ -79,13 +79,15 @@
 
 
 
-<meta name="description" content="NO DEPENDENCE ONLY PRIDE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BBBBBlog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;index.html">
+<meta name="description" content="Django + Nginx + Uwsgi部署服务器摘要写这篇博客主要是为了记录一下自己部署的历程(太艰辛了)，同时也为了让其他人能够在看了本博文后能够少走弯路。希望这篇博文能够对大家有所帮助。 环境本人所使用的环境如下 123Ubuntu 18.04.4(腾讯云服务器)python 3.6(服务器自带)mysql  环境搭建在上述环境的基础上进行部署django所需的环境的配置和搭建 首先是p">
+<meta name="keywords" content="环境搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django + Nginx + Uwsgi部署服务器">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;08&#x2F;09&#x2F;django+nginx+uwsgi%E9%83%A8%E7%BD%B2&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="NO DEPENDENCE ONLY PRIDE">
+<meta property="og:description" content="Django + Nginx + Uwsgi部署服务器摘要写这篇博客主要是为了记录一下自己部署的历程(太艰辛了)，同时也为了让其他人能够在看了本博文后能够少走弯路。希望这篇博文能够对大家有所帮助。 环境本人所使用的环境如下 123Ubuntu 18.04.4(腾讯云服务器)python 3.6(服务器自带)mysql  环境搭建在上述环境的基础上进行部署django所需的环境的配置和搭建 首先是p">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-08-08T23:40:17.791Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -116,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/09/django+nginx+uwsgi部署/"/>
 
 
 
 
 
-  <title>Archive | BBBBBlog</title>
+  <title>Django + Nginx + Uwsgi部署服务器 | BBBBBlog</title>
   
 
 
@@ -141,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,411 +271,289 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bcutty Kmy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BBBBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Django + Nginx + Uwsgi部署服务器</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-09T07:40:20+08:00">
+                2020-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 18 posts in total. Keep on posting.
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%83%A8%E7%BD%B2%E7%AF%87/" itemprop="url" rel="index">
+                    <span itemprop="name">部署篇</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="Django + Nginx + Uwsgi部署服务器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/22/%E6%9C%9F%E6%9C%AB%E9%A2%98%E8%A7%A3_%E9%83%A8%E5%88%86/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">期末题解（部分）</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.4k words
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-12-22T12:34:50+08:00"
-              content="2019-12-22" >
-          12-22
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5 minutues
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/30/%E9%A2%98%E8%A7%A3%E7%AF%87-C6/" itemprop="url">
-              
-                <span itemprop="name">题解篇-C6</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-30T13:30:50+08:00"
-              content="2019-11-30" >
-          11-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h1 id="Django-Nginx-Uwsgi部署服务器"><a href="#Django-Nginx-Uwsgi部署服务器" class="headerlink" title="Django + Nginx + Uwsgi部署服务器"></a>Django + Nginx + Uwsgi部署服务器</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>写这篇博客主要是为了记录一下自己部署的历程(太艰辛了)，同时也为了让其他人能够在看了本博文后能够少走弯路。希望这篇博文能够对大家有所帮助。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>本人所使用的环境如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ubuntu 18.04.4(腾讯云服务器)</span><br><span class="line">python 3.6(服务器自带)</span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
 
-        
-        
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>在上述环境的基础上进行部署django所需的环境的配置和搭建</p>
+<p>首先是pip3的安装，这一步就不再赘述了。</p>
+<p>然后是git的安装，直接<code>apt-get install git</code>就行了，主要是为了后面能够从github上clone源码。也可以通过<code>wget 项目地址.zip 下载地址</code>的方式下载项目zip包然后解压。 </p>
+<p>然后是django所需环境的安装，可以通过虚拟环境的方式安装，也可以直接安装，因为本人是只用在服务器上部署这一个django项目，所以本人直接安装并没有通过虚拟环境，先导出requirements.txt然后在这里安装就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
 
-        
+<p>mysql的安装也不在这里说了，因为不是重点，大家度娘都能够解决。并且mysql的安装对部署的影响并不大。</p>
+<p>然后则是uwsgi的安装了，uwsgi大家可以直接通过<code>pip install uwsgi</code>的方式完成安装，不过请确定是最新版，否则容易出现bug，安装完成后可以测试一下</p>
+<p>首先在manage.py同一级目录下创建test.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(env, start_response)</span>:</span></span><br><span class="line">    start_response(<span class="string">'200 OK'</span>, [(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>)])</span><br><span class="line">    <span class="keyword">return</span> <span class="string">b"Hello World"</span></span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>然后运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsgi --http :8000 --wsgi-file test.py</span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/25/%E5%BB%BA%E5%9B%BE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" itemprop="url">
-              
-                <span itemprop="name">建图方法总结</span>
-              
-            </a>
-        
-      </h2>
+<p>打开<code>&lt;公网ip:8000&gt;</code>看能否访问并看到hello world，如果能看到则没问题</p>
+<p>然后是对nginx的安装，同理<code>apt-get install nginx</code>，安装完后，可以通过<code>service --status-all</code>查看niginx前面是否有+号，如果没问题，再访问<code>公网ip</code>，如果出现nginx的欢迎界面，则nginx安装成功</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>环境安装好了，接下来就是最重要的配置环节了。</p>
+<p>首先是对uwsgi的配置，首先在manage.py同级目录下创建uwsgi.ini文件用于配置，配置内容如下</p>
+<p>#对应是注释，复制的时候最好把中文删去，省去编码问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"># Django-related settings</span><br><span class="line">socket = 127.0.0.1:8888</span><br><span class="line"></span><br><span class="line"># the base directory (full path) 项目根地址 即manage.py所在目录</span><br><span class="line">chdir = /root/myblog</span><br><span class="line"></span><br><span class="line"># Django s wsgi file</span><br><span class="line">module = blog.wsgi:application</span><br><span class="line"></span><br><span class="line"># process-related settings</span><br><span class="line"># master 主进程</span><br><span class="line">master = true</span><br><span class="line"></span><br><span class="line"># maximum number of worker processes</span><br><span class="line">processes = 4</span><br><span class="line"># buffer-size 这个需要设置一下</span><br><span class="line">buffer-size = 30000</span><br><span class="line"># ... with appropriate permissions - may be needed</span><br><span class="line"># chmod-socket = 664</span><br><span class="line"># clear environment on exit</span><br><span class="line"># 日志文件</span><br><span class="line">daemonize = /root/myblog/mysite.log	</span><br><span class="line">vacuum = true</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-25T18:20:55+08:00"
-              content="2019-11-25" >
-          11-25
-        </time>
-      </div>
+<p>然后是对nginx的配置</p>
+<p>首先了解一下nginx的配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">主配置文件：/etc/nginx/nginx.conf一般不用动</span><br><span class="line">可用配置文件：/etc/nginx/sites-available我们一般更改这里的配置文件</span><br><span class="line">已用配置文件：/etc/nginx/sites-enabled，已经启用的配置文件 我们在可用配置文件目录，新建一个xxx.conf此文件用于配置我们的项目。xxx可写自己的项目名称</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/nginx/sites-available</span><br><span class="line">vim xxx.conf</span><br><span class="line">// 如果不是root用户，可能需要先sudo创建文件然后chmod然后再进行vim修改</span><br></pre></td></tr></table></figure>
 
+<p>然后在xxx.conf文件中写入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">upstream django &#123;</span><br><span class="line">    server 127.0.0.1:8888; # for a web port socket (we&apos;ll use this first)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name 公网ip;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    client_max_body_size 75M;  #上传文件大小限制</span><br><span class="line"></span><br><span class="line">    # 网站静态文件所在目录</span><br><span class="line">    location /static&#123;</span><br><span class="line">        alias /root/myblog/static;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    # 上传文件所在目录</span><br><span class="line">    location /media&#123;</span><br><span class="line">        alias /root/myblog/media;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    # 动态文件交给uwsgi处理</span><br><span class="line">    location / &#123;</span><br><span class="line">        uwsgi_pass 127.0.0.1:8888;</span><br><span class="line">        include /etc/nginx/uwsgi_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>然后将此文件再sites-enabled中创建一个软连接，表示此配置文件已经启用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/nginx/sites-available/xxx.conf   /etc/nginx/sites-enabled/xxx.conf</span><br></pre></td></tr></table></figure>
+
+<p>另外我们还需要将启动nginx的用户改为root，要不然会出现403 forbidden的错误。打开/etc/nginx/nginx.conf文件，将第一行中user后面的用户改为root即可。</p>
+<p>然后需要对django进行一下小修改</p>
+<p>首先是对settings.py中的debug改为false，allowed_host改为[‘*‘]或者[‘公网ip’]，这样才能访问到。</p>
+<p>然后在最后加入<code>STATIC_ROOT = os.path.join(BASE_DIR,&#39;static&#39;)</code>，之后再进入项目执行<code>python3 manage.py collectstatic</code>执行之后就能看到项目中新增了一个static目录，这样nginx就能访问到了，才能正确加载项目的静态文件，否则访问的就是缺失css样式的项目</p>
+<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p>然后就是将nginx重启服务并且将uwsgi启动的阶段了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx restart </span><br><span class="line">sudo uwsgi uwsgi.ini</span><br><span class="line">sudo killall -9 uwsgi</span><br></pre></td></tr></table></figure>
+
+<p>第一行是nginx的重启，第二行则是启动uwsgi服务，最后一行是需要关闭uwsgi服务所需要执行的命令</p>
+<p>启动uwsgi系统提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[uWSGI] getting INI configuration from uwsgi.ini</span><br></pre></td></tr></table></figure>
+
+<p>则代表启动成功了，现在就可以访问<code>公网ip:8000</code>访问你的项目了</p>
+<p>如果出现问题，可查看uwsgi的日志文件，也就是前面所配置的<code>daemonize = /root/myblog/mysite.log</code>，从而帮助找到错误，进而解决。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>需要注意的点是，uwsgi的socket和nginx里的配置一定要一样，同时不要使用8000端口(不要问我怎么知道的)，上文使用的是8888端口，同时需要查看相应端口的防火墙是否已经打开，如果出现问题可以在服务器上通过<code>curl</code>进行本地访问测试。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/23/%E9%A2%98%E8%A7%A3%E7%AF%87-C5/" itemprop="url">
-              
-                <span itemprop="name">题解篇-C5</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-23T11:30:50+08:00"
-              content="2019-11-23" >
-          11-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" itemprop="url">
-              
-                <span itemprop="name">约瑟夫环</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-17T23:01:50+08:00"
-              content="2019-11-17" >
-          11-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/17/%E9%A2%98%E8%A7%A3%E7%AF%87-E3/" itemprop="url">
-              
-                <span itemprop="name">题解篇-E3</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-17T13:13:50+08:00"
-              content="2019-11-17" >
-          11-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/12/Prince-and-Princess/" itemprop="url">
-              
-                <span itemprop="name">Prince and Princess</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-12T21:02:31+08:00"
-              content="2019-11-12" >
-          11-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" itemprop="url">
-              
-                <span itemprop="name">动态规划(DP)——背包问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-11T17:52:18+08:00"
-              content="2019-11-11" >
-          11-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/10/%E6%90%AD%E5%BB%BAhexo-Github%E5%8D%9A%E5%AE%A2/" itemprop="url">
-              
-                <span itemprop="name">搭建(hexo-Github)博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-10T00:50:18+08:00"
-              content="2019-11-10" >
-          11-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/09/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%82%A1%E7%A5%A8%E9%97%AE%E9%A2%98/" itemprop="url">
-              
-                <span itemprop="name">动态规划(DP)——股票问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-09T22:28:41+08:00"
-              content="2019-11-09" >
-          11-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Bcutty Kmy
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yoursite.com/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/" title="Django + Nginx + Uwsgi部署服务器">http://yoursite.com/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="tag"># 环境搭建</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/03/JavaWeb/" rel="next" title="JavaWeb">
+                <i class="fa fa-chevron-left"></i> JavaWeb
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -681,6 +561,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -701,8 +588,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -778,6 +674,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Django-Nginx-Uwsgi部署服务器"><span class="nav-number">1.</span> <span class="nav-text">Django + Nginx + Uwsgi部署服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.2.1.</span> <span class="nav-text">环境搭建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启"><span class="nav-number">1.4.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.5.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -940,6 +852,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
