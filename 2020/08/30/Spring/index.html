@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java自学总结," />
 
 
 
@@ -79,14 +79,15 @@
 
 
 
-<meta name="description" content="NO DEPENDENCE ONLY PRIDE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;index.html">
+<meta name="description" content="Java框架学习Day1 Spring1. Spring开发步骤     1. 导入坐标     2. 创建Bean     3. 创建applicationContext.xml     4. 在配置文件中进行配置(&amp;lt;bean&amp;gt;&amp;lt;&#x2F;bean&amp;gt;)     5. 创建ApplicationContext对象getBean(提供配置时的id)       * 注意：">
+<meta name="keywords" content="Java自学总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java框架">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;08&#x2F;30&#x2F;Spring&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="NO DEPENDENCE ONLY PRIDE">
+<meta property="og:description" content="Java框架学习Day1 Spring1. Spring开发步骤     1. 导入坐标     2. 创建Bean     3. 创建applicationContext.xml     4. 在配置文件中进行配置(&amp;lt;bean&amp;gt;&amp;lt;&#x2F;bean&amp;gt;)     5. 创建ApplicationContext对象getBean(提供配置时的id)       * 注意：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-25T09:56:33.931Z">
+<meta property="og:updated_time" content="2020-08-30T12:51:35.832Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/30/Spring/"/>
 
 
 
 
 
-  <title>tags | BBBBBlog</title>
+  <title>Java框架 | BBBBBlog</title>
   
 
 
@@ -272,40 +273,325 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/30/Spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bcutty Kmy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BBBBBlog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                8 tags in total
+          <h1 class="post-title" itemprop="name headline">Java框架</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-30T09:50:20+08:00">
+                2020-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AF%87/" itemprop="url" rel="index">
+                    <span itemprop="name">学习篇</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/08/30/Spring/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/08/30/Spring/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/08/30/Spring/" class="leancloud_visitors" data-flag-title="Java框架">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.1k words
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4 minutues
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Java%E8%87%AA%E5%AD%A6%E6%80%BB%E7%BB%93/" style="font-size: 18px; color: #8e8e8e">Java自学总结</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 18px; color: #8e8e8e">web前端</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #ccc">学习</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" style="font-size: 12px; color: #ccc">环境搭建</a> <a href="/tags/%E8%87%AA%E5%AD%A6%E6%80%BB%E7%BB%93/" style="font-size: 12px; color: #ccc">自学总结</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 30px; color: #111">随笔</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #ccc">项目学习</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 24px; color: #4f4f4f">题解</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="Java框架学习"><a href="#Java框架学习" class="headerlink" title="Java框架学习"></a>Java框架学习</h1><h2 id="Day1-Spring"><a href="#Day1-Spring" class="headerlink" title="Day1 Spring"></a>Day1 Spring</h2><pre><code>1. Spring开发步骤
+    1. 导入坐标
+    2. 创建Bean
+    3. 创建applicationContext.xml
+    4. 在配置文件中进行配置(&lt;bean&gt;&lt;/bean&gt;)
+    5. 创建ApplicationContext对象getBean(提供配置时的id) 
+
+    * 注意：
+        1. jdk版本问题，需要在project structure和settings中对jdk版本进行选择和更改
+        2. idea有自带的maven，自己安装了后应改为自己的maven
+        3. 更换aliyun如果还是无法下载，可以自己下载后放入对应仓库中再进行reload project
+        4. dependency容易爆红
+
+2. Spring配置文件
+    2.1 Bean标签基本配置
+        默认情况用反射调用无参构造创建对象，基本属性：id(唯一标识)、class(Bean的全类名)
+    2.2 Bean标签范围配置
+        scope：对象作用范围
+            * singleton：默认值，单例
+                * 当Spring核心文件(配置文件)被加载时，实例化配置的Bean实例，且一直存在直到容器销毁或应用卸载
+            * prototype：多例的
+                * 在调用getBean方法时实例化Bean，对象在使用中就活着，长时间不使用会被Java垃圾回收机制销毁
+            * request：web项目中，Spring创建一个Bean的对象，将对象存入request域
+            * session：web项目中，Spring创建一个Bean的对象，将对象存入session域
+            * global session：web项目中，应用在Portlet环境，如果没有Portlet环境那么global session相当于session
+    2.3 Bean生命周期配置
+        * init-method：指定类中初始化方法名称
+        * destroy-method：指定类中销毁方法名称
+    2.4 Bean实例化三种方式
+        * 无参构造方法
+        * 工厂静态方法
+            * 配置bean中的factory和factory-method属性
+                &lt;bean id=&quot;userDao&quot; class=&quot;xxx.xxx.xxxfactory&quot; factory-method=&quot;xxx()&quot;&gt;&lt;/bean&gt;
+        * 工厂实例方法
+            * 配置两个bean
+                &lt;bean id=&quot;factory&quot; class=&quot;xxx.xxx.xxxfactory&quot;&gt;&lt;/bean&gt;
+                &lt;bean id=&quot;userDao&quot; factory-bean=&quot;factory&quot; factory-method=&quot;xxx()&quot;&gt;&lt;/bean&gt;
+    2.5 Bean依赖注入
+        理解为何需要依赖注入：https://www.bilibili.com/video/BV1WZ4y1H7du?p=14
+        依赖注入(dependency injection)：Spring框架核心IOC的具体实现
+        注入方式：
+            * 构造方法
+                * 配置bean
+                    &lt;bean id=&quot;userDao&quot; class=&quot;com.dbettkk.dao.impl.UserDaoImpl&quot;&gt;&lt;/bean&gt;
+                    &lt;bean id=&quot;userService&quot; class=&quot;com.dbettkk.service.impl.UserServiceImpl&quot;&gt;
+                        &lt;constructor-arg name=&quot;userDao&quot; ref=&quot;userDao&quot;&gt;&lt;/constructor-arg&gt;
+                    &lt;/bean&gt;
+                    * 注意：constructor-arg中的name属性是UserServiceImpl的构造方法的参数部分，而ref属性则是上面已经配置好的bean的id。
+            * set方法
+                * 配置bean
+                    &lt;bean id=&quot;userDao&quot; class=&quot;com.dbettkk.dao.impl.UserDaoImpl&quot;&gt;&lt;/bean&gt;
+                    &lt;bean id=&quot;userService&quot; class=&quot;com.dbettkk.service.impl.UserServiceImpl&quot;&gt;
+                        &lt;property name=&quot;userDao&quot; ref=&quot;userDao&quot;&gt;&lt;/property&gt;
+                    &lt;/bean&gt;
+                    * 注意：property中的name属性是UserServiceImpl的setXxx()方法的xxx部分，而ref属性则是上面已经配置好的bean的id。
+                    * 也可以使用p命名空间进行简化，然后在bean中通过属性方式进行配置，同理p-xxx中的xxx是setXxx()方法的xxx而，属性的值则是上面所配置的bean的id值
+                        * xmlns=&quot;http://www.springframework.org/schema/p&quot;
+                        * &lt;bean id=&quot;userService&quot; class=&quot;com.dbettkk.service.impl.UserServiceImpl&quot; p:userDao-ref=&quot;userDao&quot;&gt;&lt;/bean&gt;
+
+        依赖注入的数据类型：
+            * 普通数据类型
+            * 引用数据类型
+            * 集合数据类型
+                * list、map、property
+                * 如果是基本数据类型就是value或者不加ref的属性，如果是引用数据类型则用ref属性
+                * 例如配置Map&lt;String, User&gt;
+                    &lt;property name=&quot;userMap&quot;&gt;
+                        &lt;map&gt;
+                            &lt;entry key=&quot;1&quot; value-ref=&quot;user&quot;&gt;&lt;/entry&gt;
+                        &lt;/map&gt;
+                    &lt;/property&gt;
+                    * 其中key代表基本数据类型，如果Map的key是引用数据类型，则使用key-ref，value同理value/value-ref
+
+    2.6 引入其他配置文件(分模块开发)
+        * 实际开发中，因为需要配置的东西很多，全写一起不方便，可以拆分为多个配置文件applicationContext-xxx，然后在主配置文件中使用import进行引入
+        * &lt;import resource=&quot;applicationContext-dao.xml&quot;&gt;&lt;/import&gt;
+
+    2.7 小结
+        &lt;bean&gt;标签
+            id属性：容器中Bean对象的唯一标识
+            class属性：要实例化的Bean的全限定名
+            scope属性：Bean作用范围，常用为singleton和prototype
+            &lt;property&gt;标签：属性注入
+                name属性：属性名称
+                value属性：注入的普通属性值
+                ref属性：注入的对象引用值(已经配置好的bean的id)
+                &lt;list&gt;标签
+                &lt;map&gt;标签
+                &lt;properties&gt;标签标签
+            &lt;constructor-arg&gt;标签    
+        &lt;import&gt;标签：导入其他Spring的分文件</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Bcutty Kmy
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yoursite.com/2020/08/30/Spring/" title="Java框架">http://yoursite.com/2020/08/30/Spring/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java%E8%87%AA%E5%AD%A6%E6%80%BB%E7%BB%93/" rel="tag"># Java自学总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/" rel="next" title="Django + Nginx + Uwsgi部署服务器">
+                <i class="fa fa-chevron-left"></i> Django + Nginx + Uwsgi部署服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -341,8 +627,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -418,6 +713,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java框架学习"><span class="nav-number">1.</span> <span class="nav-text">Java框架学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day1-Spring"><span class="nav-number">1.1.</span> <span class="nav-text">Day1 Spring</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
