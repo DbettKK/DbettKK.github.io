@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Java框架学习Day1 Spring1. Spring开发步骤     1. 导入坐标     2. 创建Bean     3. 创建applicationContext.xml     4. 在配置文件中进行配置(&amp;lt;bean&amp;gt;&amp;lt;&#x2F;bean&amp;gt;)     5. 创建ApplicationContext对象getBean(提供配置时的id)       * 注意：">
+<meta name="description" content="Java框架学习SpringSpring IOC1. Spring开发步骤     1. 导入坐标     2. 创建Bean     3. 创建applicationContext.xml     4. 在配置文件中进行配置(&amp;lt;bean&amp;gt;&amp;lt;&#x2F;bean&amp;gt;)     5. 创建ApplicationContext对象getBean(提供配置时的id)       * 注意：">
 <meta name="keywords" content="Java自学总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java框架">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;08&#x2F;30&#x2F;Spring&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="Java框架学习Day1 Spring1. Spring开发步骤     1. 导入坐标     2. 创建Bean     3. 创建applicationContext.xml     4. 在配置文件中进行配置(&amp;lt;bean&amp;gt;&amp;lt;&#x2F;bean&amp;gt;)     5. 创建ApplicationContext对象getBean(提供配置时的id)       * 注意：">
+<meta property="og:description" content="Java框架学习SpringSpring IOC1. Spring开发步骤     1. 导入坐标     2. 创建Bean     3. 创建applicationContext.xml     4. 在配置文件中进行配置(&amp;lt;bean&amp;gt;&amp;lt;&#x2F;bean&amp;gt;)     5. 创建ApplicationContext对象getBean(提供配置时的id)       * 注意：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-30T12:51:35.832Z">
+<meta property="og:updated_time" content="2020-08-31T12:27:58.563Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k words
+                  2.1k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4 minutues
+                  8 minutues
                 </span>
               
             </div>
@@ -426,7 +426,7 @@
       
 
       
-        <h1 id="Java框架学习"><a href="#Java框架学习" class="headerlink" title="Java框架学习"></a>Java框架学习</h1><h2 id="Day1-Spring"><a href="#Day1-Spring" class="headerlink" title="Day1 Spring"></a>Day1 Spring</h2><pre><code>1. Spring开发步骤
+        <h1 id="Java框架学习"><a href="#Java框架学习" class="headerlink" title="Java框架学习"></a>Java框架学习</h1><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h3 id="Spring-IOC"><a href="#Spring-IOC" class="headerlink" title="Spring IOC"></a>Spring IOC</h3><pre><code>1. Spring开发步骤
     1. 导入坐标
     2. 创建Bean
     3. 创建applicationContext.xml
@@ -516,7 +516,86 @@
                 &lt;map&gt;标签
                 &lt;properties&gt;标签标签
             &lt;constructor-arg&gt;标签    
-        &lt;import&gt;标签：导入其他Spring的分文件</code></pre>
+        &lt;import&gt;标签：导入其他Spring的分文件
+
+3. Spring相关API
+    3.1 ApplicationContext相关的继承体系
+        众多接口-抽象类-实现类
+    3.2 ApplicationContext的实现类
+        * ClassPathXmlApplicationContext
+            * 从类的根路径下加载配置文件
+        * FileSystemXmlApplicationContext
+            * 从磁盘路径加载配置文件(绝对路径)
+        * AnnotationConfigApplicationContext
+            * 使用注解配置容器对象时，使用此类创建spring容器，读取注解
+
+    3.3 getBean()方法使用
+        参数：
+            * id(String)：可以获取多个id不同class相同的bean，不会发生冲突
+            * 字节码文件(Class)：不用进行强转，如果有多个id不同class相同的bean则会报错
+
+4. Spring配置数据源
+    4.1 数据源(连接池)的作用
+        * 提高程序性能
+        * 实例化数据源，初始化部分连接资源
+        * 使用连接资源时从数据源中获取
+        * 使用完毕后将连接资源归还给数据源
+    4.2 抽取jdbc配置文件
+        1. 代码中加载
+            * 使用ResourceBundle加载配置文件并获取到值后用dataSource进行配置即可
+        2. Spring配置文件中加载
+            1. 引入context命名空间和约束路径
+            2. 使用context:property-placeholder并设置locations属性为properties文件位置
+            3. 使用SPEL表达式${key}获取properties配置文件中key对应的值并给bean标签下的property标签的value值
+            &lt;context:property-placeholder location=&quot;classpath:xx.properties&quot;/&gt;
+            &lt;property name=&quot;xxx&quot; value=&quot;${key}&quot;/&gt;
+    4.2 Spring配置数据源</code></pre><h4 id="Spring注解开发"><a href="#Spring注解开发" class="headerlink" title="Spring注解开发"></a>Spring注解开发</h4><pre><code>1. Spring原始注解
+    * Spring原始注解主要是替代&lt;Bean&gt;配置
+        * @Component：使用在类上用于实例化Bean
+        * @Controller：使用在web层类上用于实例化Bean
+        * @Service：使用在Service层类用于实例化Bean
+        * @Repository：使用在dao层类用于实例化Bean
+            * 这三个和Component是一样的，只是具有语义，方便理解
+        * @Autowired：使用在字段上根据类型依赖注入 ref
+        * @Qualifier：结合@Autowired一起使用用于根据名称进行依赖注入
+        * @Resource：相当于@Autowired+@Qualified,根据名称进行依赖注入
+        * @Value：注入普通属性
+            * 可以使用SPEL表达式-@Value(&quot;${key}&quot;)
+        * @Scope：作用范围
+        * @PostConstruct：init-method
+        * @PreDestroy：destroy-method
+    * 使用注解开发时，需要在配置文件中进行组件扫描
+        * &lt;context:component-scan base-package=&quot;com.dbettkk&quot;/&gt;
+        * base-package：基本包，扫描该包以及子包的注解，以便识别
+    * 注意：
+        * 使用注解开发，可以不用写set方法
+        * 如果Spring容器中直存在一种类型的Bean，则相应的属性可以不写@Qualifier，只写@Autowired，默认从Spring容器中进行匹配
+        * 如果想要按照名称进行匹配，则需要@Autowired+@Qualifier
+        * 也可以将两个注解替换为@Resource(name=&quot;&quot;)，值为@Qualifier的value
+2. Spring新注解
+    * 非自定义的Bean的配置&lt;bean&gt;
+    * 加载properties文件的配置：&lt;context:property-placeholder&gt;
+    * 组件扫描的配置：&lt;context:component-scan&gt;
+    * 引入其他文件：&lt;import&gt;
+
+    新注解：
+        * @Configuration：用于指定当前类时一个Spring配置类，当创建容器时会从该类上加载
+        * @ComponentScan：用于指定Spring在初始化容器时要扫描的包，作用和&lt;context:component-scan&gt;一致
+        * @Bean：使用在方法上，标注将该方法的返回值，存储在Spring容器中
+        * @PropertySource：用于加载.properties文件中的配置
+        * @import：用于导入其他配置类</code></pre><h4 id="Spring集成Junit"><a href="#Spring集成Junit" class="headerlink" title="Spring集成Junit"></a>Spring集成Junit</h4><pre><code>1. 原始Junit测试Spring的问题
+    * 在每个测试中都需要两行代码来获取ApplicationContext对象和使用getBean()方法获取想要测试的对象，冗余
+2. 解决方案
+    * 让SpringJunit负责创建Spring容器，但是需要将配置文件名称告诉它
+    * 将需要进行测试的Bean直接在测试类中进行注入
+3. 集成Junit步骤
+    1. 导入Spring集成Junit的坐标
+    2. 使用@Runwith注解替换原来的运行期
+        * @RunWith(SpringJUnit4ClassRunner.class)
+    3. 使用@ContextConfiguration指定配置文件或配置类
+        * 配置文件直接写，配置类需要指定@ContextConfiguration(classes = {SpringConfiguration.class})
+    4. 使用@Autowired注入需要测试的对象
+    5. 创建测试方法进行测试</code></pre><h3 id="Spring-AOP"><a href="#Spring-AOP" class="headerlink" title="Spring AOP"></a>Spring AOP</h3>
       
     </div>
     
@@ -723,7 +802,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java框架学习"><span class="nav-number">1.</span> <span class="nav-text">Java框架学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day1-Spring"><span class="nav-number">1.1.</span> <span class="nav-text">Day1 Spring</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java框架学习"><span class="nav-number">1.</span> <span class="nav-text">Java框架学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">1.1.</span> <span class="nav-text">Spring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-IOC"><span class="nav-number">1.1.1.</span> <span class="nav-text">Spring IOC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring注解开发"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Spring注解开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring集成Junit"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Spring集成Junit</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-AOP"><span class="nav-number">1.1.2.</span> <span class="nav-text">Spring AOP</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -757,7 +836,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">131.8k</span>
+    <span title="Site words total count">132.8k</span>
   
 </div>
 
