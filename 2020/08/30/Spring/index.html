@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="Java框架学习SpringSpring IOC1. Spring开发步骤     1. 导入坐标     2. 创建Bean     3. 创建applicationContext.xml     4. 在配置文件中进行配置(&amp;lt;bean&amp;gt;&amp;lt;&#x2F;bean&amp;gt;)     5. 创建ApplicationContext对象getBean(提供配置时的id)       * 注意：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-02T09:10:34.399Z">
+<meta property="og:updated_time" content="2020-09-09T11:53:52.884Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  4.3k words
+                  7.4k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  17 minutues
+                  29 minutues
                 </span>
               
             </div>
@@ -763,7 +763,235 @@
         &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
     &lt;/bean&gt;
 4. 常用操作
-    CRUD</code></pre><h4 id="编程式事务控制相关对象"><a href="#编程式事务控制相关对象" class="headerlink" title="编程式事务控制相关对象"></a>编程式事务控制相关对象</h4>
+    CRUD</code></pre><h3 id="Spring的事务控制"><a href="#Spring的事务控制" class="headerlink" title="Spring的事务控制"></a>Spring的事务控制</h3><pre><code>编程式-调用api
+声明式-配置文件</code></pre><h4 id="编程式事务控制相关对象"><a href="#编程式事务控制相关对象" class="headerlink" title="编程式事务控制相关对象"></a>编程式事务控制相关对象</h4><pre><code>1. PlatformTransectionManager：该接口是spring的事务管理器，它里面提供了我们常用的操作事务的方法
+    * getTransection(TransectionDefination defination)    获取状态
+    * commit
+    * rollback
+    注意：不同的Dao层技术则有不同的实现类。该接口只规定控制事务的方法
+
+2. TransectionDefination：是事务定义的信息对象
+    * getIsolationLevel()：获取事务隔离级别——五类
+    * getPropogationBehavior()：获取事务的传播行为
+        * REQUIRED:如果当前没有事务，就新建一个事务，如果已经存在一个事务，则加入这个事务(默认值)
+        * SUPPORTS:支持当前事务，如果当前没有事务，就以非事务方式运行
+        ...
+    * getTimeout()：获取超时时间
+    * isReadOnly()：是否只读
+3. TransecionStatus：提供事务具体的运行状态
+    * hasSavePoint()
+    * isCompleted()
+    * isNewTransection()
+    * isRollbackOnly()</code></pre><h4 id="基于XML的声明式事务控制"><a href="#基于XML的声明式事务控制" class="headerlink" title="基于XML的声明式事务控制"></a>基于XML的声明式事务控制</h4><pre><code>1. 概念
+    采用声明的方式来处理事务，即在配置文件中声明，来代替硬编码的方式
+    作用：
+        * 不侵入开发的组件
+        * 在不需要事务管理的时候，只要在设定文件上修改一下即可
+        注意：底层就是AOP
+2. 声明式事务控制的实现
+    * 谁是切点
+    * 谁是通知
+    * 配置切面
+3. 切点方法的事务参数的配置
+    &lt;tx:advice id=&quot;txAdvice&quot; transection-manager=&quot;transactionManager&quot;&gt;
+        &lt;tx:attributes&gt;
+            &lt;tx:method name=&quot;*&quot;/&gt;
+        &lt;/tx:attributes&gt;
+    &lt;/tx:advice&gt;
+    其中&lt;tx:method&gt;代表切点方法的事务参数的配置
+        * name：切点方法名
+        * isolation：事务隔离级别
+        * propogation：事务传播型位
+        * timeout：超时时间
+        * read-only：是否只读
+    其他相关配置
+    &lt;bean id=transactionManager&quot; class=&quot;jdbc模板&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+    &lt;/bean&gt;
+    &lt;aop:config&gt;
+        &lt;aop:advisor advice-ref=&quot;txAdvice&quot; pointcut=&quot;切点表达式&quot;/&gt;
+    &lt;/aop:config&gt;
+4. 小结
+    * 平台事务管理器配置
+    * 事务通知的配置
+    * 事务aop织入的配置</code></pre><h4 id="基于注解的声明式事务控制"><a href="#基于注解的声明式事务控制" class="headerlink" title="基于注解的声明式事务控制"></a>基于注解的声明式事务控制</h4><pre><code>1. 注解配置声明式事务控制解析
+    1. 使用@Transectional在需要进行事务控制的类或者方法上进行修饰，注解可用的属性同xml配置。且在类上使用该注解表示该类下的所有方法都是以同一套参数配置
+    2. XML配置文件中要开启事务的注解驱动&lt;tx:annotation-driven/&gt;
+2. 知识要点
+    * 平台事务管理器配置(xml方式)
+    * 事务通知的配置(@Transectional注解配置)
+    * 事务注解驱动的配置&lt;tx:annotation-driven/&gt;</code></pre><h3 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h3><h4 id="Spring与Web环境的集成"><a href="#Spring与Web环境的集成" class="headerlink" title="Spring与Web环境的集成"></a>Spring与Web环境的集成</h4><pre><code>1. ApplicationContext应用上下文获取方式
+    应用上下文是通过new ClassPathXmlApplicationContext(配置文件路径)获取的，但是每次写Servlet获得Bean都需要加载配置文件，存在弊端，加载多次。
+    在Web项目中可以使用ServletContextListener监听Web应用启动，在其启动时，加载配置文件，创建ApplicationContext对象，将其存储在最大的域servletContext域中，就可以在任意位置获取上下文对象了
+2. Spring提供获取应用上下文的工具
+    上述分析不用动手实现，Spring提供了监听器ContextLoaderListener就是对上述功能的封装，还监听器内部加载Spring配置文件，创建应用上下文对象，并存储到ServletContext域中，提供工具类WebApplicationContextUtils供使用者获取应用上下文对象。
+    我们需要做的有两件事
+        * 在web.xml中配置COntextLoaderListener监听器(导入spring-web坐标)
+        * 使用WebApplicationContextUtils工具类获得上下文对象</code></pre><h4 id="SpringMVC的简介"><a href="#SpringMVC的简介" class="headerlink" title="SpringMVC的简介"></a>SpringMVC的简介</h4><pre><code>1. SpringMVC概述
+    SpringMVC是基于Java实现的MVC设计模型的请求驱动类型的轻量级WEB框架
+    SpringMVC已经称为目前最主流的MVC框架之一。通过一套注解，让简单的Java类称为处理请求的控制器，而无需实现任何接口，同时支持RESTful编程风格的请求
+2. SpringMVC开发步骤
+    1. 导入SpringMVC包
+    2. 配置SpringMVC核心控制器DispatherServlet
+    3. 编写控制器(POJO-简单的JavaBean)和视图页面
+    4. 将Controller使用注解配置到Spring容器中(@Component,@Controller)
+    5. 配置spring-mvc.xml(组件扫描)
+    6. 执行访问测试    </code></pre><h4 id="SpringMVC组件解析"><a href="#SpringMVC组件解析" class="headerlink" title="SpringMVC组件解析"></a>SpringMVC组件解析</h4><pre><code>1. SpringMVC执行流程
+    1. 用户发送请求至前端控制器DispatherServlet
+    2. DispatherServlet收到请求调用HandlerMapping处理器映射器
+    3. 处理器映射器找到具体的处理器(可以根据xml配置、注解进行查找)，生成处理器对象以及处理器拦截器一并返回给DispatherServlet
+    4. DispatherServlet调用HandlerAdapter处理器适配器
+    5. HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)
+    6. Controller执行完成后返回ModelAndView
+    7. HandlerAdapter将Controller执行结果ModelAndView返回给DispatherServlet
+    8. DispatherServlet将ModelAndView传给ViewResolver视图解析器
+    9. ViewResolver解析后返回具体View
+    10. DispatherServlet根据View进行渲染视图(将模型数据填充至视图中)。DispatherServlet响应用户
+
+2. SpringMVC注解解析
+     @RequestMapping：用于建立请求URL和处理请求方法之间的对应关系
+     位置：
+         * 类上：请求URL的以及访问目录，不写的话默认为应用的根目录
+         * 方法上：请求URL的第二级访问目录，与类上使用的@RequestMapping标注的以及目录一起组成访问虚拟路径
+     参数
+         * value：
+         * method：指定请求方式
+        * params:用于指定限制请求参数的条件，支持简单的表达式
+            * params = {&quot;accountNmae&quot;}：表示请求参数必须要accountName
+            * params = {&quot;money!100&quot;}：表示请求参数money不能是100
+
+4. SpringMVC的xml配置解析
+5. 知识要点
+    SpringMVC相关组件
+        * 前端控制器：DispatherServlet
+        * 处理器映射器：HandlerMapping
+        * 处理器适配器：HandlerAdapter
+        * 处理器：Handler
+        * 视图解析器：ViewResolver
+        * 视图：View
+    SpringMVC的注释和配置
+        * 请求映射注解：@RequestMapping
+        * 视图解析器配置：
+            REDIRECT_URL_PREFIX=&quot;redirect:&quot;
+            FORWARD_URL_PREFIX=&quot;forward:&quot;
+            prefix=&quot;&quot;
+            suffix=&quot;&quot;
+            &lt;!--手动配置内部资源视图解析器--&gt;
+            &lt;bean id=&quot;viewResolver&quot; class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+                &lt;property name=&quot;prefix&quot; value=&quot;/jsp&quot;/&gt;
+                &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
+            &lt;/bean&gt;</code></pre><h4 id="SpringMVC的数据响应"><a href="#SpringMVC的数据响应" class="headerlink" title="SpringMVC的数据响应"></a>SpringMVC的数据响应</h4><pre><code>1.    SpringMVC数据响应的方式
+    1. 页面跳转
+        * 直接返回字符串
+        * 通过ModelAndView对象返回
+    2. 回写数据
+        * 直接返回字符串
+        * 返回对象或集合
+2. 页面跳转
+    1. 直接返回字符串形式
+        此方式会将返回的字符串与视图解析器的前后缀拼接后跳转
+    2. 返回ModelAndView对象
+        对ModelAndView对象进行添加视图和数据然后进行返回
+3. 回写数据
+    1. 直接返回字符串形式
+        1. 通过框架注入的Response对象，使用response.getWriter().print()方法进行回写
+        2. 如果要直接返回字符串形式，因为框架会默认认为是页面跳转，所以需要通过@ResponseBody注解告知SpringMVC框架，方法返回的字符串不是跳转，而是直接在http响应体中返回
+    2. 回写对象或集合
+        为处理器适配器配置消息转换参数，指定使用jackson进行对象或集合的转换
+            &lt;bean class=&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&quot;&gt;
+                &lt;property name=&quot;messageConverters&quot;&gt;
+                    &lt;list&gt;
+                        &lt;bean class=&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;/&gt;
+                    &lt;/list&gt;
+                &lt;/property&gt;
+            &lt;/bean&gt;
+        mvc注解驱动
+            &lt;mvc:annotation-driven/&gt;
+            使用该驱动能默认底层实现jackson转换器
+
+4. 知识要点
+    数据响应方式
+        1）页面跳转
+        2）回写数据</code></pre><h4 id="SpringMVC获得请求数据"><a href="#SpringMVC获得请求数据" class="headerlink" title="SpringMVC获得请求数据"></a>SpringMVC获得请求数据</h4><pre><code>1. 获得请求参数
+    * 基本类型参数
+    * POJO类型参数
+    * 数组类型参数
+    * 集合类型参数
+2. 获得基本类型参数
+    Controller中的业务方法的参数名称要与请求参数的name一致，参数值会自动映射匹配
+3. 获得POJO类型参数
+    Controller中的业务方法的POJO参数的属性名与请求参数的name一致，参数值会自动映射匹配
+4. 获得数组类型参数
+    Controller中的业务方法的数组名称与请求参数的name一致，参数值会自动映射匹配
+5. 获得集合类型参数
+    获得集合参数时，要将集合参数包装到一个POJO中才可以。
+    当使用ajax提交时，可以指定contentType为json形式，那么在方法参数位置使用@RequestBody可以直接接收集合数据而无需使用POJO进行包装
+6. 请求数据乱码问题
+    当post请求时，数据会出现乱码，我们可以设置一个过滤器来进行编码的过滤。
+7. 参数绑定注解@RequestParam
+    当请求的参数名称与Controller的业务方法参数不一致时，需要通过@RequestParam注解显式的绑定
+    * value：与请求参数名称相同
+    * required：此在指定的请求参数是否必须包括，默认为true，没有参数则报错
+    * defaultValue：当没有指定请求参数式，则使用指定的默认值赋值
+8. 获得Restful风格的参数
+    Restful是一种软件架构风格、设计风格，而不是标准，提供以组设计原则和约束条件，主要用于客户端和服务器交互类的软件，基于这个风格的设计的软件可以更简洁、有层次，更易实现缓存
+    Restful风格的请求是使用&quot;url+请求方式&quot;表示一次请求目的。
+        * GET
+        * POST
+        * PUT
+        * DELETE
+    在SpringMVC中可以使用占位符进行参数绑定，在业务方法中可以使用@PathVariable注解进行占位符的匹配获取工作
+9. 自定义类型转换器
+    * SpringMVC默认提供一些常用的类型转换器
+    * 但不是所有数据类型都提供了转换器，没有提供的就需要自定义转换器
+    自定义类型转换的开发步骤
+        1. 定义转换器，实现Converter接口
+        2. 在配置文件中声明转换器
+        3. 在&lt;annotation-driven&gt;中引用转换器
+10. 获得请求头
+    1. @RequestHeader：可获得请求头信息 相当于request.getHeader(name)
+        * value：请求头名称
+        * required：是否必须携带
+    2. @CookieValue：可以直接获得Cookie值
+        * value：指定cookie名称
+        * required：是否必须携带
+11. 文件上传
+    文件上传客户端三要素
+        1. 表单项type=&quot;file&quot;
+        2. 表单提交方式为post
+        3. 表单的enctype属性是多部分表单形式，及enctype=&quot;multipart/form-data&quot;
+    文件上传原理
+        * 当form表单修改为多部分表单时，request.getParamter()将失效
+        * enctype=&quot;application/x-www-form-urlencoded&quot;时，form表单的正文内容格式是：key=value&amp;key=value
+        * 当form表单的enctype取值为Mutipart/form-data时，请求正文内容就变成多部分形式
+12. 单文件上传步骤
+    1. 导入fileupload和io坐标
+    2. 配置文件上传解析器
+    3. 编写文件上传代码
+13. 单文件上传实现
+14. 多文件上传
+    页面上使用相同name的多个input项，在服务器端使用MultipartFile[]进行接收即可</code></pre><h4 id="SpringMVC拦截器"><a href="#SpringMVC拦截器" class="headerlink" title="SpringMVC拦截器"></a>SpringMVC拦截器</h4><pre><code>1. 拦截器interceptor的使用
+    SpringMVC的拦截器类似于Servlet开发中的过滤器Filter，用于对处理器进行预处理和后处理
+    将拦截器按一定的顺序连结成一条链，这条链称为拦截器链。在访问时，拦截器链中的拦截器就会按照配置的顺序调用，拦截器也是AOP思想的具体实现
+2. 拦截器和过滤器区别
+    * 使用范围
+        Filter：任何JavaWeb工程都能使用
+        Interceptor：SpringMVC的一部分，只有使用框架的项目能使用
+    * 拦截范围
+        Filter：在url-pattern中配置了/*之后，可以对所有访问的资源进行拦截
+        Interceptor：只会拦截访问的控制器方法，如果访问的是jsp、html、css、img或者js是不会进行拦截的
+3. 拦截器快速入门
+    自定义拦截器
+        1. 创建拦截器实现HandlerInterceptor接口
+        2. 配置拦截器
+        3. 测试拦截器的拦截效果
+4. 拦截器方法说明
+    * preHandle()：请求处理之前调用，返回类型为Boolean，true为放行
+    * postHandle()：请求处理之后、视图返回前调用，可对ModelAndView对象进行操作
+    * afterCompletion()：整个请求结束之后，渲染了视图之后
+
+5. 案例-用户登录权限控制
+    需求：用户没有登录的情况下，不能对后台菜单进行访问，点击菜单跳转到登录页面</code></pre>
       
     </div>
     
@@ -970,7 +1198,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java框架学习"><span class="nav-number">1.</span> <span class="nav-text">Java框架学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">1.1.</span> <span class="nav-text">Spring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-IOC"><span class="nav-number">1.1.1.</span> <span class="nav-text">Spring IOC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring注解开发"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Spring注解开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring集成Junit"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Spring集成Junit</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-AOP"><span class="nav-number">1.1.2.</span> <span class="nav-text">Spring AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-AOP-简介"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Spring AOP 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于XML的AOP开发"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">基于XML的AOP开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于注解的AOP开发"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">基于注解的AOP开发</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JdbcTemplate基本使用"><span class="nav-number">1.1.3.</span> <span class="nav-text">Spring JdbcTemplate基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编程式事务控制相关对象"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">编程式事务控制相关对象</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java框架学习"><span class="nav-number">1.</span> <span class="nav-text">Java框架学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">1.1.</span> <span class="nav-text">Spring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-IOC"><span class="nav-number">1.1.1.</span> <span class="nav-text">Spring IOC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring注解开发"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Spring注解开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring集成Junit"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Spring集成Junit</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-AOP"><span class="nav-number">1.1.2.</span> <span class="nav-text">Spring AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-AOP-简介"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Spring AOP 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于XML的AOP开发"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">基于XML的AOP开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于注解的AOP开发"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">基于注解的AOP开发</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JdbcTemplate基本使用"><span class="nav-number">1.1.3.</span> <span class="nav-text">Spring JdbcTemplate基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring的事务控制"><span class="nav-number">1.1.4.</span> <span class="nav-text">Spring的事务控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编程式事务控制相关对象"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">编程式事务控制相关对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于XML的声明式事务控制"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">基于XML的声明式事务控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于注解的声明式事务控制"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">基于注解的声明式事务控制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringMVC"><span class="nav-number">1.1.5.</span> <span class="nav-text">SpringMVC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring与Web环境的集成"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Spring与Web环境的集成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC的简介"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">SpringMVC的简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC组件解析"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">SpringMVC组件解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC的数据响应"><span class="nav-number">1.1.5.4.</span> <span class="nav-text">SpringMVC的数据响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC获得请求数据"><span class="nav-number">1.1.5.5.</span> <span class="nav-text">SpringMVC获得请求数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC拦截器"><span class="nav-number">1.1.5.6.</span> <span class="nav-text">SpringMVC拦截器</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1004,7 +1232,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">135k</span>
+    <span title="Site words total count">138.1k</span>
   
 </div>
 
