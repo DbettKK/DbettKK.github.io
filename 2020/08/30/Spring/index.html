@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="Java框架学习SpringSpring IOC1. Spring开发步骤     1. 导入坐标     2. 创建Bean     3. 创建applicationContext.xml     4. 在配置文件中进行配置(&amp;lt;bean&amp;gt;&amp;lt;&#x2F;bean&amp;gt;)     5. 创建ApplicationContext对象getBean(提供配置时的id)       * 注意：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-12T06:59:29.111Z">
+<meta property="og:updated_time" content="2020-09-15T10:54:31.020Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  7.9k words
+                  10.3k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  31 minutues
+                  41 minutues
                 </span>
               
             </div>
@@ -1035,7 +1035,190 @@
     1. 创建异常处理器实现HandlerExceptionResolver
     2. 配置异常处理器
     3. 编写异常页面
-    4. 测试异常跳转</code></pre>
+    4. 测试异常跳转</code></pre><h3 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h3><h4 id="MyBatis简介"><a href="#MyBatis简介" class="headerlink" title="MyBatis简介"></a>MyBatis简介</h4><pre><code>1. 原始jdbc操作
+2. 原始jdbc操作的分析
+    * 问题：
+        1. 数据库连接创建、释放频繁造成系统资源浪费从而影响系统性能
+        2. sql语句在代码中硬编码，造成代码不易维护，实际应用sql变化可能较大，sql变动需要改变java代码
+        3. 查询操作，需要手动将结果集中的数据手动封装到试题中，插入操作时，需要手动将实体的数据设置到sql的占位符位置
+    * 解决方案
+        1. 使用数据库连接池初始化连接资源
+        2. 将sql语句抽取到xml配置文件中
+        3. 使用反射、内省等底层技术，自动将实体与表进行属性与字段的自动映射
+3. 什么是Mybatis
+    * mybatis是一个优秀的基于java的持久层框架，它内部封装了jdbc，使开发者只需要关注sql语句本身，而不需要花费精力去处理加载驱动、创建连接、创建statement等繁杂的过程。
+    * mybatis通过xml或注解的方式将要执行的各种statement配置起来，并通过java对象和statement中sql的动态参数进行映射生成最终执行的sql语句
+    * 最后由mybatis框架执行sql并将结果映射为java对象并返回。采用ORM思想解决了实体和数据库映射的问题，对jdbc进行封装，屏蔽了jdbc api底层访问细节，使我们不用于jdbc api打交道就可以完成对数据库的持久化操作</code></pre><h4 id="MyBatis快速入门"><a href="#MyBatis快速入门" class="headerlink" title="MyBatis快速入门"></a>MyBatis快速入门</h4><pre><code>1. Mybatis开发步骤
+    1. 添加Mybatis坐标
+    2. 创建user数据表
+    3. 编写User实体类
+    4. 编写映射文件UserMapper.xml(SQL语句)
+    5. 编写核心文件SqlMapConfig.xml(MyBatis核心配置)
+    6. 编写测试类
+2. 环境搭建
+3. 编写测试代码
+4. 知识小结</code></pre><h4 id="MyBatis映射文件概述"><a href="#MyBatis映射文件概述" class="headerlink" title="MyBatis映射文件概述"></a>MyBatis映射文件概述</h4><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;userMapper&quot;&gt;
+    &lt;select id=&quot;findAll&quot; resultType=&quot;com.dbettkk.domain.User&quot;&gt;
+        SELECT * FROM user
+    &lt;/select&gt;
+&lt;/mapper&gt;</code></pre><h4 id="MyBatis增删改查操作"><a href="#MyBatis增删改查操作" class="headerlink" title="MyBatis增删改查操作"></a>MyBatis增删改查操作</h4><pre><code>1. 插入数据库操作
+    注意问题：
+        * 插入语句使用insert标签
+        * 在映射文件中使用parameterType属性指定要插入的数据类型
+        * Sql语句中使用#{实体属性名}方式引用实体中的属性值
+        * 插入操作使用的API是sqlSession.insert(&quot;命名空间.id&quot;, 实体对象)
+        * 插入操作设计数据库数据变化，所以要使用sqlSeesion对象显式的提交事务，即sqlSession.commit()
+2. 更新操作
+    注意问题
+        * 使用update标签
+        * sql语句使用#{实体属性名}方式引用实体中的属性值
+        * 更新操作使用的API是sqlSession.update(&quot;命名空间.id&quot;, Object);        
+3. 删除操作
+    注意问题
+        * 使用delete标签
+        * sql语句使用#{任意字符串}方式引用传递的单个参数
+        * 删除操作使用的API是sqlSession.delete(&quot;命名空间.id&quot;, Object);
+4. 知识小结</code></pre><h4 id="MyBatis核心配置文件概述"><a href="#MyBatis核心配置文件概述" class="headerlink" title="MyBatis核心配置文件概述"></a>MyBatis核心配置文件概述</h4><pre><code>1. 核心配置文件层级关系
+    * configuration配置
+        * properties属性
+        * settings设置
+        * typeAllases类型别名
+        * typeHandlers类型处理器
+        * objectFactory对象工厂
+        * plugins插件
+        * environments环境
+            * environment环境变量
+                * transactionManager事务管理器
+                * dataSource数据源
+        * databaseProvider数据库厂商标识
+        * mappers映射器
+2. 常用配置解析
+    1. enviroments标签：数据库环境的配置，支持多环境的配置 需指定默认环境
+        事务管理器类型有两种
+            * JDBC：直接使用JDBC的提交和回滚，依赖于从数据源得到的连接来管理事务作用域
+            * MANAGED：这个配置几乎没做什么，从不提交或回滚一个连接，它让容器来管理事务的整个生命周期(比如JEE应用服务器的上下文)，默认情况下会关闭连接，需要配置相关属性。
+        数据源类型有三种：
+            * UNPOOLED：知识每次被请求时打开和关闭连接
+            * POOLED：这种数据源的实现利用池的概念将JDBC连接对象组织起来
+            * JDNI：这个数据源的实现是为了能在如EJB或应用服务器这类容器中使用，容器可以集中或在外部配置数据源，然后防止一个JNDI上下文的引用
+    2. mapper标签：加载映射
+        * 使用相对于类路径的资源引用，例如&lt;mapper resource=&quot;com/dbettkk/mapper/UserMapper.xml&quot;/&gt;
+        * 使用完全限定资源定位符(URL)，绝对路径
+        * 使用映射器接口实现类的完全限定类名，例如&lt;mapper class=&quot;全限定类名&quot;/&gt;
+        * 将包内的映射器接口实现全部注册为映射器，例如：&lt;package name=&quot;包名&quot;/&gt;
+    3. properties标签：该标签可以加载额外配置的properties文件
+        * &lt;properties resource=&quot;jdbc.properties&quot;/&gt;
+    4. typeAliases标签：定义别名
+        mybatis框架已经为我们设置好了一些常用类型的别名string、long、int、double、boolean
+        &lt;typeAliases&gt;
+            &lt;typeAlias type=&quot;com.dbettkk.domain.User&quot; alias=&quot;user&quot;/&gt;
+        &lt;/typeAliases&gt;</code></pre><h4 id="MyBatis相应的API"><a href="#MyBatis相应的API" class="headerlink" title="MyBatis相应的API"></a>MyBatis相应的API</h4><pre><code>1. SqlSession工厂构造器SqlSessionFactoryBuilder
+    通过加载mybatis的核心文件的输入流的形式构建一个SqlSessionFactory对象
+    // 加载核心配置文件
+    InputStream stream = Resources.getResourceAsStream(&quot;sqlMapConfig.xml&quot;);
+    // 获得session工厂对象
+    SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(stream);
+    // 获得session会话对象
+    SqlSession sqlSession = factory.openSession();
+2. SqlSession工厂对象SqlSessionFactory
+    * openSession() 默认开启一个事务，该事务不会自动提交，需要手动提交
+    * openSession(boolean autoCommit) 设置参数 是否自动提交
+3. SqlSession会话对象
+    insert、update、delete方法
+    &lt;T&gt; T selectOne()、&lt;E&gt; List&lt;E&gt; selectList()
+    rollback、commit方法</code></pre><h4 id="MyBatis的Dao层实现"><a href="#MyBatis的Dao层实现" class="headerlink" title="MyBatis的Dao层实现"></a>MyBatis的Dao层实现</h4><pre><code>1. 传统开发方式：接口和实现都需要编写
+2. 代理开发方式：只需要编写Mapper接口
+    遵循以下规范
+        1. Mapper.xml文件中的namespace与mapper接口全限定名相同
+        2. Mapper接口方法名和Mapper.xml中定义的每个statement的id相同
+        3. Mapper接口方法的输入参数类型和mapper.xml中定义的每个sql的parameterType的类型相同
+        4. Mapper接口方法的输出参数类型和mapper.xml中定义的每个sql的resultType类型相同
+    InputStream stream = Resources.getResourceAsStream(&quot;sqlMapConfig.xml&quot;);
+    SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(stream);
+    SqlSession sqlSession = factory.openSession();
+    UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+    通过接口来执行方法</code></pre><h4 id="MyBatis映射文件深入"><a href="#MyBatis映射文件深入" class="headerlink" title="MyBatis映射文件深入"></a>MyBatis映射文件深入</h4><pre><code>1. 动态sql语句
+    动态sql &lt;if&gt;
+    动态sql &lt;foreach&gt;
+2. sql片段抽取
+    将重复的sql片段进行抽取&lt;include&gt;和&lt;sql&gt;标签
+3. 小结
+    &lt;select&gt;&lt;insert&gt;&lt;update&gt;&lt;delete&gt; 增删改查
+    &lt;where&gt;&lt;if&gt;&lt;foreach&gt; if和foreach
+    &lt;sql&gt;&lt;include&gt; sql片段抽取</code></pre><h4 id="MyBatis核心配置文件深入"><a href="#MyBatis核心配置文件深入" class="headerlink" title="MyBatis核心配置文件深入"></a>MyBatis核心配置文件深入</h4><pre><code>1. typeHandler标签：类型处理器
+    可以重写或者自定义类型处理器，实现TypeHandler接口或继承BaseTypeHandler类
+    开发步骤
+        1. 定义转换类继承类BaseTypeHandler&lt;T&gt;
+        2. 覆盖四个未实现的方法，其中setNonNullParameter为java程序设置数据到数据库的回调方法，getNullableResult为查询时mysql的字符串类型转换成java的Type类型的方法
+        3. 在MyBatis核心配置文件中注册
+        4. 测试
+2. plugins标签：插件标签
+    分页助手插件 使用简单方式获得分页数据
+    还能获取相关的分页信息PageInfo&lt;User&gt; pageInfo = new PageInfo&lt;User&gt;(userList);
+    开发步骤
+        1. 导入统一PageHelper坐标
+        2. 在mybatis核心配置文件中进行配置
+        3. 测试分页数据获取</code></pre><h4 id="MyBatis的多表操作"><a href="#MyBatis的多表操作" class="headerlink" title="MyBatis的多表操作"></a>MyBatis的多表操作</h4><pre><code>1. 一对一查询
+    &lt;resultMap id=&quot;orderMap&quot; type=&quot;order&quot;&gt;
+        &lt;!--
+            手动指定字段与实体属性的映射关系
+                column: 字段名称
+                property: 属性名称
+        --&gt;
+        &lt;id column=&quot;oid&quot; property=&quot;id&quot;/&gt;
+        &lt;result column=&quot;ordertime&quot; property=&quot;ordertime&quot;/&gt;
+        &lt;result column=&quot;total&quot; property=&quot;total&quot;/&gt;
+        &lt;!--&lt;result column=&quot;uid&quot; property=&quot;user.id&quot;/&gt;
+        &lt;result column=&quot;username&quot; property=&quot;user.username&quot;/&gt;
+        &lt;result column=&quot;password&quot; property=&quot;user.password&quot;/&gt;
+        &lt;result column=&quot;birthday&quot; property=&quot;user.birthday&quot;/&gt;--&gt;
+        &lt;!--
+            property: 指当前实体(order)属性 的名称(user)
+            javaType: 指当前实体(order)属性 的类型(User)
+        --&gt;
+        &lt;association property=&quot;user&quot; javaType=&quot;user&quot;&gt;
+            &lt;id column=&quot;uid&quot; property=&quot;id&quot;/&gt;
+            &lt;result column=&quot;username&quot; property=&quot;username&quot;/&gt;
+            &lt;result column=&quot;password&quot; property=&quot;password&quot;/&gt;
+            &lt;result column=&quot;birthday&quot; property=&quot;birthday&quot;/&gt;
+        &lt;/association&gt;
+    &lt;/resultMap&gt;
+    &lt;select id=&quot;findAll&quot; resultMap=&quot;orderMap&quot;&gt;
+        SELECT *, o.id oid FROM orders o, user u WHERE o.uid = u.id
+    &lt;/select&gt;
+2. 一对多查询
+    &lt;resultMap id=&quot;userMap&quot; type=&quot;user&quot;&gt;
+        &lt;id column=&quot;uid&quot; property=&quot;id&quot;/&gt;
+        &lt;result column=&quot;username&quot; property=&quot;username&quot;/&gt;
+        &lt;result column=&quot;password&quot; property=&quot;password&quot;/&gt;
+        &lt;result column=&quot;birthday&quot; property=&quot;birthday&quot;/&gt;
+        &lt;!--
+            配置集合属性
+                property: 集合名称
+                ofType: 集合中的数据类型
+        --&gt;
+        &lt;collection property=&quot;orderList&quot; ofType=&quot;order&quot; &gt;
+            &lt;!--封装order的数据--&gt;
+            &lt;id column=&quot;oid&quot; property=&quot;id&quot;/&gt;
+            &lt;result column=&quot;ordertime&quot; property=&quot;ordertime&quot;/&gt;
+            &lt;result column=&quot;total&quot; property=&quot;total&quot;/&gt;
+            &lt;!--&lt;association property=&quot;user&quot; javaType=&quot;user&quot;&gt;
+                &lt;id column=&quot;uid&quot; property=&quot;id&quot;/&gt;
+                &lt;result column=&quot;username&quot; property=&quot;username&quot;/&gt;
+                &lt;result column=&quot;password&quot; property=&quot;password&quot;/&gt;
+                &lt;result column=&quot;birthday&quot; property=&quot;birthday&quot;/&gt;
+            &lt;/association&gt;--&gt;
+        &lt;/collection&gt;
+    &lt;/resultMap&gt;
+3. 多对多查询
+    和一对多类似 只有sql语句存在差别
+4. 知识小结
+    配置方式
+        一对一：&lt;resultMap&gt;
+        一对多：&lt;resultMap&gt;+&lt;collection&gt;
+        多对多：&lt;resultMap&gt;+&lt;collection&gt;</code></pre>
       
     </div>
     
@@ -1242,7 +1425,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java框架学习"><span class="nav-number">1.</span> <span class="nav-text">Java框架学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">1.1.</span> <span class="nav-text">Spring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-IOC"><span class="nav-number">1.1.1.</span> <span class="nav-text">Spring IOC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring注解开发"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Spring注解开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring集成Junit"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Spring集成Junit</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-AOP"><span class="nav-number">1.1.2.</span> <span class="nav-text">Spring AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-AOP-简介"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Spring AOP 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于XML的AOP开发"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">基于XML的AOP开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于注解的AOP开发"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">基于注解的AOP开发</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JdbcTemplate基本使用"><span class="nav-number">1.1.3.</span> <span class="nav-text">Spring JdbcTemplate基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring的事务控制"><span class="nav-number">1.1.4.</span> <span class="nav-text">Spring的事务控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编程式事务控制相关对象"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">编程式事务控制相关对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于XML的声明式事务控制"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">基于XML的声明式事务控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于注解的声明式事务控制"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">基于注解的声明式事务控制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringMVC"><span class="nav-number">1.1.5.</span> <span class="nav-text">SpringMVC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring与Web环境的集成"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Spring与Web环境的集成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC的简介"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">SpringMVC的简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC组件解析"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">SpringMVC组件解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC的数据响应"><span class="nav-number">1.1.5.4.</span> <span class="nav-text">SpringMVC的数据响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC获得请求数据"><span class="nav-number">1.1.5.5.</span> <span class="nav-text">SpringMVC获得请求数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC拦截器"><span class="nav-number">1.1.5.6.</span> <span class="nav-text">SpringMVC拦截器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring练习-环境搭建"><span class="nav-number">1.1.5.7.</span> <span class="nav-text">Spring练习 环境搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC异常处理"><span class="nav-number">1.1.5.8.</span> <span class="nav-text">SpringMVC异常处理</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java框架学习"><span class="nav-number">1.</span> <span class="nav-text">Java框架学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring"><span class="nav-number">1.1.</span> <span class="nav-text">Spring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-IOC"><span class="nav-number">1.1.1.</span> <span class="nav-text">Spring IOC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring注解开发"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Spring注解开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring集成Junit"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Spring集成Junit</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-AOP"><span class="nav-number">1.1.2.</span> <span class="nav-text">Spring AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-AOP-简介"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Spring AOP 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于XML的AOP开发"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">基于XML的AOP开发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于注解的AOP开发"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">基于注解的AOP开发</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-JdbcTemplate基本使用"><span class="nav-number">1.1.3.</span> <span class="nav-text">Spring JdbcTemplate基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring的事务控制"><span class="nav-number">1.1.4.</span> <span class="nav-text">Spring的事务控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编程式事务控制相关对象"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">编程式事务控制相关对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于XML的声明式事务控制"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">基于XML的声明式事务控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于注解的声明式事务控制"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">基于注解的声明式事务控制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringMVC"><span class="nav-number">1.1.5.</span> <span class="nav-text">SpringMVC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring与Web环境的集成"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Spring与Web环境的集成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC的简介"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">SpringMVC的简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC组件解析"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">SpringMVC组件解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC的数据响应"><span class="nav-number">1.1.5.4.</span> <span class="nav-text">SpringMVC的数据响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC获得请求数据"><span class="nav-number">1.1.5.5.</span> <span class="nav-text">SpringMVC获得请求数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC拦截器"><span class="nav-number">1.1.5.6.</span> <span class="nav-text">SpringMVC拦截器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring练习-环境搭建"><span class="nav-number">1.1.5.7.</span> <span class="nav-text">Spring练习 环境搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringMVC异常处理"><span class="nav-number">1.1.5.8.</span> <span class="nav-text">SpringMVC异常处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyBatis"><span class="nav-number">1.1.6.</span> <span class="nav-text">MyBatis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis简介"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">MyBatis简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis快速入门"><span class="nav-number">1.1.6.2.</span> <span class="nav-text">MyBatis快速入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis映射文件概述"><span class="nav-number">1.1.6.3.</span> <span class="nav-text">MyBatis映射文件概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis增删改查操作"><span class="nav-number">1.1.6.4.</span> <span class="nav-text">MyBatis增删改查操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis核心配置文件概述"><span class="nav-number">1.1.6.5.</span> <span class="nav-text">MyBatis核心配置文件概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis相应的API"><span class="nav-number">1.1.6.6.</span> <span class="nav-text">MyBatis相应的API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis的Dao层实现"><span class="nav-number">1.1.6.7.</span> <span class="nav-text">MyBatis的Dao层实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis映射文件深入"><span class="nav-number">1.1.6.8.</span> <span class="nav-text">MyBatis映射文件深入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis核心配置文件深入"><span class="nav-number">1.1.6.9.</span> <span class="nav-text">MyBatis核心配置文件深入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBatis的多表操作"><span class="nav-number">1.1.6.10.</span> <span class="nav-text">MyBatis的多表操作</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1276,7 +1459,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">138.6k</span>
+    <span title="Site words total count">141k</span>
   
 </div>
 
