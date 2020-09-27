@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java自学总结," />
 
 
 
@@ -79,15 +79,21 @@
 
 
 
-<meta name="description" content="NO DEPENDENCE ONLY PRIDE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;index.html">
+<meta name="description" content="Ubuntu安装RabbitMQ教程摘要本篇主要给大家介绍ubuntu安装rabbitmq的过程以及相关遇到的坑，同时也避免自己忘记，所以写下这篇博文供大家学习。 相关版本操作系统：Linux阿里云服务器 ubuntu：18.04（root用户） rabbitmq：3.8.8 erlang：23.0.3（Ubuntu Xenial 64bit） 正文erlang安装因为rabbitmq由erlan">
+<meta name="keywords" content="Java自学总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu安装RabbitMQ教程">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;09&#x2F;27&#x2F;ubuntu%E8%A3%85rabbitmq&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="NO DEPENDENCE ONLY PRIDE">
+<meta property="og:description" content="Ubuntu安装RabbitMQ教程摘要本篇主要给大家介绍ubuntu安装rabbitmq的过程以及相关遇到的坑，同时也避免自己忘记，所以写下这篇博文供大家学习。 相关版本操作系统：Linux阿里云服务器 ubuntu：18.04（root用户） rabbitmq：3.8.8 erlang：23.0.3（Ubuntu Xenial 64bit） 正文erlang安装因为rabbitmq由erlan">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-25T09:56:21.228Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;5qZCA4xUKTIVoJW.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;3wYV67ZJ4fTHONh.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;zkW5bhGHVmvyPYJ.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;CypmLvHd6PjTfuB.png">
+<meta property="og:updated_time" content="2020-09-27T16:27:26.589Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;5qZCA4xUKTIVoJW.png">
 
 
 
@@ -117,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/09/27/ubuntu装rabbitmq/"/>
 
 
 
 
 
-  <title>categories | BBBBBlog</title>
+  <title>Ubuntu安装RabbitMQ教程 | BBBBBlog</title>
   
 
 
@@ -272,40 +278,275 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/27/ubuntu%E8%A3%85rabbitmq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bcutty Kmy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BBBBBlog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                11 categories in total
+          <h1 class="post-title" itemprop="name headline">Ubuntu安装RabbitMQ教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-27T23:59:45+08:00">
+                2020-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%85%8D%E7%BD%AE%E7%AF%87/" itemprop="url" rel="index">
+                    <span itemprop="name">配置篇</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/09/27/ubuntu%E8%A3%85rabbitmq/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/27/ubuntu%E8%A3%85rabbitmq/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/09/27/ubuntu%E8%A3%85rabbitmq/" class="leancloud_visitors" data-flag-title="Ubuntu安装RabbitMQ教程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  921 words
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3 minutues
+                </span>
+              
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DP/">DP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9B%BE%E8%AE%BA/">图论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AF%87/">学习篇</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%80%E4%BB%8B/">简介</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E9%A2%98/">综合题</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E6%B5%81/">网络流</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%83%A8%E7%BD%B2%E7%AF%87/">部署篇</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%85%8D%E7%BD%AE%E7%AF%87/">配置篇</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="Ubuntu安装RabbitMQ教程"><a href="#Ubuntu安装RabbitMQ教程" class="headerlink" title="Ubuntu安装RabbitMQ教程"></a>Ubuntu安装RabbitMQ教程</h1><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>本篇主要给大家介绍ubuntu安装rabbitmq的过程以及相关遇到的坑，同时也避免自己忘记，所以写下这篇博文供大家学习。</p>
+<h3 id="相关版本"><a href="#相关版本" class="headerlink" title="相关版本"></a>相关版本</h3><p>操作系统：Linux阿里云服务器</p>
+<p>ubuntu：18.04（root用户）</p>
+<p>rabbitmq：3.8.8</p>
+<p>erlang：23.0.3（Ubuntu Xenial 64bit）</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="erlang安装"><a href="#erlang安装" class="headerlink" title="erlang安装"></a>erlang安装</h4><p>因为rabbitmq由erlang语言编写，所以安装之前需要安装erlang语言环境，由于ubuntu本身使用的apt-get源里的erlang比较老，所以这里我们是直接去官网下载安装。</p>
+<p>首先进入erlang官网下载页</p>
+<p><a href="https://www.erlang-solutions.com/resources/download.html" target="_blank" rel="noopener">https://www.erlang-solutions.com/resources/download.html</a></p>
+<p>然后往下找到自己想要下载的版本，erlang的版本是根据rabbitmq的版本来的，可以查看rabbitmq官网中的Erlang Versions，<a href="https://www.rabbitmq.com/which-erlang.html" target="_blank" rel="noopener">点这里</a>来查看自己想下载的rabbitmq对应所支持的erlang版本，然后再到下载页面进行下载，同时需要注意自己系统的版本和相应的指令集（amd还是arm），如下图</p>
+<p><img src="https://i.loli.net/2020/09/28/5qZCA4xUKTIVoJW.png" alt="1.png"></p>
+<p>然后下载到自己电脑后，就通过相关shell传到自己的服务器里去，进入相应的目录，然后通过下面命令进行解压就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i esl-erlang_版本号_ubuntu_artful_amd64.deb</span><br></pre></td></tr></table></figure>
+<p>当然可能会存在缺少相关依赖的情况，可通过以下命令进行相应依赖的安装，然后重新执行上面↑的命令就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get -f install</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，可以通过命令行输入<code>erl</code>命令查看自己是否安装成功以及安装的版本。如下图</p>
+<p><img src="https://i.loli.net/2020/09/28/3wYV67ZJ4fTHONh.png" alt="2.png"></p>
+<h4 id="rabbitmq安装"><a href="#rabbitmq安装" class="headerlink" title="rabbitmq安装"></a>rabbitmq安装</h4><p>然后erlang安装完成后我们就直接进入rabbitmq的安装，为了安装的方便，这里我也是选择的对相应的包进行下载后再安装的方式。</p>
+<p>首先在服务器上安装好相关依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 更新</span><br><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">apt-get -y install socat logrotate init-system-helpers adduser</span><br><span class="line">apt-get -y install wget</span><br><span class="line"></span><br><span class="line"># 下载包</span><br><span class="line">wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.8/rabbitmq-server_3.8.8-1_all.deb</span><br><span class="line"></span><br><span class="line"># 安装</span><br><span class="line">dpkg -i rabbitmq-server_3.8.8-1_all.deb</span><br></pre></td></tr></table></figure>
+
+<p>上面<code>wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.8/rabbitmq-server_3.8.8-1_all.deb</code>命令中的版本号可自己指定，然后因为该网站是外网，所以可能下载速度很慢，也可以选择自己在本地电脑访问相应的地址下载好后再通过shell传输到服务器进行安装，会更快一下。</p>
+<p>然后安装完成后就可以通过以下命令对rabbitmq服务进行启动和关闭了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service rabbitmq-server start # 启动服务</span><br><span class="line">service rabbitmq-server stop # 停止服务</span><br><span class="line">service rabbitmq-server restart # 重启服务</span><br></pre></td></tr></table></figure>
+
+<p>然后为了操作rabbitmq的方便，我们还可以开启管理界面，使用以下命令即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure>
+
+<p>然后可以访问ip:15672来查看该页面了，如下图</p>
+<p><img src="https://i.loli.net/2020/09/28/zkW5bhGHVmvyPYJ.png" alt="3.png"></p>
+<p>然后该页面提供默认的账号密码进行登录，账户密码都是guest，但是因为rabbitmq的配置问题，他只允许本机登录，所以会出现无法登录的情况，这时就需要进行相关配置文件的配置</p>
+<p>因为这个是高版本，所以没有默认创建配置文件，所以需要我们自己创建rabbitmq.conf文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rabbitmq/rabbitmq.conf</span><br></pre></td></tr></table></figure>
+
+<p>然后在github上复制或者下载配置文件模板，<a href="https://github.com/rabbitmq/rabbitmq-server/blob/v3.7.x/docs/rabbitmq.conf.example" target="_blank" rel="noopener">点这里</a>，然后进行相应的修改，将<strong>loopback_users.guest = false</strong>这一行前的##进行去除即可，如下图，</p>
+<p><img src="https://i.loli.net/2020/09/28/CypmLvHd6PjTfuB.png" alt="4.png"></p>
+<p>然后再进行登录就能成功了</p>
+<p>然后相关的其他操作就靠大家自己摸索了</p>
+<hr>
+<p><strong><em>如有谬误请不吝指正，方便立马修改以防止误导他人</em></strong></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Bcutty Kmy
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yoursite.com/2020/09/27/ubuntu%E8%A3%85rabbitmq/" title="Ubuntu安装RabbitMQ教程">http://yoursite.com/2020/09/27/ubuntu%E8%A3%85rabbitmq/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java%E8%87%AA%E5%AD%A6%E6%80%BB%E7%BB%93/" rel="tag"># Java自学总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/30/Spring/" rel="next" title="Java框架">
+                <i class="fa fa-chevron-left"></i> Java框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -341,8 +582,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -418,6 +668,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu安装RabbitMQ教程"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu安装RabbitMQ教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-number">1.0.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关版本"><span class="nav-number">1.0.2.</span> <span class="nav-text">相关版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-number">1.0.3.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#erlang安装"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">erlang安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rabbitmq安装"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">rabbitmq安装</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Ubuntu安装RabbitMQ教程</title>
+      <link href="/2020/09/27/ubuntu%E8%A3%85rabbitmq/"/>
+      <url>/2020/09/27/ubuntu%E8%A3%85rabbitmq/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Ubuntu安装RabbitMQ教程"><a href="#Ubuntu安装RabbitMQ教程" class="headerlink" title="Ubuntu安装RabbitMQ教程"></a>Ubuntu安装RabbitMQ教程</h1><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>本篇主要给大家介绍ubuntu安装rabbitmq的过程以及相关遇到的坑，同时也避免自己忘记，所以写下这篇博文供大家学习。</p><h3 id="相关版本"><a href="#相关版本" class="headerlink" title="相关版本"></a>相关版本</h3><p>操作系统：Linux阿里云服务器</p><p>ubuntu：18.04（root用户）</p><p>rabbitmq：3.8.8</p><p>erlang：23.0.3（Ubuntu Xenial 64bit）</p><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="erlang安装"><a href="#erlang安装" class="headerlink" title="erlang安装"></a>erlang安装</h4><p>因为rabbitmq由erlang语言编写，所以安装之前需要安装erlang语言环境，由于ubuntu本身使用的apt-get源里的erlang比较老，所以这里我们是直接去官网下载安装。</p><p>首先进入erlang官网下载页</p><p><a href="https://www.erlang-solutions.com/resources/download.html" target="_blank" rel="noopener">https://www.erlang-solutions.com/resources/download.html</a></p><p>然后往下找到自己想要下载的版本，erlang的版本是根据rabbitmq的版本来的，可以查看rabbitmq官网中的Erlang Versions，<a href="https://www.rabbitmq.com/which-erlang.html" target="_blank" rel="noopener">点这里</a>来查看自己想下载的rabbitmq对应所支持的erlang版本，然后再到下载页面进行下载，同时需要注意自己系统的版本和相应的指令集（amd还是arm），如下图</p><p><img src="https://i.loli.net/2020/09/28/5qZCA4xUKTIVoJW.png" alt="1.png"></p><p>然后下载到自己电脑后，就通过相关shell传到自己的服务器里去，进入相应的目录，然后通过下面命令进行解压就可以了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i esl-erlang_版本号_ubuntu_artful_amd64.deb</span><br></pre></td></tr></table></figure><p>当然可能会存在缺少相关依赖的情况，可通过以下命令进行相应依赖的安装，然后重新执行上面↑的命令就可以了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get -f install</span><br></pre></td></tr></table></figure><p>安装完成后，可以通过命令行输入<code>erl</code>命令查看自己是否安装成功以及安装的版本。如下图</p><p><img src="https://i.loli.net/2020/09/28/3wYV67ZJ4fTHONh.png" alt="2.png"></p><h4 id="rabbitmq安装"><a href="#rabbitmq安装" class="headerlink" title="rabbitmq安装"></a>rabbitmq安装</h4><p>然后erlang安装完成后我们就直接进入rabbitmq的安装，为了安装的方便，这里我也是选择的对相应的包进行下载后再安装的方式。</p><p>首先在服务器上安装好相关依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 更新</span><br><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">apt-get -y install socat logrotate init-system-helpers adduser</span><br><span class="line">apt-get -y install wget</span><br><span class="line"></span><br><span class="line"># 下载包</span><br><span class="line">wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.8/rabbitmq-server_3.8.8-1_all.deb</span><br><span class="line"></span><br><span class="line"># 安装</span><br><span class="line">dpkg -i rabbitmq-server_3.8.8-1_all.deb</span><br></pre></td></tr></table></figure><p>上面<code>wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.8/rabbitmq-server_3.8.8-1_all.deb</code>命令中的版本号可自己指定，然后因为该网站是外网，所以可能下载速度很慢，也可以选择自己在本地电脑访问相应的地址下载好后再通过shell传输到服务器进行安装，会更快一下。</p><p>然后安装完成后就可以通过以下命令对rabbitmq服务进行启动和关闭了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service rabbitmq-server start # 启动服务</span><br><span class="line">service rabbitmq-server stop # 停止服务</span><br><span class="line">service rabbitmq-server restart # 重启服务</span><br></pre></td></tr></table></figure><p>然后为了操作rabbitmq的方便，我们还可以开启管理界面，使用以下命令即可</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure><p>然后可以访问ip:15672来查看该页面了，如下图</p><p><img src="https://i.loli.net/2020/09/28/zkW5bhGHVmvyPYJ.png" alt="3.png"></p><p>然后该页面提供默认的账号密码进行登录，账户密码都是guest，但是因为rabbitmq的配置问题，他只允许本机登录，所以会出现无法登录的情况，这时就需要进行相关配置文件的配置</p><p>因为这个是高版本，所以没有默认创建配置文件，所以需要我们自己创建rabbitmq.conf文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rabbitmq/rabbitmq.conf</span><br></pre></td></tr></table></figure><p>然后在github上复制或者下载配置文件模板，<a href="https://github.com/rabbitmq/rabbitmq-server/blob/v3.7.x/docs/rabbitmq.conf.example" target="_blank" rel="noopener">点这里</a>，然后进行相应的修改，将<strong>loopback_users.guest = false</strong>这一行前的##进行去除即可，如下图，</p><p><img src="https://i.loli.net/2020/09/28/CypmLvHd6PjTfuB.png" alt="4.png"></p><p>然后再进行登录就能成功了</p><p>然后相关的其他操作就靠大家自己摸索了</p><hr><p><strong><em>如有谬误请不吝指正，方便立马修改以防止误导他人</em></strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 配置篇 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java自学总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java框架</title>
       <link href="/2020/08/30/Spring/"/>
       <url>/2020/08/30/Spring/</url>
