@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="环境搭建," />
+  <meta name="keywords" content="区块链总结," />
 
 
 
@@ -79,16 +79,22 @@
 
 
 
-<meta name="description" content="Django + Nginx + Uwsgi部署服务器摘要写这篇博客主要是为了记录一下自己部署的历程(太艰辛了)，同时也为了让其他人能够在看了本博文后能够少走弯路。希望这篇博文能够对大家有所帮助。 环境本人所使用的环境如下 123Ubuntu 18.04.4(腾讯云服务器)python 3.6(服务器自带)mysql  环境搭建在上述环境的基础上进行部署django所需的环境的配置和搭建 首先是p">
-<meta name="keywords" content="环境搭建">
+<meta name="description" content="区块链从零开始完全明白写这篇博文是以一个大三学生的角度，以一些通俗一点的语言给大家普及一下什么是区块链，可能文章中很多说法存在错误以及问题，希望能包含并且提出，以便尽快改正。 简介首先我们要了解什么是区块链以及为何需要区块链这个东西。 为了方便大家理解，这里先说用途，很简单，就是用来记账，也就是账本。为什么用区块链记账呢，好处是什么呢？好处是这个账本人手一个，且大家都一样并且无法被改变，并且每一笔">
+<meta name="keywords" content="区块链总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django + Nginx + Uwsgi部署服务器">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;08&#x2F;09&#x2F;django+nginx+uwsgi%E9%83%A8%E7%BD%B2&#x2F;index.html">
+<meta property="og:title" content="区块链普及">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;09&#x2F;29&#x2F;%E5%8C%BA%E5%9D%97%E9%93%BE&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="Django + Nginx + Uwsgi部署服务器摘要写这篇博客主要是为了记录一下自己部署的历程(太艰辛了)，同时也为了让其他人能够在看了本博文后能够少走弯路。希望这篇博文能够对大家有所帮助。 环境本人所使用的环境如下 123Ubuntu 18.04.4(腾讯云服务器)python 3.6(服务器自带)mysql  环境搭建在上述环境的基础上进行部署django所需的环境的配置和搭建 首先是p">
+<meta property="og:description" content="区块链从零开始完全明白写这篇博文是以一个大三学生的角度，以一些通俗一点的语言给大家普及一下什么是区块链，可能文章中很多说法存在错误以及问题，希望能包含并且提出，以便尽快改正。 简介首先我们要了解什么是区块链以及为何需要区块链这个东西。 为了方便大家理解，这里先说用途，很简单，就是用来记账，也就是账本。为什么用区块链记账呢，好处是什么呢？好处是这个账本人手一个，且大家都一样并且无法被改变，并且每一笔">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-08T23:41:04.147Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;NCYDgW7BO2KvAxL.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;3bc8JyBXvutlaj9.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;B47WtFnpRbPaNcs.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;h1EqtTXrSnxuWmK.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;d5yiGButSOYo7P8.png">
+<meta property="og:updated_time" content="2020-09-28T16:10:20.813Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;09&#x2F;28&#x2F;NCYDgW7BO2KvAxL.png">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/08/09/django+nginx+uwsgi部署/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/09/29/区块链/"/>
 
 
 
 
 
-  <title>Django + Nginx + Uwsgi部署服务器 | BBBBBlog</title>
+  <title>区块链普及 | BBBBBlog</title>
   
 
 
@@ -285,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/29/%E5%8C%BA%E5%9D%97%E9%93%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bcutty Kmy">
@@ -302,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Django + Nginx + Uwsgi部署服务器</h1>
+          <h1 class="post-title" itemprop="name headline">区块链普及</h1>
         
 
         <div class="post-meta">
@@ -314,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-09T07:40:20+08:00">
-                2020-08-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-29T00:10:25+08:00">
+                2020-09-29
               </time>
             
 
@@ -337,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%83%A8%E7%BD%B2%E7%AF%87/" itemprop="url" rel="index">
-                    <span itemprop="name">部署篇</span>
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AF%87/" itemprop="url" rel="index">
+                    <span itemprop="name">学习篇</span>
                   </a>
                 </span>
 
@@ -355,8 +361,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
+                <a href="/2020/09/29/%E5%8C%BA%E5%9D%97%E9%93%BE/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/29/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -364,7 +370,7 @@
 
           
           
-             <span id="/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="Django + Nginx + Uwsgi部署服务器">
+             <span id="/2020/09/29/%E5%8C%BA%E5%9D%97%E9%93%BE/" class="leancloud_visitors" data-flag-title="区块链普及">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,7 +395,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k words
+                  3.2k words
                 </span>
               
 
@@ -405,7 +411,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5 minutues
+                  10 minutues
                 </span>
               
             </div>
@@ -426,57 +432,46 @@
       
 
       
-        <h1 id="Django-Nginx-Uwsgi部署服务器"><a href="#Django-Nginx-Uwsgi部署服务器" class="headerlink" title="Django + Nginx + Uwsgi部署服务器"></a>Django + Nginx + Uwsgi部署服务器</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>写这篇博客主要是为了记录一下自己部署的历程(太艰辛了)，同时也为了让其他人能够在看了本博文后能够少走弯路。希望这篇博文能够对大家有所帮助。</p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>本人所使用的环境如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ubuntu 18.04.4(腾讯云服务器)</span><br><span class="line">python 3.6(服务器自带)</span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
-
-<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>在上述环境的基础上进行部署django所需的环境的配置和搭建</p>
-<p>首先是pip3的安装，这一步就不再赘述了。</p>
-<p>然后是git的安装，直接<code>apt-get install git</code>就行了，主要是为了后面能够从github上clone源码。也可以通过<code>wget 项目地址.zip 下载地址</code>的方式下载项目zip包然后解压。 </p>
-<p>然后是django所需环境的安装，可以通过虚拟环境的方式安装，也可以直接安装，因为本人是只用在服务器上部署这一个django项目，所以本人直接安装并没有通过虚拟环境，先导出requirements.txt然后在这里安装就可以了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-
-<p>mysql的安装也不在这里说了，因为不是重点，大家度娘都能够解决。并且mysql的安装对部署的影响并不大。</p>
-<p>然后则是uwsgi的安装了，uwsgi大家可以直接通过<code>pip install uwsgi</code>的方式完成安装，不过请确定是最新版，否则容易出现bug，安装完成后可以测试一下</p>
-<p>首先在manage.py同一级目录下创建test.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(env, start_response)</span>:</span></span><br><span class="line">    start_response(<span class="string">'200 OK'</span>, [(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>)])</span><br><span class="line">    <span class="keyword">return</span> <span class="string">b"Hello World"</span></span><br></pre></td></tr></table></figure>
-
-<p>然后运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsgi --http :8000 --wsgi-file test.py</span><br></pre></td></tr></table></figure>
-
-<p>打开<code>&lt;公网ip:8000&gt;</code>看能否访问并看到hello world，如果能看到则没问题</p>
-<p>然后是对nginx的安装，同理<code>apt-get install nginx</code>，安装完后，可以通过<code>service --status-all</code>查看niginx前面是否有+号，如果没问题，再访问<code>公网ip</code>，如果出现nginx的欢迎界面，则nginx安装成功</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>环境安装好了，接下来就是最重要的配置环节了。</p>
-<p>首先是对uwsgi的配置，首先在manage.py同级目录下创建uwsgi.ini文件用于配置，配置内容如下</p>
-<p>#对应是注释，复制的时候最好把中文删去，省去编码问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"># Django-related settings</span><br><span class="line">socket = 127.0.0.1:8888</span><br><span class="line"></span><br><span class="line"># the base directory (full path) 项目根地址 即manage.py所在目录</span><br><span class="line">chdir = /root/myblog</span><br><span class="line"></span><br><span class="line"># Django s wsgi file</span><br><span class="line">module = blog.wsgi:application</span><br><span class="line"></span><br><span class="line"># process-related settings</span><br><span class="line"># master 主进程</span><br><span class="line">master = true</span><br><span class="line"></span><br><span class="line"># maximum number of worker processes</span><br><span class="line">processes = 4</span><br><span class="line"># buffer-size 这个需要设置一下</span><br><span class="line">buffer-size = 30000</span><br><span class="line"># ... with appropriate permissions - may be needed</span><br><span class="line"># chmod-socket = 664</span><br><span class="line"># clear environment on exit</span><br><span class="line"># 日志文件</span><br><span class="line">daemonize = /root/myblog/mysite.log	</span><br><span class="line">vacuum = true</span><br></pre></td></tr></table></figure>
-
-<p>然后是对nginx的配置</p>
-<p>首先了解一下nginx的配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">主配置文件：/etc/nginx/nginx.conf一般不用动</span><br><span class="line">可用配置文件：/etc/nginx/sites-available我们一般更改这里的配置文件</span><br><span class="line">已用配置文件：/etc/nginx/sites-enabled，已经启用的配置文件 我们在可用配置文件目录，新建一个xxx.conf此文件用于配置我们的项目。xxx可写自己的项目名称</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/nginx/sites-available</span><br><span class="line">vim xxx.conf</span><br><span class="line">// 如果不是root用户，可能需要先sudo创建文件然后chmod然后再进行vim修改</span><br></pre></td></tr></table></figure>
-
-<p>然后在xxx.conf文件中写入以下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">upstream django &#123;</span><br><span class="line">    server 127.0.0.1:8888; # for a web port socket (we&apos;ll use this first)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name 公网ip;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    client_max_body_size 75M;  #上传文件大小限制</span><br><span class="line"></span><br><span class="line">    # 网站静态文件所在目录</span><br><span class="line">    location /static&#123;</span><br><span class="line">        alias /root/myblog/static;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    # 上传文件所在目录</span><br><span class="line">    location /media&#123;</span><br><span class="line">        alias /root/myblog/media;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    # 动态文件交给uwsgi处理</span><br><span class="line">    location / &#123;</span><br><span class="line">        uwsgi_pass 127.0.0.1:8888;</span><br><span class="line">        include /etc/nginx/uwsgi_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后将此文件再sites-enabled中创建一个软连接，表示此配置文件已经启用：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/nginx/sites-available/xxx.conf   /etc/nginx/sites-enabled/xxx.conf</span><br></pre></td></tr></table></figure>
-
-<p>另外我们还需要将启动nginx的用户改为root，要不然会出现403 forbidden的错误。打开/etc/nginx/nginx.conf文件，将第一行中user后面的用户改为root即可。</p>
-<p>然后需要对django进行一下小修改</p>
-<p>首先是对settings.py中的debug改为false，allowed_host改为[‘*‘]或者[‘公网ip’]，这样才能访问到。</p>
-<p>然后在最后加入<code>STATIC_ROOT = os.path.join(BASE_DIR,&#39;static&#39;)</code>，之后再进入项目执行<code>python3 manage.py collectstatic</code>执行之后就能看到项目中新增了一个static目录，这样nginx就能访问到了，才能正确加载项目的静态文件，否则访问的就是缺失css样式的项目</p>
-<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p>然后就是将nginx重启服务并且将uwsgi启动的阶段了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx restart </span><br><span class="line">sudo uwsgi uwsgi.ini</span><br><span class="line">sudo killall -9 uwsgi</span><br></pre></td></tr></table></figure>
-
-<p>第一行是nginx的重启，第二行则是启动uwsgi服务，最后一行是需要关闭uwsgi服务所需要执行的命令</p>
-<p>启动uwsgi系统提示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[uWSGI] getting INI configuration from uwsgi.ini</span><br></pre></td></tr></table></figure>
-
-<p>则代表启动成功了，现在就可以访问<code>公网ip:8000</code>访问你的项目了</p>
-<p>如果出现问题，可查看uwsgi的日志文件，也就是前面所配置的<code>daemonize = /root/myblog/mysite.log</code>，从而帮助找到错误，进而解决。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>需要注意的点是，uwsgi的socket和nginx里的配置一定要一样，同时不要使用8000端口(不要问我怎么知道的)，上文使用的是8888端口，同时需要查看相应端口的防火墙是否已经打开，如果出现问题可以在服务器上通过<code>curl</code>进行本地访问测试。</p>
+        <h1 id="区块链从零开始完全明白"><a href="#区块链从零开始完全明白" class="headerlink" title="区块链从零开始完全明白"></a>区块链从零开始完全明白</h1><p>写这篇博文是以一个大三学生的角度，以一些通俗一点的语言给大家普及一下什么是区块链，可能文章中很多说法存在错误以及问题，希望能包含并且提出，以便尽快改正。</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>首先我们要了解什么是区块链以及为何需要区块链这个东西。</p>
+<p>为了方便大家理解，这里先说用途，很简单，就是用来记账，也就是账本。为什么用区块链记账呢，好处是什么呢？好处是这个账本人手一个，且大家都一样并且无法被改变，并且每一笔账都能被找到。无法被改变就是其最厉害的地方。具体怎么实现的呢，我们后面会说到，大家先有个印象，不要将区块链想得太复杂，就是一个无法被改变的且无限大可以溯源的账本而已。</p>
+<p>然后是什么是区块链，顾名思义，由区块组成的链。为什么能够记账呢，就是将交易的记录放在区块里罢了，然后再把区块用链连起来，就形成了区块链。</p>
+<p>区块链还有一些好处，也就是分布式、去中心化。就如同不让一个人保存账本，要是这个人私自改了也没人知道，也就形成了麻烦。使用区块链就能避免这个问题。</p>
+<h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p>在详细了解区块链的知识之前，我们需要先了解一些加密相关的知识。</p>
+<p>加密分为两类，对称加密和非对称加密。</p>
+<p>什么是对称加密呢，通俗来讲就是一把锁，开锁和解锁是同一把钥匙，这就是对称加密。</p>
+<p>那什么是非对称加密呢，加锁和解锁的钥匙不同，且需要成对使用，这就是非对称加密，同时，非对称加密加锁的钥匙称为公钥而解锁的钥匙称为私钥。公钥可以公开给所有人，但私钥需要自己保存。</p>
+<p>这两种加密方式各有优缺点，对称加密，速度快，但是存在一个密钥如何传输的问题，我这上锁了，我要怎么把密钥安全的给你呢？而对于非对称加密则是安全性非常高但速度很慢。</p>
+<p>所以区块链则将这两种技术结合起来，用非对称加密进行密钥的分发而对称加密用于数据传输。将传输的数据使用对称加密，然后将对称加密的密钥用交易的人提供的非对称加密的公钥加密，然后再传输给交易的人，然后交易的人拿到后通过自己的私钥解密获得密钥后，再解密得到相应的数据。从而结合两者优势，安全也迅速的完成数据的传输。</p>
+<p>还有一个需要说明的地方，非对称加密中公钥和私钥除了用于加锁和解锁外，还有一个功能。即私钥用于签名，公钥用于验证。什么是签名呢，即表明这个东西是你提供的，你签了名，且这个签名被验证成功了，就表示这个东西就是你提供的。比如你要向你的老板给一份数据，但老板不知道这份数据是你给的，因为可能你把数据给你老板的中途被调换之类的，所以你就用你的私钥在这份数据上进行签名(签名不会暴露自己的私钥)，然后将公钥给你的老板，你的老板用公钥来验证这份数据上的签名，验证成功后，就能放心打开数据了。所以在区块链交易中，签名也是必不可少的一部分。</p>
+<p>最后很重要的一部分就是加密的算法，我们这里就介绍哈希加密算法，常见的有MD5和SHA256/512，MD5已经比较过时了，现在用的基本是后者，256和512代表的是加密后的比特位，任何数据经过SHA256/512哈希算法加密后，都会形成256或者512位数据，且无法反推，且任何两个不同的数据会经过hash后得到的肯定是两个不同的256/512位的数据(哈希冲突在该算法中可以认为不存在)。然后这里再提一下签名，签名是将数据的哈希值通过一些算法进行签名，即和数据本身无关，因为签名只用证明发送方即可，和具体的数据无关。</p>
+<h3 id="区块具体实现"><a href="#区块具体实现" class="headerlink" title="区块具体实现"></a>区块具体实现</h3><p>我们这里就开始正题说一下区块到底是什么。一个区块就可以看作一个矩形，分为两个部分，头部和身体部分，前面说到过区块里存交易记录，这个记录就存放在区块的身体部分里，存着一条又一条的记录。如下图</p>
+<p><img src="https://i.loli.net/2020/09/28/NCYDgW7BO2KvAxL.png" alt="1.png"></p>
+<p>那头部存什么东西呢，首先需要存这些所有交易记录的哈希值，即保证如果有一条记录发生任何改变，哈希值肯定发生变化，所以这就保证了交易记录的不可更改。其次需要存一个区块高度，什么是区块高度呢，也就是区块的编号，我们说过区块链是将区块一个个链起来，所以就存在前后顺序，即存在编号，所以还需要存一个编号。然后还需要存一个版本号，这个就不是很重要。同时交易记录的哈希值具体怎么得出的，我们后面还会具体说到和一个merkle tree相关。其次头部里还要存一个值，前面所有区块的总哈希值，即保证如果一个想要改变一个区块的记录，需要将其前面所有区块记录都改变，因为哈希值是唯一的，所以这也保证了所有区块中记录的不可改变且可溯源。最后头部里还要存一个很关键的值，nounce值，一个随机值，具体用来干嘛我们后面会一一道来。</p>
+<p>所以区块链就可以简单看作下图</p>
+<p><img src="https://i.loli.net/2020/09/28/3bc8JyBXvutlaj9.png" alt="2.png"></p>
+<h3 id="比特币"><a href="#比特币" class="headerlink" title="比特币"></a>比特币</h3><p>将区块链肯定离不开比特币这个东西，也正是这个东西推动区块链的发展。</p>
+<p>首先我们从一笔交易开始，假设这样一个场景，A从B处买了一台电脑，3500元，A付给B5000元，B找给A1400元，还剩下100元作为小费。(小费可以这样理解，你这笔交易想要尽快完成即想尽快A拿货B拿钱，就需要付小费，这笔小费是给矿工的)，这就是一次交易，但这样的交易在区块链中形成的交易记录是这样的，如下图</p>
+<p><img src="https://i.loli.net/2020/09/28/B47WtFnpRbPaNcs.png" alt="3.png"></p>
+<p>我们可以看到，其中小费的部分没有在其中体现出来，为什么呢，这就牵扯到下一个重要的点——矿工。</p>
+<p>我们经常听到挖矿挖矿，所以到底什么是挖矿，什么又是矿呢？</p>
+<p>首先我们需要明确，我们的交易，不是立马就完成的，只有当这笔交易记录在区块链上，也就是存在于某一个区块上，这笔交易才算完成。那区块是如何形成的呢，是算出来的，谁来算呢？怎么算呢？</p>
+<p>矿工来算。矿工可以选择一些交易记录来形成区块，形成区块后，小费就归矿工了，所以矿工肯定会选择小费高的交易记录了，这也解释了为何A一定要给一部分小费。</p>
+<p>那怎么形成区块呢，我们前面说过，区块头部里存了该区块所有交易的哈希值，以及前面所有区块的总哈希值，所以这两部分是无法改变的，也是现成的，要形成区块，这两部分是必须的，因为保证了交易的不可改变且可溯源。然后除了这两部分，还有一个东西，就是前面说到的nounce值，这三者结合再哈希得到的值，满足前多少多少位为0，则代表成功，就代表算对了，这个区块就能形成了。所以矿工是干嘛的，就是耗费电力、算力来随机生成这个nounce值，来使得三者的哈希值满足条件，进而形成区块。这个过程，就叫做挖矿，也可以用POW(工作量证明)来表示，表示你浪费了电力、物力来算这个nounce值，有资格获得小费，也就是比特币。</p>
+<h3 id="交易广播"><a href="#交易广播" class="headerlink" title="交易广播"></a>交易广播</h3><p>前面比较笼统的说了相关交易和比特币以及挖矿的问题，这里我们就具体说下其实现问题。</p>
+<p>一笔交易，形成后(还没有进入区块，只是A付了钱)，会向全网进行广播，也就是所有节点都收到了这笔交易的记录，节点对这个记录进行验证，也就是验证A是不是付了钱、B的账户地址等等问题，验证成功后，节点就将这个记录，放进交易缓存池，这个池子里放了很多的交易记录，但还没有形成区块，等着矿工去里面选呢，选小费高的记录去形成区块。这就是广播的第一个使用的地方。让这笔交易进入全网。</p>
+<p>因为矿工是很多的，所以当几个矿工同时在计算该链上下一个区块时，就存在先后顺序了。我们用下图来表示</p>
+<p><img src="https://i.loli.net/2020/09/28/h1EqtTXrSnxuWmK.png" alt="4.png"></p>
+<p>可以看到，ABC同时计算一个区块，此时A先算出来了，他就会立刻进行广播表示自己算出来了，然后BC收到广播后，就会停止计算并验证A是否计算正确，正确了的话，就将这个区块上链了，然后大家重新去缓存池里拿交易上链。这就是一个竞争的过程。</p>
+<p>还有一种情况，就是两个人一起完成了计算，因为只要保证算出来前几位为0即可，情况是很多的，所以可能两个不一样的区块但都满足条件。我们考虑AB同时计算出来，此时，又会如何呢，我们看下图</p>
+<p><img src="https://i.loli.net/2020/09/28/d5yiGButSOYo7P8.png" alt="5.png"></p>
+<p>区块链会将两个区块都上链，然后让大家继续计算，因为两个区块后面的区块大家也都能进行计算，所以会存在某个链上(A和B链)先生成下一个区块C的情况，例如A后先计算出来一个区块C，此时C就会进行广播了，广播后，B就被抛弃了，A+C作为主链了。当然如果B上先生成也是同理。此时另一个区块被抛弃后，里面的交易记录就重新回到了缓存池，那矿工的小费呢，下面继续说。</p>
+<p>这就牵扯到区块验证问题了，因为存在这种同时计算出区块的问题，所以区块链中规定了，当前区块形成后，在该区块后再追加6个区块后，这个区块里的交易才算真正完成，矿工才能拿到钱，即保证这个区块不会被抛弃。那为何是6个区块呢，因为根据相关计算，在领先6个区块的情况下，不可能存在一个新的链(从那个区块开始)替代该链，即不会存在一个比该链更长的链来替代。进而保证交易的完成，小费也能成功进入矿工手里。</p>
+<h3 id="merkle-tree"><a href="#merkle-tree" class="headerlink" title="merkle tree"></a>merkle tree</h3><p>然后这里再说一下前面提到的merkle tree，这是可以看作一个数据结构，也就是一个二叉树，但这个树是一棵完美二叉树。</p>
+<p>这棵树是怎么形成的呢，所有的交易作为叶节点，然后两两进行哈希形成父节点，如果是奇数个叶节点，则会复制一个叶节点，使其自身和自身哈希，然后父节点也同样两两哈希，一直到形成一个根节点。而区块头部信息里，就存的是该根节点的值。</p>
+<p>具体的实现可以参考这篇博文<a href="https://www.cnblogs.com/fengzhiwu/p/5524324.html" target="_blank" rel="noopener">merkle tree</a></p>
+<p>然后这棵树有什么用呢，可以用来验证，验证什么呢，验证某一笔交易是否存在于区块链中，具体的验证方法，也就是和merkle tree原理相关。参考上面博文。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>希望这篇博文能对大家有所帮助。</p>
 
       
     </div>
@@ -497,7 +492,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://yoursite.com/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/" title="Django + Nginx + Uwsgi部署服务器">http://yoursite.com/2020/08/09/django+nginx+uwsgi%E9%83%A8%E7%BD%B2/</a>
+    <a href="http://yoursite.com/2020/09/29/%E5%8C%BA%E5%9D%97%E9%93%BE/" title="区块链普及">http://yoursite.com/2020/09/29/%E5%8C%BA%E5%9D%97%E9%93%BE/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -512,7 +507,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="tag"># 环境搭建</a>
+            <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%80%BB%E7%BB%93/" rel="tag"># 区块链总结</a>
           
         </div>
       
@@ -525,8 +520,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/03/JavaWeb/" rel="next" title="JavaWeb">
-                <i class="fa fa-chevron-left"></i> JavaWeb
+              <a href="/2020/09/27/ubuntu%E8%A3%85rabbitmq/" rel="next" title="Ubuntu安装RabbitMQ教程">
+                <i class="fa fa-chevron-left"></i> Ubuntu安装RabbitMQ教程
               </a>
             
           </div>
@@ -534,10 +529,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/08/30/Spring/" rel="prev" title="Java框架">
-                Java框架 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -688,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Django-Nginx-Uwsgi部署服务器"><span class="nav-number">1.</span> <span class="nav-text">Django + Nginx + Uwsgi部署服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.2.1.</span> <span class="nav-text">环境搭建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启"><span class="nav-number">1.4.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.5.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#区块链从零开始完全明白"><span class="nav-number">1.</span> <span class="nav-text">区块链从零开始完全明白</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.0.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加密"><span class="nav-number">1.0.2.</span> <span class="nav-text">加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块具体实现"><span class="nav-number">1.0.3.</span> <span class="nav-text">区块具体实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比特币"><span class="nav-number">1.0.4.</span> <span class="nav-text">比特币</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交易广播"><span class="nav-number">1.0.5.</span> <span class="nav-text">交易广播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#merkle-tree"><span class="nav-number">1.0.6.</span> <span class="nav-text">merkle tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.0.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
