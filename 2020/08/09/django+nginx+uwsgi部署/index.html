@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="Django + Nginx + Uwsgi部署服务器摘要写这篇博客主要是为了记录一下自己部署的历程(太艰辛了)，同时也为了让其他人能够在看了本博文后能够少走弯路。希望这篇博文能够对大家有所帮助。 环境本人所使用的环境如下 123Ubuntu 18.04.4(腾讯云服务器)python 3.6(服务器自带)mysql  环境搭建在上述环境的基础上进行部署django所需的环境的配置和搭建 首先是p">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-08T23:41:04.147Z">
+<meta property="og:updated_time" content="2020-11-17T03:51:27.680Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k words
+                  1.6k words
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5 minutues
+                  6 minutues
                 </span>
               
             </div>
@@ -476,6 +476,14 @@
 
 <p>则代表启动成功了，现在就可以访问<code>公网ip:8000</code>访问你的项目了</p>
 <p>如果出现问题，可查看uwsgi的日志文件，也就是前面所配置的<code>daemonize = /root/myblog/mysite.log</code>，从而帮助找到错误，进而解决。</p>
+<h3 id="补充-前端部署"><a href="#补充-前端部署" class="headerlink" title="补充 前端部署"></a>补充 前端部署</h3><p>首先本地运行以下命令打包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<p>然后将生成的dist文件夹拷贝到服务器上的任意一个位置(下面配置)</p>
+<p>然后将上文配置好的nginx的配置文件(<code>/etc/nginx/site-available/xxx.conf</code>)再次打开，再加入一个server即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;	# 随意</span><br><span class="line">    server_name 公网ip;</span><br><span class="line">    root /root/django/dist;	# 你自己放dist的路径</span><br><span class="line">    location / &#123;</span><br><span class="line">      try_files $uri $uri/ @router;</span><br><span class="line">      index index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    location @router &#123;</span><br><span class="line">       rewrite ^.*$ /index.html last; # 防止刷新404</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后重启nginx服务即配置完毕(比后端好配置多了)</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>需要注意的点是，uwsgi的socket和nginx里的配置一定要一样，同时不要使用8000端口(不要问我怎么知道的)，上文使用的是8888端口，同时需要查看相应端口的防火墙是否已经打开，如果出现问题可以在服务器上通过<code>curl</code>进行本地访问测试。</p>
 
       
@@ -688,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Django-Nginx-Uwsgi部署服务器"><span class="nav-number">1.</span> <span class="nav-text">Django + Nginx + Uwsgi部署服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.2.1.</span> <span class="nav-text">环境搭建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启"><span class="nav-number">1.4.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.5.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Django-Nginx-Uwsgi部署服务器"><span class="nav-number">1.</span> <span class="nav-text">Django + Nginx + Uwsgi部署服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.2.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.2.1.</span> <span class="nav-text">环境搭建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启"><span class="nav-number">1.4.</span> <span class="nav-text">重启</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#补充-前端部署"><span class="nav-number">1.4.1.</span> <span class="nav-text">补充 前端部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.5.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -722,7 +730,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">145.8k</span>
+    <span title="Site words total count">146k</span>
   
 </div>
 
