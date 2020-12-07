@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="插件使用," />
 
 
 
@@ -79,16 +79,25 @@
 
 
 
-<meta name="description" content="摘要主要是之前一直不知道约瑟夫环的dp解法，这里和大家分享一下。本文用三种方法给大家呈现本题。 最后一条毛毛虫题目描述小D的花园里养了 n 条毛毛虫，每条毛毛虫都有自己独有的编号（从 1 到 n ）。 一开始，所有的毛毛虫都开开心心地生活在花园里，享受着食物和阳光。 直到某一天，额……它们知道自己肯定会被吃掉，所以就开始玩一个游戏，来决定被吃的顺序。游戏的方法是这样的： 所有毛毛虫按照编号顺序从">
-<meta name="keywords" content="随笔">
+<meta name="description" content="ANTLR4 解析语法树 以及IDEA相关插件使用前言首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。 ANTLR简介在这就给大家用我自己的话简单介绍一下antlr，就功能需求而言，其就是一个在你给定文法的前提下，能将输入串转换成语法树的工具。 也就是，你给定一个文法，再给定一个输入串，他能判断该输入">
+<meta name="keywords" content="插件使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="约瑟夫环">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF&#x2F;index.html">
+<meta property="og:title" content="ANTLR4 解析语法树 以及IDEA相关插件使用">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;12&#x2F;07&#x2F;antlr&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
-<meta property="og:description" content="摘要主要是之前一直不知道约瑟夫环的dp解法，这里和大家分享一下。本文用三种方法给大家呈现本题。 最后一条毛毛虫题目描述小D的花园里养了 n 条毛毛虫，每条毛毛虫都有自己独有的编号（从 1 到 n ）。 一开始，所有的毛毛虫都开开心心地生活在花园里，享受着食物和阳光。 直到某一天，额……它们知道自己肯定会被吃掉，所以就开始玩一个游戏，来决定被吃的顺序。游戏的方法是这样的： 所有毛毛虫按照编号顺序从">
+<meta property="og:description" content="ANTLR4 解析语法树 以及IDEA相关插件使用前言首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。 ANTLR简介在这就给大家用我自己的话简单介绍一下antlr，就功能需求而言，其就是一个在你给定文法的前提下，能将输入串转换成语法树的工具。 也就是，你给定一个文法，再给定一个输入串，他能判断该输入">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-25T09:45:09.364Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;ZjAPoifHLBvqDbg.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;MbxTp8vC4UH5qlP.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;Hh6bC7vE9mzt8Q4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;WQtogHCeP9EnZNA.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;NZO8ymUQhvTWpMg.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;D2Ff1sRdVTNa9hj.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;MvTyVJp5UxXfZnC.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;D4RrNLZdokMqAWY.png">
+<meta property="og:updated_time" content="2020-12-07T05:36:49.318Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;ZjAPoifHLBvqDbg.png">
 
 
 
@@ -118,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/17/约瑟夫环/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/12/07/antlr/"/>
 
 
 
 
 
-  <title>约瑟夫环 | BBBBBlog</title>
+  <title>ANTLR4 解析语法树 以及IDEA相关插件使用 | BBBBBlog</title>
   
 
 
@@ -285,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/07/antlr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bcutty Kmy">
@@ -302,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">约瑟夫环</h1>
+          <h1 class="post-title" itemprop="name headline">ANTLR4 解析语法树 以及IDEA相关插件使用</h1>
         
 
         <div class="post-meta">
@@ -314,8 +323,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-17T23:01:50+08:00">
-                2019-11-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-07T13:40:20+08:00">
+                2020-12-07
               </time>
             
 
@@ -337,8 +346,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index">
-                    <span itemprop="name">杂项</span>
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AF%87/" itemprop="url" rel="index">
+                    <span itemprop="name">学习篇</span>
                   </a>
                 </span>
 
@@ -355,8 +364,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" itemprop="commentCount"></span>
+                <a href="/2020/12/07/antlr/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/12/07/antlr/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -364,7 +373,7 @@
 
           
           
-             <span id="/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" class="leancloud_visitors" data-flag-title="约瑟夫环">
+             <span id="/2020/12/07/antlr/" class="leancloud_visitors" data-flag-title="ANTLR4 解析语法树 以及IDEA相关插件使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,7 +398,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k words
+                  1.6k words
                 </span>
               
 
@@ -405,7 +414,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4 minutues
+                  5 minutues
                 </span>
               
             </div>
@@ -426,34 +435,54 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>主要是之前一直不知道约瑟夫环的dp解法，这里和大家分享一下。本文用三种方法给大家呈现本题。</p>
-<h2 id="最后一条毛毛虫"><a href="#最后一条毛毛虫" class="headerlink" title="最后一条毛毛虫"></a>最后一条毛毛虫</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>小D的花园里养了 n 条毛毛虫，每条毛毛虫都有自己独有的编号（从 1 到 n ）。</p>
-<p>一开始，所有的毛毛虫都开开心心地生活在花园里，享受着食物和阳光。</p>
-<p>直到某一天，额……它们知道自己肯定会被吃掉，所以就开始玩一个游戏，来决定被吃的顺序。游戏的方法是这样的：</p>
-<p>所有毛毛虫按照编号顺序从 11 到 n 顺时针围成一个环，然后从 1 号毛毛虫开始顺时针依次报数，报到数字 m 的毛毛虫就出环被吃，下一条毛毛虫继续从 1 开始顺时针报数……直到所有毛毛虫都出环被吃。</p>
-<p>那么，最后一条被吃的毛毛虫的编号是多少呢？</p>
-<p> 时间限制：1000ms，内存限制：65536KB</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>两个正整数 n,m ，意义如题所示。</p>
-<p>输入数据保证： 1≤n,m≤3000。</p>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>一个正整数，代表最后一条被吃的毛毛虫的编号。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5 3</span><br></pre></td></tr></table></figure>
+        <h1 id="ANTLR4-解析语法树-以及IDEA相关插件使用"><a href="#ANTLR4-解析语法树-以及IDEA相关插件使用" class="headerlink" title="ANTLR4 解析语法树 以及IDEA相关插件使用"></a>ANTLR4 解析语法树 以及IDEA相关插件使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。</p>
+<h2 id="ANTLR简介"><a href="#ANTLR简介" class="headerlink" title="ANTLR简介"></a>ANTLR简介</h2><p>在这就给大家用我自己的话简单介绍一下antlr，就功能需求而言，其就是一个在你给定文法的前提下，能将输入串转换成语法树的工具。</p>
+<p>也就是，你给定一个文法，再给定一个输入串，他能判断该输入串是否符合该文法，如果符合，就能将其生成为一棵语法树供你进一步使用。</p>
+<h2 id="IDEA插件"><a href="#IDEA插件" class="headerlink" title="IDEA插件"></a>IDEA插件</h2><p>在idea的plugins中进行搜索ANTLR4应该就能搜到该插件，进行下载重启即可，如下图所示。</p>
+<p><img src="https://i.loli.net/2020/12/07/ZjAPoifHLBvqDbg.png" alt="antlr.png"></p>
+<p>重启后就能在下方工具栏看到ANTLR Preview和Tool Output两栏，也就是插件提供的功能。如何使用该插件在下文会提到。</p>
+<h2 id="如何使用ANTLR"><a href="#如何使用ANTLR" class="headerlink" title="如何使用ANTLR"></a>如何使用ANTLR</h2><p>如何来使用该工具呢，首先当然是配置环境，因为本人是使用Java语言来进行开发的，所以只能配置一下maven的依赖即可，请一定注意，<strong>版本号应和上文下载的插件对应的最新版本号吻合</strong>，否则可能会有bug</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.antlr<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>antlr4-runtime<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+<p>然后配置好环境后，下一步就是开始写文法。ANTLR专门的.g4后缀文件，用于写文法，在IDEA中随便找个目录新建一个xxx.g4文件即可，这里推荐大家将xxx的第一个字母大写，因为后面会根据该文件名生成对应的类，所以首字母大写会好一些。</p>
+<p>在创建好.g4文件后，它的图标应该长这样，如下图</p>
+<p><img src="https://i.loli.net/2020/12/07/MbxTp8vC4UH5qlP.png" alt="g4.png"></p>
+<p>当然也有可能它不长那样(比如我自己的)，可能就是IDEA本身的问题了，像这样</p>
+<p><img src="https://i.loli.net/2020/12/07/Hh6bC7vE9mzt8Q4.png" alt="c0.png"></p>
+<p>如果遇到图标无法正常显示，那么插件的功能也就无法正常使用了，因为它没法在该文件中进行相关文法的检验。所以怎么解决呢？</p>
+<p>我本人是通过在项目src/main/java目录里新建一个<strong>Scratch File</strong>，如下图：</p>
+<p><img src="https://i.loli.net/2020/12/07/WQtogHCeP9EnZNA.png" alt="ss.png"></p>
+<p><img src="https://i.loli.net/2020/12/07/NZO8ymUQhvTWpMg.png" alt="sss.png"></p>
+<p>然后里面就应该有这样的画面，然后点击第一个创建，应该就能拿到正常图标显示的文件了，也可以进行相关插件的使用了。</p>
+<p>然后在该文件中进行相关文法的书写，文法的书写规范这里就不再赘述了，大家可以自行找相关博客来学习，在我们成功完成文法的书写后，我们就可以开始生成相应的parser和lexer了。</p>
+<p><strong>但是需要注意的是，ANTLR是不支持直接左递归文法的，需要进行改写。</strong></p>
+<p>我们在g4文件处右键首先进行配置，选择Configure ANTLR</p>
+<p><img src="https://i.loli.net/2020/12/07/D2Ff1sRdVTNa9hj.png" alt="sssss.png"></p>
+<p>就应该会有这个页面</p>
+<p><img src="https://i.loli.net/2020/12/07/MvTyVJp5UxXfZnC.png" alt="2s.png"></p>
+<p>然我们在第一个框里选择想要导出的位置，一般是选择在项目中新建一个包，并选择该包，然后选择OK就行。</p>
+<p>然后我们就可以点击上图的Generate ANTLR Recognizer进行类的生成了。生成成功应该如下图所示：</p>
+<p><img src="https://i.loli.net/2020/12/07/D4RrNLZdokMqAWY.png" alt="cc.png"></p>
+<p>其中Parser是语法分析的类，Lexer是词法分析的类，此时我们就已经可以开始通过输入一些字符串来检查是否符合我们的文法了。</p>
+<p>我们就在一个Main方法中输入以下语句即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, RecognitionException </span>&#123;</span><br><span class="line">    File file = <span class="keyword">new</span> File(<span class="string">"xxx"</span>); <span class="comment">// 自行选择路径</span></span><br><span class="line">    InputStream in = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">    ANTLRInputStream input = <span class="keyword">new</span> ANTLRInputStream(in);</span><br><span class="line">    C0Lexer lex = <span class="keyword">new</span> C0Lexer(input);</span><br><span class="line">    CommonTokenStream tokens = <span class="keyword">new</span> CommonTokenStream(lex);</span><br><span class="line">    C0Parser parser = <span class="keyword">new</span> C0Parser(tokens);</span><br><span class="line">    C0Parser.ProgramContext tree = parser.program();</span><br><span class="line">    System.out.println(tree.toStringTree(parser));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h3><p>毛毛虫被吃的顺序依次为：3、1、5、2、4 。</p>
-<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><p><a href="accoding.cn">北航OJ</a></p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>(1) 首先很显然最简单的约瑟夫环问题，肯定用最容易理解的方法就是循环链表了。通过指针遍历、删除来完成每次的报数和出局环节，最后只剩一条毛毛虫时，就结束就可以了。虽然非常容易理解，但是代码比较长，时间花费也比较高(和后面介绍的方法相比)，但本题的限制还是可以随便AC的。代码如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">p</span>,*<span class="title">r</span>,*<span class="title">head</span>;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	head=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        r=(struct node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node));</span><br><span class="line">        r-&gt;num=i;</span><br><span class="line">        <span class="keyword">if</span> (head==<span class="literal">NULL</span>)</span><br><span class="line">            head=p=r;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            p-&gt;next=r;          </span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;next=head;</span><br><span class="line">    r=p;</span><br><span class="line">    p=head;</span><br><span class="line">   	<span class="keyword">while</span>(p-&gt;next!=p)&#123;</span><br><span class="line">         <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m<span class="number">-1</span>;i++)&#123;</span><br><span class="line">               r=p;</span><br><span class="line">               p=p-&gt;next;</span><br><span class="line">          &#125;</span><br><span class="line">          r-&gt;next=p-&gt;next;</span><br><span class="line">          <span class="built_in">free</span>(p);</span><br><span class="line">          p=r-&gt;next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%d"</span>, p-&gt;num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	insert(n,m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果输入的字符串符合文法，那么就能正常输出一个生成的语法树了，如果不符合，那么插件也会自动帮你打印出错的位置，并且不会报错。</p>
+<p><strong>如果想要它报错该怎么办呢？</strong>这也是当时困扰我很久的问题，想要其报错，我们就需要为其自己设计一个Listener来自定义错误处理。</p>
+<p>我们就自己新建一个类，并继承BaseErrorListener类，并重载syntaxError方法即可，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyErrorListener</span> <span class="keyword">extends</span> <span class="title">BaseErrorListener</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">syntaxError</span><span class="params">(Recognizer&lt;?, ?&gt; recognizer,</span></span></span><br><span class="line"><span class="function"><span class="params">                            Object offendingSymbol,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> line,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> charPositionInLine,</span></span></span><br><span class="line"><span class="function"><span class="params">                            String msg,</span></span></span><br><span class="line"><span class="function"><span class="params">                            RecognitionException e)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"hello"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>(2) 第二第三种方法本质一样，只是实现方式有所区别。都是通过数学方法进行一些推导得到的。首先我们假设编号从0开始，最后求出的答案再加1就好了，所以可以知道在第一次中，肯定是叫到(m-1)%n的会出局，那么第一次出局的下一个肯定就是m%n了，如果把他当作0号，那剩下的n-1个人又组成了一个新的约瑟夫环，此时出局的就是(m-1)%(n-1)，但是因为现在的0号并不是0号，而是m%n号，所以我们得到的胜利者还要加回去，也就是((m-1)%(n-1)+m%n)%n，如果我们把第n-1次胜利者看作f(n-1)的话，那第n次的胜利者肯定就是(f(n-1)+m%n)%n，那对于第三次开始叫号也就是同样的道理，胜利者编号就为((f(n-2)+m%(n-1))%(n-1)+m%n)%n，可以看出是有规律的，我们用式子写出来就是f(n)=(f(n-1)+m%n)%n，f(n-1)=(f(n-2)+m%(n-1))%(n-1)，化简得到就一个式子f(n)=(f(n-1)+m)%n，对于n∈[0,n]都是成立的。那么我们就可以写递归代码了，如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> (func(n<span class="number">-1</span>)+m)%n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,func(n) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样在我们的Parser遇到不符合我们定义的文法时，就能报错并输出了。</p>
+<h2 id="如何测试-g4文件"><a href="#如何测试-g4文件" class="headerlink" title="如何测试.g4文件"></a>如何测试.g4文件</h2><p>即通过插件我们可以测试自己设计的文法中的一个parser，而不用每次都执行main方法，我们只用在g4文件中选择一个parser，并右键选择Test Rule xxx即可，在idea下方就会自动出现一个弹窗用于测试了。</p>
+<h2 id="拿到语法树下一步怎么办"><a href="#拿到语法树下一步怎么办" class="headerlink" title="拿到语法树下一步怎么办"></a>拿到语法树下一步怎么办</h2><p>我们经过一系列努力后，终于成功生成语法树了，那我们应该怎么处理这棵树呢？</p>
+<p>antlr为我们提供了两种遍历语法树的方式，分别为Listener方式和Visitor方式。这两种方式的不同点在于，listener是其已经为你定义好怎么遍历了，而Visitor则需要你自己定义怎么去遍历。且listener的所有返回类型都为void，即不能通过方法返回值传参，而visitor可以自定义一个返回值类型，当然所有方法的返回值类型都是一样的。</p>
+<p>不管要使用listener还是visitor方式，方法都是去继承对应antlr为我们生成的类，有xxxlistener和xxxvisitor，继承就可以了，然后选择自己想要重载的方法进行重载，进而就能实现自己想要的功能了。</p>
+<p>对于listener和visitor，想要用其遍历自己生成的语法树，就通过以下代码即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, RecognitionException </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    C0Parser.ProgramContext tree = parser.program();</span><br><span class="line">    <span class="comment">// visitor方式</span></span><br><span class="line">    YourVisitor visitor = <span class="keyword">new</span> YourVisitor();</span><br><span class="line">    visitor.visit(tree);</span><br><span class="line">    <span class="comment">// listener方式</span></span><br><span class="line">    ParseTreeWalker walker = <span class="keyword">new</span> ParseTreeWalker();</span><br><span class="line">    walker.walk(<span class="keyword">new</span> YourListener(), tree);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>(3) 但是这样递归，其实多了很多重复计算的步骤，是可以优化的，即DP，所以转移方程也就是上文提到的<code>f(n)=(f(n-1)+m)%n</code>，甚至不需要数组来存，直接就能出来，代码如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m,s=<span class="number">0</span>,i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    	s=(s+m)%i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>有谬误敬请指出，敬请不吝赐教</p>
 <hr>
-<hr>
+
+<p>如果上文存在谬误请一定不吝指出。</p>
 
       
     </div>
@@ -474,7 +503,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://yoursite.com/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" title="约瑟夫环">http://yoursite.com/2019/11/17/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</a>
+    <a href="http://yoursite.com/2020/12/07/antlr/" title="ANTLR4 解析语法树 以及IDEA相关插件使用">http://yoursite.com/2020/12/07/antlr/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -489,7 +518,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"># 随笔</a>
+            <a href="/tags/%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/" rel="tag"># 插件使用</a>
           
         </div>
       
@@ -502,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/17/%E9%A2%98%E8%A7%A3%E7%AF%87-E3/" rel="next" title="题解篇-E3">
-                <i class="fa fa-chevron-left"></i> 题解篇-E3
+              <a href="/2020/09/29/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="next" title="区块链普及">
+                <i class="fa fa-chevron-left"></i> 区块链普及
               </a>
             
           </div>
@@ -511,10 +540,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/23/%E9%A2%98%E8%A7%A3%E7%AF%87-C5/" rel="prev" title="题解篇-C5">
-                题解篇-C5 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -665,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后一条毛毛虫"><span class="nav-number">2.</span> <span class="nav-text">最后一条毛毛虫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">2.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">2.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例"><span class="nav-number">2.4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例"><span class="nav-number">2.5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例解释"><span class="nav-number">2.6.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">2.7.</span> <span class="nav-text">题目来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.8.</span> <span class="nav-text">分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ANTLR4-解析语法树-以及IDEA相关插件使用"><span class="nav-number">1.</span> <span class="nav-text">ANTLR4 解析语法树 以及IDEA相关插件使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANTLR简介"><span class="nav-number">1.2.</span> <span class="nav-text">ANTLR简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA插件"><span class="nav-number">1.3.</span> <span class="nav-text">IDEA插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用ANTLR"><span class="nav-number">1.4.</span> <span class="nav-text">如何使用ANTLR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何测试-g4文件"><span class="nav-number">1.5.</span> <span class="nav-text">如何测试.g4文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拿到语法树下一步怎么办"><span class="nav-number">1.6.</span> <span class="nav-text">拿到语法树下一步怎么办</span></a></li></ol></li></ol></div>
             
 
           </div>
