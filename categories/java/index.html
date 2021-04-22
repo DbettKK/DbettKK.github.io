@@ -82,7 +82,7 @@
 <meta name="description" content="NO DEPENDENCE ONLY PRIDE">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BBBBBlog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;java&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;Java&#x2F;index.html">
 <meta property="og:site_name" content="BBBBBlog">
 <meta property="og:description" content="NO DEPENDENCE ONLY PRIDE">
 <meta property="og:locale" content="en">
@@ -116,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/java/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/Java/"/>
 
 
 
 
 
-  <title>Category: java | BBBBBlog</title>
+  <title>Category: Java | BBBBBlog</title>
   
 
 
@@ -276,7 +276,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>java<small>Category</small>
+        <h1>Java<small>Category</small>
         </h1>
       </div>
 
@@ -288,37 +288,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2021/03/31/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/" itemprop="url">
+            <a class="post-title-link" href="/2021/03/05/jvm/" itemprop="url">
               
-                <span itemprop="name">Java面经整理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-03-31T20:09:50+08:00"
-              content="2021-03-31" >
-          03-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/03/04/Java%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url">
-              
-                <span itemprop="name">Java面试准备</span>
+                <span itemprop="name">JVM</span>
               
             </a>
         
@@ -326,9 +298,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2021-03-04T13:48:50+08:00"
-              content="2021-03-04" >
-          03-04
+              datetime="2021-03-05T19:06:50+08:00"
+              content="2021-03-05" >
+          03-05
         </time>
       </div>
 
@@ -389,7 +361,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -478,7 +450,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">243.4k</span>
+    <span title="Site words total count">244.2k</span>
   
 </div>
 
@@ -1081,6 +1053,48 @@
             newcounter.save(null, {
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+ement = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
