@@ -220,11 +220,12 @@
           <h1 id="Linux上Java相关环境配置"><a href="#Linux上Java相关环境配置" class="headerlink" title="Linux上Java相关环境配置"></a>Linux上Java相关环境配置</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>主要是记录一下Linux上Java相关的环境配置过程，希望能够帮助到大家，同时也防止自己忘记。</p>
 <p>主要包括：JDK的配置、Maven的配置、Zookeeper的配置</p>
 <p>主要步骤都相同：下载——解压——配置环境变量——source</p>
-<p>linux版本：ubuntu18.04 or ubuntu20.04</p>
-<h2 id="JDK配置"><a href="#JDK配置" class="headerlink" title="JDK配置"></a>JDK配置</h2><p><em>注意：本人未使用openjdk，也未通过包管理器进行下载，而是通过在oracle官网下载的方式</em></p>
-<p>①下载对应版本jdk。进入Oracle官网，选择对应的jdk版本，需要登录，然后下载对应linux的安装包，tar.gz结尾，如<code>jdk-8u291-linux-x64.tar.gz</code></p>
-<p>②在虚拟机新建一个目录（放置这些文件），我个人比较喜欢放在<code>/usr/bin/java</code>下，所以在<code>/usr/bin</code>目录下<code>sudo mkdir java</code>即可。</p>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/22/Java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -322,10 +323,13 @@
       
           <h1 id="Python学习"><a href="#Python学习" class="headerlink" title="Python学习"></a>Python学习</h1><p><em>学习自廖雪峰的博客网站python篇</em></p>
 <h3 id="Pycharm内容"><a href="#Pycharm内容" class="headerlink" title="Pycharm内容"></a>Pycharm内容</h3><p><code>ctrl+d</code>复制当前行，<code>ctrl+y</code>删除当前行，<code>shift+enter</code>换行(当前行任意位置均可换行)，<code>ctrl+/</code>批量注释或批量取消注释，<code>Tab</code>键和<code>shift+Tab</code>键完成批量缩进和取消缩进，<code>ctrl+f</code>查找，<code>ctrl+r</code>替换，<code>ctrl+&#39;+&#39;/&#39;-&#39;</code>折叠或者展开代码或<code>ctrl+shift+&#39;+&#39;/&#39;-&#39;</code>全部折叠或展开代码。设置-&gt;KeyMap设置快捷键。#TODO 记录要做的事情。</p>
-<h3 id="小Tips"><a href="#小Tips" class="headerlink" title="小Tips"></a>小Tips</h3><p>转义字符——除了用<code>\</code>外，还可以用<code>r&#39; &#39;</code>代表单引号内的内容不转义，特殊的<code>%%</code>表示<code>%</code>。<br>多行写代码——用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>的格式表示多行字符，并且还能在前面加上<code>r</code>一起使用表示内部内容不转义。<br>python除法——<code>/</code>默认是结果为浮点数，而<code>//</code>则默认会去掉小数部分保留整数。<br>字符编码——ASCII码(单字节)-&gt;Unicode码(通常双字节)-&gt;utf-8编码(可变长编码)，计算机中编码：内存统一使用Unicode编码，需要保存到硬盘或者需要传输时则转为utf-8，用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件，浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器。<br>格式化输出——利用<code>%</code>来实现，和c语言类似。例如<code>print(&#39;hello %s %d&#39; % (&#39;world&#39;,4))</code>就会输出<code>hello world 4</code>如果只有一个格式化输出，则不用添加括号。在<code>%d</code>前面添加数字代表空格数或者<code>%f</code>前加<code>.</code>和数字控制小数位数，若不确定要格式化输出的内容可以用<code>%s</code>代替，会将所有内容转换为字符串输出。还有一种格式化方法是使用<code>format()</code>方法，它会用传入的参数依次替换字符串内的占位符<code>{0}</code>、<code>{1}</code>……，不过这种方式写起来比%要麻烦得多，如<code>&#39;Hello, {0}, 成绩提升了 {1:.1f}%&#39;.format(&#39;小明&#39;, 17.125)</code>，输出<code>Hello, 小明, 成绩提升了 17.1%</code>。<br>条件判断——可用<code>elif</code>表示<code>else if</code>，同时如果<code>if</code>后面只有一个变量就和C语言类似。<br>IO——<code>input()</code>的返回类型为<code>str</code>，可用<code>int()</code>转换为整数型，<code>float()</code>转换为浮点数类型。<br>不可变对象——对于不变对象来说，调用对象自身的任意方法，也不会改变该对象自身的内容。相反，这些方法会创建新的对象并返回，这样，就保证了不可变对象本身永远是不可变的。</p>
-<p>全局变量——在函数中想要修改全局遍历，如果是可变类型，则可以直接进行修改，如果是不可变类型，则需要使用global声明才可修改。</p>
-<h3 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a>Python基础</h3><h5 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h5><p>python3以unicode编码，即支持多种语言的字符串。<br>对于单个字符(英文或中文)，可用<code>ord()</code>和<code>chr()</code>函数分别读取字符的整数表示和把编码转换为字符。还可以用十六进制表示其他语言如：<code>&#39;\u4e2d\u6587&#39;</code>等价于<code>中文</code>。<br>对于<code>bytes</code>类型的数据用带<code>b</code>前缀的单引号或双引号表示，如<code>x = b&#39;ABC&#39;</code>,<code>bytes</code>类型的数据每个字符占用一个字节。用unicode编码的字符串可以通过<code>encode()</code>函数编码为指定的<code>bytes</code>,内部参数为<code>ascii或者utf-8</code>等其他编码方式,反过来就是使用<code>decode()</code>函数，如果<code>bytes</code>中只有一小部分无效的字节，可以传入<code>errors=&#39;ignore&#39;</code>。纯英文的<code>str</code>可以用<code>ASCII</code>编码为<code>bytes</code>，内容是一样的，含有中文的<code>str</code>可以用<code>UTF-8</code>编码为<code>bytes</code>。<br>对于<code>str</code>字符串可用<code>len()</code>函数计算字符数，如果换为<code>bytes</code>类型，则计算字节数。为了避免乱码问题，我们应该坚持使用<code>utf-8</code>来对<code>str</code>和<code>bytes</code>进行转换。</p>
+<h3 id="小Tips"><a href="#小Tips" class="headerlink" title="小Tips"></a>小Tips</h3>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/01/python%E5%AD%A6%E4%B9%A0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -424,14 +428,12 @@
           <h2 id="JavaScript学习"><a href="#JavaScript学习" class="headerlink" title="JavaScript学习"></a>JavaScript学习</h2><p><em>time:2020/04/10</em></p>
 <h4 id="Javascript基础"><a href="#Javascript基础" class="headerlink" title="Javascript基础"></a>Javascript基础</h4><p>数据类型和变量</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Number类型，不区分整数和浮点数统一为Number类型。</span></span><br><span class="line"><span class="comment">//NaN和Infinity是特殊的Number类型</span></span><br><span class="line"><span class="comment">//一个表示无法表示的数，另一个则是在JavaScript中超过最大能表示的范围，就为Infinity</span></span><br><span class="line"><span class="comment">//%取模运算在JavaScript中可以对浮点数使用</span></span><br><span class="line"><span class="number">10.5</span>%<span class="number">3</span>==<span class="number">1.5</span>;</span><br><span class="line"><span class="number">0</span>/<span class="number">0</span>==<span class="literal">NaN</span>;</span><br><span class="line"><span class="number">2</span>/<span class="number">0</span>==<span class="literal">Infinity</span>;</span><br><span class="line"><span class="comment">//==和===运算符，前者会自动转换类型再比较，所以应坚持使用后者进行比较</span></span><br><span class="line"><span class="comment">//NaN和所有值都不同，包括其自身，需使用isNaN()来判断</span></span><br><span class="line"><span class="comment">//浮点数的比较也需要注意,eg.1/3!=1-2/3</span></span><br></pre></td></tr></table></figure>
-
-<p>字符串</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可用`...`来表示多行字符串</span></span><br><span class="line"><span class="string">`这是一个</span></span><br><span class="line"><span class="string">多行</span></span><br><span class="line"><span class="string">字符串`</span>;</span><br><span class="line"><span class="comment">//除了用'+'连接字符串，还可以使用$&#123;&#125;来实现</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'小明'</span>;</span><br><span class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">`你好, <span class="subst">$&#123;name&#125;</span>, 你今年<span class="subst">$&#123;age&#125;</span>岁了!`</span>;</span><br><span class="line"><span class="comment">//var message = '你好, ' + name + ', 你今年' + age + '岁了!';</span></span><br><span class="line"><span class="comment">//字符串可以使用下标访问特定位置的字符。</span></span><br><span class="line"><span class="comment">//字符串是不变的，所以对某位置的字符进行改变，全字符串是不变的</span></span><br></pre></td></tr></table></figure>
-
-<p><em>time:2020/04/16</em></p>
-<p>数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以直接给Array的length赋值，并且会改变Array的大小</span></span><br><span class="line"><span class="comment">//可以给Array超过范围的索引赋值，同样会改变Array</span></span><br><span class="line"><span class="comment">//indexOf()方法，可以返回一个索引或者返回索引对应的元素，即参数可以是索引也可以是元素</span></span><br><span class="line"><span class="comment">//slice()方法，就是和string的substring方法是同样的效果，且参数是参数包含开始索引不包含结束索引,不传递参数，则代表剪切整个字符串，可以这样复制数组</span></span><br><span class="line"><span class="comment">//push()和pop()方法，字符串末尾添加或者删除元素</span></span><br><span class="line"><span class="comment">//unshift()和shift()方法，字符串开头添加或者删除元素(unshift添加)</span></span><br><span class="line"><span class="comment">//sort()方法，排序;reverse()方法，调转数组。</span></span><br><span class="line"><span class="keyword">var</span> arr=&#123;<span class="string">'A'</span>,<span class="string">'b'</span>&#125;;</span><br><span class="line">arr.sort();</span><br><span class="line"><span class="comment">//splice()方法,第一个参数指定索引，第二个参数指定从该索引开始删除的元素个数，然后后面可以跟一些字符串表示从该索引开始添加的元素，也可以不添加，即只有两个参数。并且该方法会返回删除的元素形成的数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">'Microsoft'</span>, <span class="string">'Apple'</span>, <span class="string">'Yahoo'</span>, <span class="string">'AOL'</span>, <span class="string">'Excite'</span>, <span class="string">'Oracle'</span>];</span><br><span class="line">arr.splice(<span class="number">2</span>, <span class="number">3</span>, <span class="string">'Google'</span>, <span class="string">'Facebook'</span>); <span class="comment">// 返回删除的元素 ['Yahoo', 'AOL', 'Excite']</span></span><br><span class="line">arr; <span class="comment">// ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']</span></span><br><span class="line">arr.splice(<span class="number">2</span>, <span class="number">2</span>); <span class="comment">// ['Google', 'Facebook']</span></span><br><span class="line">arr; <span class="comment">// ['Microsoft', 'Apple', 'Oracle']</span></span><br><span class="line">arr.splice(<span class="number">2</span>, <span class="number">0</span>, <span class="string">'Google'</span>, <span class="string">'Facebook'</span>); <span class="comment">// 返回[],因为没有删除任何元素</span></span><br><span class="line">arr; <span class="comment">// ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']</span></span><br><span class="line"><span class="comment">//concat方法，连接两个数组并返回新数组</span></span><br><span class="line"><span class="keyword">var</span> c=a.concat(b);</span><br><span class="line"><span class="comment">//join方法，把数组中的元素用特定的字符串连接起来，返回字符串</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr.join(<span class="string">'-'</span>); <span class="comment">// 'A-B-C-1-2-3'，可以是字符串 不一定只有一个字符</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/01/JavaScript%E5%AD%A6%E4%B9%A0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -530,12 +532,12 @@
           <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>时隔几个月，终于又开始写博客了，原因呢，大学太颓废，还是得找点事给自己干，所以从现在开始学习前端开发，最开始，当然，从HTML开始，虽然之前也学过一些，但是总结的东西都不多，所以这次就当是正式开始系统的学习前端知识了，我的一个思路呢就是HTML-&gt;CSS-&gt;JS，先把这三大基础整透，再说后面的内容。写博客的目的呢，一是监督自己学习，二呢就是方便自己在学习的时候做好相关的笔记记录，这样也能给予自己前进的动力了，好了废话就说这么多，开始这一系列第一篇博客的更新了。</p>
 <p><em>time：2020/04/07</em></p>
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>在开始这篇博客前已经完成了一些准备工作如下：</p>
-<p>vscode安装、webstorm安装、sublime安装，虽然这三个IDE都比较推荐，但我还是全都安装下来了，在使用过程中再来取舍。</p>
-<h4 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h4><p>用 style 属性代替旧的一些标签以及属性，如<code>&lt;font&gt;,&lt;basefont&gt;,&lt;s&gt;,&lt;u&gt;,alion,color,bgcolor</code>等等。将其变成以下样式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span> = <span class="string">"background-color:red"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span> = <span class="string">"color:red"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span> = <span class="string">"font-family:verdana"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"text-align:center"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>文本格式化标签</p>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/01/HTML%E5%AD%A6%E4%B9%A0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -636,33 +638,12 @@
 
 </blockquote>
 <p>判断链表是否存在环</p>
-<blockquote>
-<p>快慢指针判断是否重合（如果需要找到入环点，在第一次相遇后一指针指向头部，然都保持慢指针速度继续前进，再次相遇的地方即为入环点）</p>
-</blockquote>
-<p>二叉搜索树、平衡二叉树、红黑树</p>
-<blockquote>
-<p>搜索二叉树：左节点 &lt; 根节点 &lt; 右节点，且左子树所有节点 &lt; 根节点 &lt; 右子树所有节点</p>
-<p>平衡二叉树：它是一 棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。对于插入节点和删除节点，如果破坏了平衡，那么都需要进行旋转以重新平衡。AVL树的查找、插入、删除操作在平均和最坏的情况下都是O（logn），代码可参考下方：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment">// 只会存在4种旋转方式：左旋、右旋、先左再右、先右再左。</span></span><br><span class="line">&gt;<span class="comment">// 递归进行判断即可</span></span><br><span class="line">&gt;<span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">&gt;<span class="keyword">int</span> val;</span><br><span class="line">&gt;Node left, right;</span><br><span class="line"><span class="comment">// 构造方法...</span></span><br><span class="line">&gt;<span class="comment">/* 左旋，右旋省略 */</span></span><br><span class="line">&gt;<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">leftRotate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  Node newNode = <span class="keyword">new</span> Node(<span class="keyword">this</span>.val);</span><br><span class="line">  newNode.left = <span class="keyword">this</span>.left;</span><br><span class="line">  newNode.right = <span class="keyword">this</span>.right.left;</span><br><span class="line">  <span class="keyword">this</span>.val = <span class="keyword">this</span>.right.val;</span><br><span class="line">  <span class="keyword">this</span>.left = newNode;</span><br><span class="line">  <span class="keyword">this</span>.right = <span class="keyword">this</span>.right.right;</span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;<span class="comment">/* 添加节点 */</span></span><br><span class="line">&gt;<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 首先进行节点添加</span></span><br><span class="line">  <span class="keyword">if</span> (node.val &lt; <span class="keyword">this</span>.lval) &#123;</span><br><span class="line">  	<span class="keyword">if</span> (<span class="keyword">this</span>.left == <span class="keyword">null</span>) <span class="keyword">this</span>.left = node;</span><br><span class="line">  	<span class="keyword">else</span> <span class="keyword">this</span>.left.add(node);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node.val &gt; <span class="keyword">this</span>.lval) &#123;</span><br><span class="line">  	<span class="keyword">if</span> (<span class="keyword">this</span>.right == <span class="keyword">null</span>) <span class="keyword">this</span>.right = node;</span><br><span class="line">  	<span class="keyword">else</span> <span class="keyword">this</span>.right.add(node);</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="comment">// 判断是否需要旋转</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.getLeftHeight() - <span class="keyword">this</span>.getRightHeight() &gt; <span class="number">1</span>) &#123; <span class="comment">// 获得子树高度的get方法 略</span></span><br><span class="line">      <span class="comment">// 需要右旋 但需要先判断左子树是否需要先左旋</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.left != <span class="keyword">null</span> &amp;&amp; <span class="keyword">this</span>.left.getLeftHeight() &lt; <span class="keyword">this</span>.left.getRightHeight()) &#123;</span><br><span class="line">          <span class="keyword">this</span>.left.leftRotate();</span><br><span class="line">      &#125;</span><br><span class="line">    	<span class="keyword">this</span>.rightRotate();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 左旋同理...</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 删除节点</span></span><br><span class="line">  <span class="comment">/* </span></span><br><span class="line"><span class="comment">  	1、查找到对应节点</span></span><br><span class="line"><span class="comment">  	2、判断该节点是否为叶节点，如果为叶节点，则直接删除</span></span><br><span class="line"><span class="comment">  		如果不是叶节点，则判断该节点是否存在左右子树</span></span><br><span class="line"><span class="comment">  			如果只有左子树 则获得左子树的最大值leftMax 并将需要删除的节点的值置为leftMax 然后递归删除左子树中的该节点</span></span><br><span class="line"><span class="comment">  			如果只有右子树 则获得右子树的最小值rigthMin 并将需要删除的节点的值置为rigthMin 然后递归删除右子树中的该节点</span></span><br><span class="line"><span class="comment">  			如果左右子树均存在，也一样获得右子树的最小值rigthMin 并将需要删除的节点的值置为rigthMin 然后递归删除右子树中的该节点</span></span><br><span class="line"><span class="comment">  	3、删除完成后 判断是否平衡 即和上面add方法的后半部分类似 然后进行旋转平衡接即可</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
-<p>==红黑树==：</p>
-<ol>
-<li><strong>任何一个节点都有颜色，黑色或者红色</strong></li>
-<li><strong>根节点是黑色的</strong></li>
-<li><strong>空节点被认为是黑色的</strong>(即NIL结点)</li>
-<li><strong>每个红色节点必须有两个黑色的子节点。（从每个叶子到根的所有路径上不能有两个连续的红色节点。）</strong></li>
-<li><strong>从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点。</strong>(这也叫做完美黑色平衡，与2-3树的完美平衡有些不同)</li>
-</ol>
-<p><strong>只有黑色节点的红黑树其实就是平衡二叉树</strong>。我们将<strong>红色点想成是填充节点</strong>。即每次插入都以红色插入，且将<strong>黑色想成主要节点</strong>。红色节点做填充。红色节点的作用就是使得树的高度更加灵活，不至于像平衡二叉树那样每次插入都需要 做平衡操作（减少了需要平衡的概率）。<strong>（红色节点的子节点是黑色节点）</strong>条件就使得高度受到限制，极限情况就是一个红色一个黑色串联。最多的查找次数 不会超过2倍的 最少的查找数。</p>
-<p>红黑树其实就是 二叉查找树和平衡二叉树 两者优缺点的一种折中。可以防止出现二叉查找树那种极差的情况，也可以减少插入时平衡的次数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment">// 旋转操作和平衡树保持一致</span></span><br><span class="line">&gt;<span class="comment">/* </span></span><br><span class="line"><span class="comment">&gt;插入操作有三种情况是不会破坏性质的 且插入的节点一定是红色</span></span><br><span class="line"><span class="comment">  1、插入节点作为根节点</span></span><br><span class="line"><span class="comment">  2、插入节点作为根节点的子节点</span></span><br><span class="line"><span class="comment">  3、插入节点的父结点是黑色的</span></span><br><span class="line"><span class="comment">&gt;如果会破坏性质 则说明不满足以上情况 也就是说明 新节点必定存在祖父节点、新节点父节点为红色</span></span><br><span class="line"><span class="comment">1、叔节点为红色——重绘，父节点和叔节点绘制为黑色，祖父节点绘制为红色</span></span><br><span class="line"><span class="comment">2、叔节点为黑色，祖-父-子节点在同侧——将父绘黑，祖绘红，然后以祖为枢纽进行向相反侧的方向旋转</span></span><br><span class="line"><span class="comment">3、叔节点为黑色，祖-父-子节点不在同侧——先根据子父所在的那一侧的方向，以父为枢向相反方向旋转，这样就实现了将子父祖异侧转换为了父子祖同侧，第二步是发现它符合上一种情况了，那就将现在的父(原来的子)绘黑，祖(原来的祖)绘红，然后再次旋转。</span></span><br><span class="line"><span class="comment">&gt;注意：需要修复时，还需要递归进行，即在一次修复后将指针指向此次操作的祖父节点 然后继续判断是否需要修复	</span></span><br><span class="line"><span class="comment">&gt;最后仍然需要将根节点绘制为红色。</span></span><br><span class="line"><span class="comment">&gt;*/</span></span><br></pre></td></tr></table></figure>
-
-<img src="https://i.loli.net/2021/03/10/O3Kf8HcTyFd69kz.png" alt="红黑树remove.png" style="zoom: 33%;">
-</blockquote>
-<p>线段树、树状数组</p>
-<blockquote>
-<p>树状数组是一种特殊的线段树</p>
-</blockquote>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/31/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -756,11 +737,13 @@
 <blockquote>
 <p>栈：跨平台性、指令集小，但指令较多。执行性能比寄存器架构差一些。<br>寄存器：性能较好、指令少但是和硬件耦合性强，无法实现跨平台。</p>
 </blockquote>
-<h3 id="JVM的生命周期"><a href="#JVM的生命周期" class="headerlink" title="JVM的生命周期"></a>JVM的生命周期</h3><p>启动：通过引导类加载器(bootstrap class loader)创建一个初始类来完成的，该类由虚拟机具体实现指定。</p>
-<p>执行：执行java程序。程序执行的时候就运行，程序结束的时候就停止。执行一个Java程序时，真实在执行的时候是一个进程。</p>
-<p>退出：以下几种情况：①程序正常执行结束；②程序执行过程中出现异常或错误；③OS出现错误导致Java虚拟机进程终止；④某线程调用Runtime类或者System类的exit()方法或者Runtime类的halt()方法，且Java安全管理器也允许此次操作。⑤除此之外，JNI ( Java Native Interface)规范描述了用JNI Invocation API来加载或卸载Java虚拟机时，Java虚拟机的退出情况。</p>
-<h3 id="JVM发展历程"><a href="#JVM发展历程" class="headerlink" title="JVM发展历程"></a>JVM发展历程</h3><p>Sun Classic VM：世界上第一款商用Java虚拟机，JDK 1.4时被完全淘汰。内部只提供解释器而没有JIT。</p>
+<h3 id="JVM的生命周期"><a href="#JVM的生命周期" class="headerlink" title="JVM的生命周期"></a>JVM的生命周期</h3>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/05/jvm/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -861,20 +844,12 @@
 <p>而 StringBuilder 与 StringBuffer 都继承自 AbstractStringBuilder 类，在 AbstractStringBuilder 中也是使用字符数组保存字符串<code>char[] value</code> 但是没有用 final 关键字修饰，所以这两种对象都是可变的。</p>
 </blockquote>
 <p><strong>线程安全性</strong></p>
-<blockquote>
-<p>String 中的对象是不可变的，也就可以理解为常量，线程安全。AbstractStringBuilder 是 StringBuilder 与 StringBuffer 的公共父类，定义了一些字符串的基本操作，如 expandCapacity、append、insert、indexOf 等公共方法。StringBuffer 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的。</p>
-</blockquote>
-<p><strong>性能</strong></p>
-<blockquote>
-<p>每次对 String 类型进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象。StringBuffer 每次都会对 StringBuffer 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 StringBuilder 相比使用 StringBuffer 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。</p>
-</blockquote>
-<p><strong>对于三者使用的总结：</strong></p>
-<blockquote>
-<p>操作少量的数据: 适用 String</p>
-<p>单线程操作字符串缓冲区下操作大量数据: 适用 StringBuilder</p>
-<p>多线程操作字符串缓冲区下操作大量数据: 适用 StringBuffer</p>
-</blockquote>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/04/Java%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -966,11 +941,12 @@
       
           <h1 id="ANTLR4-解析语法树-以及IDEA相关插件使用"><a href="#ANTLR4-解析语法树-以及IDEA相关插件使用" class="headerlink" title="ANTLR4 解析语法树 以及IDEA相关插件使用"></a>ANTLR4 解析语法树 以及IDEA相关插件使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。</p>
 <h2 id="ANTLR简介"><a href="#ANTLR简介" class="headerlink" title="ANTLR简介"></a>ANTLR简介</h2><p>在这就给大家用我自己的话简单介绍一下antlr，就功能需求而言，其就是一个在你给定文法的前提下，能将输入串转换成语法树的工具。</p>
-<p>也就是，你给定一个文法，再给定一个输入串，他能判断该输入串是否符合该文法，如果符合，就能将其生成为一棵语法树供你进一步使用。</p>
-<h2 id="IDEA插件"><a href="#IDEA插件" class="headerlink" title="IDEA插件"></a>IDEA插件</h2><p>在idea的plugins中进行搜索ANTLR4应该就能搜到该插件，进行下载重启即可，如下图所示。</p>
-<p><img src="https://i.loli.net/2020/12/07/ZjAPoifHLBvqDbg.png" alt="antlr.png"></p>
-<p>重启后就能在下方工具栏看到ANTLR Preview和Tool Output两栏，也就是插件提供的功能。如何使用该插件在下文会提到。</p>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/07/antlr/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -1063,11 +1039,12 @@
           <h1 id="区块链从零开始完全明白"><a href="#区块链从零开始完全明白" class="headerlink" title="区块链从零开始完全明白"></a>区块链从零开始完全明白</h1><p>写这篇博文是以一个大三学生的角度，以一些通俗一点的语言给大家普及一下什么是区块链，可能文章中很多说法存在错误以及问题，希望能包含并且提出，以便尽快改正。</p>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>首先我们要了解什么是区块链以及为何需要区块链这个东西。</p>
 <p>为了方便大家理解，这里先说用途，很简单，就是用来记账，也就是账本。为什么用区块链记账呢，好处是什么呢？好处是这个账本人手一个，且大家都一样并且无法被改变，并且每一笔账都能被找到。无法被改变就是其最厉害的地方。具体怎么实现的呢，我们后面会说到，大家先有个印象，不要将区块链想得太复杂，就是一个无法被改变的且无限大可以溯源的账本而已。</p>
-<p>然后是什么是区块链，顾名思义，由区块组成的链。为什么能够记账呢，就是将交易的记录放在区块里罢了，然后再把区块用链连起来，就形成了区块链。</p>
-<p>区块链还有一些好处，也就是分布式、去中心化。就如同不让一个人保存账本，要是这个人私自改了也没人知道，也就形成了麻烦。使用区块链就能避免这个问题。</p>
-<h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p>在详细了解区块链的知识之前，我们需要先了解一些加密相关的知识。</p>
-<p>加密分为两类，对称加密和非对称加密。</p>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/29/%E5%8C%BA%E5%9D%97%E9%93%BE/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
@@ -1165,11 +1142,12 @@
       
           <h1 id="Ubuntu安装RabbitMQ教程"><a href="#Ubuntu安装RabbitMQ教程" class="headerlink" title="Ubuntu安装RabbitMQ教程"></a>Ubuntu安装RabbitMQ教程</h1><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>本篇主要给大家介绍ubuntu安装rabbitmq的过程以及相关遇到的坑，同时也避免自己忘记，所以写下这篇博文供大家学习。</p>
 <h3 id="相关版本"><a href="#相关版本" class="headerlink" title="相关版本"></a>相关版本</h3><p>操作系统：Linux阿里云服务器</p>
-<p>ubuntu：18.04（root用户）</p>
-<p>rabbitmq：3.8.8</p>
-<p>erlang：23.0.3（Ubuntu Xenial 64bit）</p>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="erlang安装"><a href="#erlang安装" class="headerlink" title="erlang安装"></a>erlang安装</h4>
           <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/27/ubuntu%E8%A3%85rabbitmq/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
