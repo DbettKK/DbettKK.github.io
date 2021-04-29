@@ -22,13 +22,13 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="ANTLR4 解析语法树 以及IDEA相关插件使用前言首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。 ANTLR简介在这就给大家用我自己的话简单介绍一下antlr，就功能需求而言，其就是一个在你给定文法的前提下，能将输入串转换成语法树的工具。">
+  <meta name="description" content="ANTLR4 解析语法树 以及IDEA相关插件使用前言首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。">
 <meta name="keywords" content="插件使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ANTLR4 解析语法树 以及IDEA相关插件使用">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;12&#x2F;07&#x2F;antlr&#x2F;index.html">
 <meta property="og:site_name" content="Dbettkk-Blog">
-<meta property="og:description" content="ANTLR4 解析语法树 以及IDEA相关插件使用前言首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。 ANTLR简介在这就给大家用我自己的话简单介绍一下antlr，就功能需求而言，其就是一个在你给定文法的前提下，能将输入串转换成语法树的工具。">
+<meta property="og:description" content="ANTLR4 解析语法树 以及IDEA相关插件使用前言首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;ZjAPoifHLBvqDbg.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;MbxTp8vC4UH5qlP.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;D2Ff1sRdVTNa9hj.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;MvTyVJp5UxXfZnC.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;D4RrNLZdokMqAWY.png">
-<meta property="og:updated_time" content="2020-12-07T05:37:42.700Z">
+<meta property="og:updated_time" content="2021-04-29T08:12:12.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;12&#x2F;07&#x2F;ZjAPoifHLBvqDbg.png">
 
@@ -182,10 +182,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-12-07 13:40:20 / Modified: 13:37:42" itemprop="dateCreated datePublished" datetime="2020-12-07T13:40:20+08:00">2020-12-07</time>
+              <time title="Created: 2020-12-07 13:40:20" itemprop="dateCreated datePublished" datetime="2020-12-07T13:40:20+08:00">2020-12-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-29 16:12:12" itemprop="dateModified" datetime="2021-04-29T16:12:12+08:00">2021-04-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -229,6 +235,7 @@
 
       
         <h1 id="ANTLR4-解析语法树-以及IDEA相关插件使用"><a href="#ANTLR4-解析语法树-以及IDEA相关插件使用" class="headerlink" title="ANTLR4 解析语法树 以及IDEA相关插件使用"></a>ANTLR4 解析语法树 以及IDEA相关插件使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先，写这篇博文主要是为了记录下我在用antlr+idea开发时遇到的坑点来帮助大家，希望大家不要走我的弯路，同时也是记录自己的一个写编译器历程。</p>
+<a id="more"></a>
 <h2 id="ANTLR简介"><a href="#ANTLR简介" class="headerlink" title="ANTLR简介"></a>ANTLR简介</h2><p>在这就给大家用我自己的话简单介绍一下antlr，就功能需求而言，其就是一个在你给定文法的前提下，能将输入串转换成语法树的工具。</p>
 <p>也就是，你给定一个文法，再给定一个输入串，他能判断该输入串是否符合该文法，如果符合，就能将其生成为一棵语法树供你进一步使用。</p>
 <h2 id="IDEA插件"><a href="#IDEA插件" class="headerlink" title="IDEA插件"></a>IDEA插件</h2><p>在idea的plugins中进行搜索ANTLR4应该就能搜到该插件，进行下载重启即可，如下图所示。</p>

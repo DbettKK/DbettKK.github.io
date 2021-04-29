@@ -22,13 +22,13 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="JVMJVM的架构模型Java编译器输入的指令基本是一种基于栈的指令集架构，另外一种架构则是基于寄存器的指令集架构。  栈：跨平台性、指令集小，但指令较多。执行性能比寄存器架构差一些。寄存器：性能较好、指令少但是和硬件耦合性强，无法实现跨平台。  JVM的生命周期">
+  <meta name="description" content="JVMJVM的架构模型Java编译器输入的指令基本是一种基于栈的指令集架构，另外一种架构则是基于寄存器的指令集架构。">
 <meta name="keywords" content="学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;05&#x2F;jvm&#x2F;index.html">
 <meta property="og:site_name" content="Dbettkk-Blog">
-<meta property="og:description" content="JVMJVM的架构模型Java编译器输入的指令基本是一种基于栈的指令集架构，另外一种架构则是基于寄存器的指令集架构。  栈：跨平台性、指令集小，但指令较多。执行性能比寄存器架构差一些。寄存器：性能较好、指令少但是和硬件耦合性强，无法实现跨平台。  JVM的生命周期">
+<meta property="og:description" content="JVMJVM的架构模型Java编译器输入的指令基本是一种基于栈的指令集架构，另外一种架构则是基于寄存器的指令集架构。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;02&#x2F;17&#x2F;NuiwLdIh7CYcTxb.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;02&#x2F;18&#x2F;Pf6Mkxzy1YAluLB.png">
@@ -42,7 +42,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;03&#x2F;04&#x2F;Idiyfvm8cHtTwxY.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;03&#x2F;04&#x2F;qxfND297J8VGFip.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;03&#x2F;04&#x2F;oFTlgyn5s2i61VQ.png">
-<meta property="og:updated_time" content="2021-03-05T11:07:58.961Z">
+<meta property="og:updated_time" content="2021-04-29T08:13:13.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;02&#x2F;17&#x2F;NuiwLdIh7CYcTxb.png">
 
@@ -186,10 +186,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-03-05 19:06:50 / Modified: 19:07:58" itemprop="dateCreated datePublished" datetime="2021-03-05T19:06:50+08:00">2021-03-05</time>
+              <time title="Created: 2021-03-05 19:06:50" itemprop="dateCreated datePublished" datetime="2021-03-05T19:06:50+08:00">2021-03-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-29 16:13:13" itemprop="dateModified" datetime="2021-04-29T16:13:13+08:00">2021-04-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -233,6 +239,7 @@
 
       
         <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h3 id="JVM的架构模型"><a href="#JVM的架构模型" class="headerlink" title="JVM的架构模型"></a>JVM的架构模型</h3><p>Java编译器输入的指令基本是一种<strong>基于栈的指令集架构</strong>，另外一种架构则是基于寄存器的指令集架构。</p>
+<a id="more"></a>
 <blockquote>
 <p>栈：跨平台性、指令集小，但指令较多。执行性能比寄存器架构差一些。<br>寄存器：性能较好、指令少但是和硬件耦合性强，无法实现跨平台。</p>
 </blockquote>

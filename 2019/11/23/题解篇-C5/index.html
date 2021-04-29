@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="A-毛毛虫题目描述草丛中有两只毛毛虫。他们想穿过草丛里的杀虫剂到达对方的身边。而草丛里的杀虫剂形成了nn个两两无公共点的圆。注意这些杀虫剂只存在于圆的边界上，且杀虫剂宽度非常非常细。毛毛虫一开始不在任何圆的边界上。 毛毛虫穿过杀虫剂就要受到一次伤害。请问一只毛毛虫到达另一只的身边，最少需要受到几次伤害？  时间限制：1000ms  内存限制：65536KB">
+  <meta name="description" content="A-毛毛虫">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解篇-C5">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E9%A2%98%E8%A7%A3%E7%AF%87-C5&#x2F;index.html">
 <meta property="og:site_name" content="Dbettkk-Blog">
-<meta property="og:description" content="A-毛毛虫题目描述草丛中有两只毛毛虫。他们想穿过草丛里的杀虫剂到达对方的身边。而草丛里的杀虫剂形成了nn个两两无公共点的圆。注意这些杀虫剂只存在于圆的边界上，且杀虫剂宽度非常非常细。毛毛虫一开始不在任何圆的边界上。 毛毛虫穿过杀虫剂就要受到一次伤害。请问一只毛毛虫到达另一只的身边，最少需要受到几次伤害？  时间限制：1000ms  内存限制：65536KB">
+<meta property="og:description" content="A-毛毛虫">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-30T05:37:50.596Z">
+<meta property="og:updated_time" content="2021-04-29T08:14:48.203Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/23/%E9%A2%98%E8%A7%A3%E7%AF%87-C5/">
@@ -181,7 +181,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-30 13:37:50" itemprop="dateModified" datetime="2019-11-30T13:37:50+08:00">2019-11-30</time>
+                <time title="Modified: 2021-04-29 16:14:48" itemprop="dateModified" datetime="2021-04-29T16:14:48+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +225,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="A-毛毛虫"><a href="#A-毛毛虫" class="headerlink" title="A-毛毛虫"></a>A-毛毛虫</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>草丛中有两只毛毛虫。他们想穿过草丛里的杀虫剂到达对方的身边。而草丛里的杀虫剂形成了nn个两两无公共点的圆。注意这些杀虫剂只存在于圆的边界上，且杀虫剂宽度非常非常细。毛毛虫一开始不在任何圆的边界上。</p>
+        <h2 id="A-毛毛虫"><a href="#A-毛毛虫" class="headerlink" title="A-毛毛虫"></a>A-毛毛虫</h2><a id="more"></a>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>草丛中有两只毛毛虫。他们想穿过草丛里的杀虫剂到达对方的身边。而草丛里的杀虫剂形成了nn个两两无公共点的圆。注意这些杀虫剂只存在于圆的边界上，且杀虫剂宽度非常非常细。毛毛虫一开始不在任何圆的边界上。</p>
 <p>毛毛虫穿过杀虫剂就要受到一次伤害。请问一只毛毛虫到达另一只的身边，最少需要受到几次伤害？</p>
 <p> 时间限制：1000ms  内存限制：65536KB </p>
 <h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一个数为数据组数T，每组数据输入5行，T≤10。</p>

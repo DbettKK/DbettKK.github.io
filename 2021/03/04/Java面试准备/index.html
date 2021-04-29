@@ -22,13 +22,13 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Java面试准备Java基础String、StringBuilder、StringBuffer String 类中使用 final 关键字修饰字符数组来保存字符串，private final char value[]，所以 String 对象是不可变的。补充（来自issue 675）：在 Java 9 之后，String 类的实现改用 byte 数组存储字符串 private final byte">
+  <meta name="description" content="Java面试准备Java基础String、StringBuilder、StringBuffer">
 <meta name="keywords" content="学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java面试准备">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;03&#x2F;04&#x2F;Java%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87&#x2F;index.html">
 <meta property="og:site_name" content="Dbettkk-Blog">
-<meta property="og:description" content="Java面试准备Java基础String、StringBuilder、StringBuffer String 类中使用 final 关键字修饰字符数组来保存字符串，private final char value[]，所以 String 对象是不可变的。补充（来自issue 675）：在 Java 9 之后，String 类的实现改用 byte 数组存储字符串 private final byte">
+<meta property="og:description" content="Java面试准备Java基础String、StringBuilder、StringBuffer">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;03&#x2F;04&#x2F;K8chDsaJLgeWFpU.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;02&#x2F;05&#x2F;6zs9MQZ4KPrLpFc.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;img.rruu.net&#x2F;image&#x2F;601e6ec3e78e5">
 <meta property="og:image" content="https:&#x2F;&#x2F;img.rruu.net&#x2F;image&#x2F;6021434267a6b">
 <meta property="og:image" content="https:&#x2F;&#x2F;img.rruu.net&#x2F;image&#x2F;6021439fcabec">
-<meta property="og:updated_time" content="2021-03-05T11:07:58.954Z">
+<meta property="og:updated_time" content="2021-04-29T08:13:08.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2021&#x2F;03&#x2F;04&#x2F;K8chDsaJLgeWFpU.png">
 
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-05 19:07:58" itemprop="dateModified" datetime="2021-03-05T19:07:58+08:00">2021-03-05</time>
+                <time title="Modified: 2021-04-29 16:13:08" itemprop="dateModified" datetime="2021-04-29T16:13:08+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Java面试准备"><a href="#Java面试准备" class="headerlink" title="Java面试准备"></a>Java面试准备</h1><h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="String、StringBuilder、StringBuffer"><a href="#String、StringBuilder、StringBuffer" class="headerlink" title="String、StringBuilder、StringBuffer"></a>String、StringBuilder、StringBuffer</h3><blockquote>
+        <h1 id="Java面试准备"><a href="#Java面试准备" class="headerlink" title="Java面试准备"></a>Java面试准备</h1><h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="String、StringBuilder、StringBuffer"><a href="#String、StringBuilder、StringBuffer" class="headerlink" title="String、StringBuilder、StringBuffer"></a>String、StringBuilder、StringBuffer</h3><a id="more"></a>
+
+<blockquote>
 <p>String 类中使用 final 关键字修饰字符数组来保存字符串，<code>private final char value[]</code>，所以 String 对象是不可变的。补充（来自<a href="https://github.com/Snailclimb/JavaGuide/issues/675" target="_blank" rel="noopener">issue 675</a>）：在 Java 9 之后，String 类的实现改用 byte 数组存储字符串 <code>private final byte[] value</code>。</p>
 <p>而 StringBuilder 与 StringBuffer 都继承自 AbstractStringBuilder 类，在 AbstractStringBuilder 中也是使用字符数组保存字符串<code>char[] value</code> 但是没有用 final 关键字修饰，所以这两种对象都是可变的。</p>
 </blockquote>

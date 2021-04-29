@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="背包问题（简单DP）摘要 该讲主要介绍三类背包问题，都是比较经典的DP问题，比之前所讲的股票问题难度有所提升。 背包Ⅰ(01背包)">
+  <meta name="description" content="背包问题（简单DP）摘要 该讲主要介绍三类背包问题，都是比较经典的DP问题，比之前所讲的股票问题难度有所提升。">
 <meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划(DP)——背包问题">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;11&#x2F;%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="Dbettkk-Blog">
-<meta property="og:description" content="背包问题（简单DP）摘要 该讲主要介绍三类背包问题，都是比较经典的DP问题，比之前所讲的股票问题难度有所提升。 背包Ⅰ(01背包)">
+<meta property="og:description" content="背包问题（简单DP）摘要 该讲主要介绍三类背包问题，都是比较经典的DP问题，比之前所讲的股票问题难度有所提升。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-08T05:29:15.574Z">
+<meta property="og:updated_time" content="2021-04-29T08:14:08.412Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/11/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP-%E2%80%94%E2%80%94%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
@@ -181,7 +181,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-08 13:29:15" itemprop="dateModified" datetime="2019-12-08T13:29:15+08:00">2019-12-08</time>
+                <time title="Modified: 2021-04-29 16:14:08" itemprop="dateModified" datetime="2021-04-29T16:14:08+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -227,6 +227,7 @@
       
         <h2 id="背包问题（简单DP）"><a href="#背包问题（简单DP）" class="headerlink" title="背包问题（简单DP）"></a>背包问题（简单DP）</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><hr>
 <p>该讲主要介绍三类背包问题，都是比较经典的DP问题，比之前所讲的股票问题难度有所提升。</p>
+<a id="more"></a>
 <h3 id="背包Ⅰ-01背包"><a href="#背包Ⅰ-01背包" class="headerlink" title="背包Ⅰ(01背包)"></a>背包Ⅰ(01背包)</h3><h4 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h4><hr>
 <p>有N件物品和一个容量为V的背包。第i件物品的费用是c[i]，价值是w[i]。求解将哪些物品装入背包可使价值总和最大。 </p>
 <p>时间限制：5000ms，内存限制：65536kb</p>
